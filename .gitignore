@@ -4,3 +4,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+
+# 生成过程中的临时文件
+content/poto/_work/
