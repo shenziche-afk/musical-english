@@ -115,6 +115,27 @@ audio/<新剧 id>/             ← 音频也按剧目分文件夹
 
 左：单句循环第 3 句，底部状态条显示已经转了 1 圈。右：跟读模式下句尾静音，底部倒计时留在「留白 2.5s」。
 
+## 本地工作台（改内容用）
+
+内置页面只能读；想改断句和译文，跑本机工作台：
+
+```bash
+python3 dev/studio.py        # 或双击 start-studio.command
+```
+
+它只监听 `127.0.0.1`，每个写请求都要启动时打印的令牌，`studio/` 也不进 `dist/` —— 线上那份没有后台，
+谁也改不了。三个页签：
+
+| 页签 | 能改 |
+| --- | --- |
+| **断句** | 每句起止时间：`±0.05 / ±0.1` 微调，或「起点=现在 / 终点=现在」直接把播放位置写成边界；重叠、压句、零长度会红字提示。 |
+| **精读** | 译文、注释、节奏提示、词条释义、短语例句、语法讲解、分区标题。 |
+| **背景** | 背景卡中英标题与正文、生词释义、阅读题题干/选项/答案/解析。 |
+
+保存是**定点改写**：只替换改过的值，`git diff` 只有那几行；写盘前自动备份到 `dev/_backup/`，
+写完立刻跑 `node --check` + `validate_packs`，不过就自动回滚。顶栏「发布」= 校验 → smoke → 提交 → 推送 →
+触发 `pages.yml`。细节和坑见 [STUDIO.md](STUDIO.md)。
+
 ## 数据存在哪
 
 学习进度、阅读题作答都存在浏览器 `localStorage`（键名 `musical-en.v1`），每答一题就写一次，刷新不丢，换设备不跟；每答一题自动保存；精读页底部和「复习完成」页有**保存**按钮：存一份当天存档（保留最近 7 天）并同时下载 `musical-english-<日期>.json`，设置页可以一键恢复。阅读题记的是选项的原始下标（`曲目:卡片:题号`），所以选项顺序打乱后也不会串答案。设置页（右上角 ⚙）可以**导出 / 导入进度 JSON**。
@@ -138,6 +159,7 @@ audio/<新剧 id>/             ← 音频也按剧目分文件夹
 musical-english/
 ├─ start.bat             双击启动本地服务（Windows，音频必需）
 ├─ start.command         双击启动（macOS）
+├─ start-studio.command  双击启动本地工作台（改内容用，只有本机能用）
 ├─ server.py             静态服务器，带 Range 支持（可拖进度条）
 ├─ index.html
 ├─ assets/app.css
@@ -154,7 +176,10 @@ musical-english/
 │     ├─ <song>.js            46 个 pack，每首一个（逐行讲解 + 背景 + 短语）
 │     └─ PACK_SPEC.md         pack 写作规范（逐行讲解、背景、来源、校验）
 ├─ audio/hamilton/       46 首 m4a（单声道 AAC 96k，约 98 MB）
+├─ studio/               本地工作台页面（不进 dist）
 ├─ dev/
+│  ├─ studio.py          本地工作台服务：/api 读写 content，只绑 127.0.0.1 + 令牌
+│  ├─ jsonedit.py        JSON 定点改写引擎（只替换改动过的值，diff 只有那几行）
 │  ├─ build_lyrics.py    从歌词 txt 重新生成 lyrics.js（源文件不随包，跑时给路径）
 │  ├─ build_lrc.py       抓取 LRC 并生成 times.js
 │  ├─ build_shows.py     扫描 content/<id>/show.json 生成 shows.js
@@ -163,6 +188,7 @@ musical-english/
 │  ├─ clean_credits.js   清歌词末尾的制作名单（node dev/clean_credits.js <id>）
 │  └─ smoke.js           Node 冒烟测试
 ├─ NOTICE.md             版权与下架声明（页面底部、设置页共用同一段文案）
+├─ STUDIO.md             本地工作台：改断句 / 译文 / 背景，保存与发布
 ├─ SHOWS.md              多剧目数据契约与新增剧目流程
 ├─ HANDOFF.md            交接文档：现状、命令、坑与下一步
 ├─ DEPLOY.md             部署方案：Cloudflare Pages / Netlify / GitHub Pages
@@ -191,7 +217,7 @@ musical-english/
 ## 下一步
 
 - 第三部剧：音频、歌词、时间轴、pack 按 `SHOWS.md` 的流程接入
-- 跟读评分（现在只录不评，把录音和原句做对比打分）
+- 背景卡的整篇改写（工作台现在按字段改，还不能整段替换）
 - 音频上对象存储或 CDN，进一步缩短手机首播等待
 - PWA：外壳与文本离线缓存
 

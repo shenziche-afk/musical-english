@@ -108,6 +108,24 @@ for (const folder of showDirs) {
       errors.push(pt + "：时间轴 " + TIMES[String(p.n)].length + " ≠ 歌词 " + lyr.lines.length);
     }
 
+    /* 断句是否说得通：起点 ≥ 终点是硬的错，等于（零长度）只提示。
+     * 时间轴来自 LRC，句与句之间有正常重叠，所以重叠不算问题。 */
+    (TIMES[String(p.n)] || []).forEach((seg, i) => {
+      const at = pt + "：时间轴第 " + (i + 1) + " 句";
+      if (!Array.isArray(seg) || seg.length !== 2) {
+        errors.push(at + "不是 [起点, 终点]");
+        return;
+      }
+      const [s, e] = seg.map(Number);
+      if (!isFinite(s) || !isFinite(e)) {
+        errors.push(at + "不是数字");
+        return;
+      }
+      if (s < 0 || e < 0) errors.push(at + "出现负数");
+      if (s > e) errors.push(at + "起点 " + s + " > 终点 " + e);
+      else if (s === e) warnings.push(at + "起点 = 终点（" + s + "s，这句播不出声音）");
+    });
+
     const rows = [];
     (p.sections || []).forEach((sec) => (sec.lines || []).forEach((l) => rows.push(l)));
     if (rows.length !== lyr.lines.length) {

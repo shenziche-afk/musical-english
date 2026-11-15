@@ -21,6 +21,10 @@
 合计 67 个 pack、4,625 行、204 张背景卡、408 题、395 条来源（Hamilton 300 + 魅影 95）。
 魅影 95 条来源只用了 4 个已实测可打开的域名：Gutenberg / Opéra national de Paris / 官方剧组 / 韦伯官网。
 
+本地工作台（2026-11-15 加）：`python3 dev/studio.py` 起一个只绑 127.0.0.1、带令牌的服务，
+三个页签改「断句 / 精读 / 背景」，保存走定点改写（diff 只有改过的那几行）+ 自动备份 + 自动校验，失败回滚。
+线上没有后台：`studio/` 不进 `dist/`，GitHub Pages 那份没有任何写接口。细节见 `STUDIO.md`。
+
 精听（2026-11-15 加）：每句有 ▶ 单句播放、「环」单句循环，播放器底部有 环 / 跟 / 录 三个键——
 跟读是「播完一句 → 静音留白（默认 2.5 s，设置页 1.5–5 s）→ 重放这一句」，录音回放只在内存里、不落盘。
 快捷键 `R` 循环、`S` 跟读、`Esc` 停。
@@ -33,6 +37,9 @@ js/app.js             全部交互（ES5 IIFE，约 2900 行）：曲库/精读/
                       单句循环 + 跟读在「单句循环 / 跟读」小节（armSegment / finishSegment / startGap）；
                       按需加载 pack：content/<showId>/<packId>.js
 js/core.js            localStorage 状态、SM-2、每日快照、文本归一化
+studio/               本地工作台前端（index/studio.js/studio.css，不进 dist）
+dev/studio.py         工作台服务：静态站 + /api（ping/tracks/pack/times/save/revert/diff/backups/publish）
+dev/jsonedit.py       JSON 定点改写引擎：记录每个值的字节区间，只替换改动处（有 --self-test）
 content/<showId>/     show.json + tracks.js / lyrics.js / times.js + 每首一个 pack
 audio/<showId>/       m4a
 assets/app.css        CSS 变量主题（--gold/--bg/--text-* 等）
@@ -51,6 +58,8 @@ cd /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-englis
 
 node dev/validate_packs.js      # 全剧目内容校验（行数/文本/音频/题目/来源）
 node dev/smoke.js               # UI 回归（~130 条，只跑 hamilton；含循环/跟读/快捷键）
+python3 dev/studio.py           # 本地工作台（改断句/译文/背景），打印带 ?t= 的地址
+python3 dev/jsonedit.py --self-test
 node dev/integrate_packs.js poto
 python3 dev/build_shows.py
 python3 dev/build_static.py     # → dist/（147 MB）
@@ -72,6 +81,12 @@ gh run list --workflow=pages.yml
 - **发布手动化**：`.github/workflows/pages.yml` 只保留 `workflow_dispatch`，避免本地改动一 push 就上线。
 - **免责声明**：页面底部 + 设置页 + `NOTICE.md`，邮箱 `shenziche@gmail.com`（改的话三处一起改）；`index.html` 有 noindex。
 - **赞赏**：页面底部 + README 末尾，图片 `assets/support-qr.png`（微信赞赏码，文案「投喂」）。
+- **工作台只在本地**：写接口不做进静态站。只监听 127.0.0.1 + 自定义令牌头（跨站表单带不了，
+  等于天然挡住别的网页偷偷 POST）+ 包 id 必须在 `show.json` 的 files 里。
+- **内容改动走定点改写**：`jsonedit.py` 记下每个值的字节区间，只替换改过的值。
+  整份 `json.dumps` 重写会把 3000 行 pack 全变成「已修改」，diff 就没法看了。
+- **每次保存都先备份再校验**：`dev/_backup/<时间戳>/` + `manifest.json`；写完跑 `node --check`
+  和 `validate_packs`，任何一步不过就自动写回原文件。打开时记 `sha1`，对不上拒绝保存（防 pull 覆盖）。
 - **README 面向访客**：开头三问（这是什么/怎么用/数据在哪）+ 内容表格 + 两张截图。
 
 ## 6. 坑（都踩过）
@@ -88,11 +103,15 @@ gh run list --workflow=pages.yml
 10. **`.w::after` 提示气泡曾是窄屏横向滚动的元凶**：`content: attr(data-tip)` 写在基础规则里，300 px 的绝对定位盒子即使 `opacity:0` 也会把 `scrollWidth` 撑到 471 px。现在 `content` 只在 `:hover/:focus` 里声明，不悬停就不生成盒子。
 11. **按钮字形用汉字而不是 emoji**：🔁/🎤 在暗色主题下会渲染成彩色小方块，和 ▶/✓ 不搭；现在统一成「环 / 跟 / 录 / 听」。
 12. **录音**：`getUserMedia` + `MediaRecorder` 需要 https 或 localhost；iOS 上回放元素要 `appendChild` 到 body 并移出屏幕，否则容易播不出声。
+13. **`[hidden]` 会被 `display:grid/flex` 盖掉**：工作台的弹窗和底部脏条一开始是空的却挡住整页点击，加 `[hidden]{display:none!important}` 才好。
+14. **工作台在 `/studio/` 下，音频要写站点根路径**：`track.file` 得拼成 `/audio/...`，否则会去 `/studio/audio/` 找（404）。
+15. **`validate_packs.js` 现在会查时间轴**：起点 > 终点算 error，起点 = 终点算 warning（历史数据里 `wait-for-it` 第 31 句就是零长度，用工作台调一下就好）。重叠不算问题——LRC 本来就叠。
+16. **`dev/.studio_token` 和 `dev/_backup/` 已 gitignore**；换令牌删文件或 `--token`。
 
 ## 7. 下一步（按优先级）
 
 1. 第三部剧：`python3 dev/new_show.py <id> "Title" "Subtitle"` → 放 tracks/lyrics/times/音频 → 写 pack → `integrate_packs` → `build_shows` → 校验。本机 `~/Desktop` 目前只有 Hamilton 与魅影两套音源，第三部要先找音频。
-2. 跟读评分：拿录音和原句做对比（音量包络/时长已经够用，别上 ASR）。
+2. 工作台增强（按需要再加）：背景卡整段替换、批量平移整段断句、导出/导入改动补丁（多台机器同步用）。
 3. PWA：外壳与文本离线缓存（音频不全量缓存）。
 4. 音频上对象存储/CDN（R2 或国内 OSS），`tracks.js` 的 `file` 写绝对 URL 即可。
 5. 访问控制（可选）：Cloudflare Access 需要自定义域名。

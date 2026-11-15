@@ -75,7 +75,8 @@ python3 dev/new_show.py <id> "<Title>" "<Subtitle>"
 
 | 做什么 | 命令 / 注意 |
 | --- | --- |
-| 改某首歌的讲解 | 直接改 pack；跑 `node dev/validate_packs.js` |
+| 改某首歌的讲解 | 直接改 pack；跑 `node dev/validate_packs.js`。日常建议用工作台：`python3 dev/studio.py` |
+| 调断句 / 译文 / 背景 | 打开工作台「断句 / 精读 / 背景」页签，保存会自动备份 + 校验（见 `STUDIO.md`） |
 | 加一首歌 | 补 track / lyrics / times / pack；`node dev/integrate_packs.js <id>`；`build_shows.py` |
 | 歌词行数变了 | times 和 pack 必须同步；校验器会报行数/文本不一致 |
 | 清制作名单 | `node dev/clean_credits.js <id>` |

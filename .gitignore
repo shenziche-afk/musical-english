@@ -7,3 +7,7 @@ Thumbs.db
 
 # 生成过程中的临时文件
 content/poto/_work/
+
+# 工作台本地数据（备份与令牌）
+dev/_backup/
+dev/.studio_token

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剧读 · 工作台</title>
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+
+<div id="boot" class="boot">正在连接本地工作台…</div>
+
+<header class="bar" id="bar" hidden>
+  <div class="bar-left">
+    <span class="logo">剧读 <em>工作台</em></span>
+    <select id="showSel" aria-label="剧目"></select>
+    <select id="packSel" aria-label="曲目"></select>
+  </div>
+  <div class="bar-right">
+    <span class="status" id="status">已连接</span>
+    <button class="btn ghost" id="undoBtn" title="放弃未保存的改动">撤销</button>
+    <button class="btn ghost" id="diffBtn">改动</button>
+    <button class="btn ghost" id="backupBtn">备份</button>
+    <button class="btn" id="saveBtn">保存 <span class="kbd">⌘S</span></button>
+    <button class="btn primary" id="publishBtn">发布</button>
+  </div>
+</header>
+
+<main id="main" hidden>
+  <section class="work">
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" data-tab="times">断句</button>
+      <button class="tab" data-tab="text">精读</button>
+      <button class="tab" data-tab="bg">背景</button>
+    </nav>
+
+    <div class="hint" id="hint"></div>
+
+    <div class="pane" id="pane-times"></div>
+    <div class="pane" id="pane-text" hidden></div>
+    <div class="pane" id="pane-bg" hidden></div>
+  </section>
+
+  <aside class="side">
+    <div class="player">
+      <div class="player-head">
+        <span class="ph-line" id="phLine">第 1 句</span>
+        <span class="ph-time" id="phTime">0:00 / 0:00</span>
+      </div>
+      <audio id="au" preload="metadata"></audio>
+      <div class="player-row">
+        <button class="pbtn" id="prevBtn" title="上一句（↑）">⏮</button>
+        <button class="pbtn big" id="playBtn" title="试听这一句（空格）">▶</button>
+        <button class="pbtn" id="nextBtn" title="下一句（↓）">⏭</button>
+        <button class="pbtn" id="loopBtn" title="循环这一句">环</button>
+      </div>
+      <div class="player-row">
+        <select id="rateSel" aria-label="播放速度">
+          <option value="0.5">0.5×</option>
+          <option value="0.75">0.75×</option>
+          <option value="1" selected>1×</option>
+          <option value="1.25">1.25×</option>
+          <option value="1.5">1.5×</option>
+        </select>
+        <span class="player-note" id="rateNote">按句收尾，速度也会跟着算</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>快捷键</h3>
+      <ul class="keys">
+        <li><span class="kbd">空格</span> 试听当前句</li>
+        <li><span class="kbd">↑</span> / <span class="kbd">↓</span> 上一句 / 下一句</li>
+        <li><span class="kbd">⌘S</span> 保存（自动备份 + 校验）</li>
+        <li><span class="kbd">Esc</span> 关闭弹窗</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>改完怎么上线</h3>
+      <p>保存 → 校验通过 → 点「发布」。发布会跑 validate_packs + smoke、提交、推送，再触发 pages.yml，约 40 秒生效。</p>
+      <p class="muted">线上是只读静态站：没有这个工作台，也没有 /api。</p>
+    </div>
+  </aside>
+</main>
+
+<div class="dirtybar" id="dirtybar" hidden>
+  <span id="dirtyText">未保存 0 处</span>
+  <button class="btn ghost small" id="dirtyUndo">撤销</button>
+  <button class="btn small" id="dirtySave">保存</button>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2 id="modalTitle">标题</h2>
+      <button class="modal-x" id="modalClose" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot" id="modalFoot"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script src="studio.js"></script>
+</body>
+</html>
