@@ -1,225 +1,99 @@
-# 剧读 · Mac 交接
+# 剧读 · 交接文档（2026-11-15）
 
-> 这是一份自包含的交接文档。DSH 会话不能直接跨机器迁移；把这个项目和本文档带到 Mac，就可以继续。
->
-> **状态更新（2026-11-14 晚）**：本文记录的是交接时的原始状态。之后已完成：阅读题选项打散 + 作答持久化、四选一干扰项兜底、`server.py` HEAD 修复、生词屈折/重音匹配、首屏按需加载（2.4 MB → 0.6 MB）、`NOTICE.md` + `_headers` + `netlify.toml` + `.gitattributes`，部署以 GitHub Pages 为主（实测国内更快），需要私有仓库再用 Cloudflare Pages。冲突时以 `README.md` / `DEPLOY.md` / `NOTICE.md` 为准。
+> 给下一个会话用。项目现状、约定、坑、下一步都在这里；细节以 `README.md` / `SHOWS.md` / `DEPLOY.md` 为准。
 
-## 1. 项目是什么
+## 1. 一句话
 
-「剧读」是一个纯静态、无后端的英语学习工具：以音乐剧歌曲为单位，把歌词拆成**句子 → 词汇 → 语法 → 短语**，配英文历史故事阅读、逐句音频、间隔重复复习。
+纯静态、无后端的音乐剧英语精读站：Hamilton 46 首 + 歌剧魅影 21 首，逐行中文讲解、英文历史背景、短语库、SM-2 复习；音频按需加载，手机上可听。
 
-当前只有一部剧：**Hamilton**，46 首已全部完成。
+- **线上**：<https://shenziche-afk.github.io/musical-english/>
+- **仓库**：<https://github.com/shenziche-afk/musical-english>（公开，Pages 由 GitHub Actions 部署，**手动触发**）
+- **本地**：`/Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac`
+- **Node**：`/Users/shenjiahao/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node`（系统 PATH 里没有 node）
 
-## 2. 当前状态（2026-11-14）
+## 2. 现在有什么
 
-- 46 / 46 首完整 pack：逐行中文讲解 + 分区 + 短语 + 复习卡
-- 3416 行歌词（4 首歌末尾的 20 行制作名单已清理）
-- 154 篇英文历史故事，308 道阅读题
-- 300 条权威参考来源（NPS / Britannica / National Archives / Smithsonian / 等）
-- 46 首音频（151.9 MB，m4a）
-- 校验：`node dev/validate_packs.js` → `shows: 1 | packs: 46 | lines: 3416 | backgrounds: 154 | sources: 300 | OK`
-- UI 回归：`node dev/smoke.js` → 全部通过
-- 还没有推到 GitHub；Mac 压缩包是 `musical-english-mac.zip`（152.7 MB）
+| 剧目 | 曲目 | 精读 | 背景卡 | 阅读题 | 音频 |
+| --- | --- | --- | --- | --- | --- |
+| Hamilton（2015） | 46 | 46/46 | 154 | 308 | 98 MB，单声道 96k |
+| The Phantom of the Opera（1986 原伦敦卡司） | 21 | 21/21 | 50 | 100 | 46 MB，单声道 64k |
 
-## 3. Mac 上跑起来
+合计 67 个 pack、4,625 行、204 张背景卡、408 题、395 条来源（Hamilton 300 + 魅影 95）。
+魅影 95 条来源只用了 4 个已实测可打开的域名：Gutenberg / Opéra national de Paris / 官方剧组 / 韦伯官网。
 
-解压到 `~/Documents/musical-english`。
+## 3. 数据与代码结构
 
-本地服务（音频必需，不能直接双击 index.html）：
+```
+index.html            选剧目 → 写 :root 主题变量 → document.write 核心三件套 + 首个 pack
+js/app.js             全部交互（ES5 IIFE，约 2400 行）；按需加载 pack：content/<showId>/<packId>.js
+js/core.js            localStorage 状态、SM-2、每日快照、文本归一化
+content/<showId>/     show.json + tracks.js / lyrics.js / times.js + 每首一个 pack
+audio/<showId>/       m4a
+assets/app.css        CSS 变量主题（--gold/--bg/--text-* 等）
+```
+
+- `show.json.files` 顺序：tracks → lyrics → times → packs；`build_shows.py` 生成 `content/shows.js`。
+- **pack 文件名必须等于 pack 的 `id`**，前端懒加载按这个规则取文件。
+- `tracks[].content` 只有在 pack 存在时才写（`integrate_packs.js` 会补）；没 pack 的曲目显示「未收录」，点行看歌词。
+- 主题：`show.json.theme` 是一组 CSS 变量（键名不带 `--`），Hamilton 金、歌剧魅影黑蓝。
+
+## 4. 常用命令
 
 ```bash
-cd ~/Documents/musical-english
-chmod +x start.command
-./start.command
+export PATH="/Users/shenjiahao/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin:$PATH"
+cd /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac
+
+node dev/validate_packs.js      # 全剧目内容校验（行数/文本/音频/题目/来源）
+node dev/smoke.js               # UI 回归（101 条，只跑 hamilton）
+node dev/integrate_packs.js poto
+python3 dev/build_shows.py
+python3 dev/build_static.py     # → dist/（147 MB）
+python3 server.py               # 本地 127.0.0.1:8765，手机同 Wi-Fi 可访问
 ```
 
-或：
+发布（push **不会**自动上线）：
 
 ```bash
-python3 server.py
+git add -A && git commit -m "..." && git push origin main
+gh workflow run pages.yml        # 手动部署，约 40 秒
+gh run list --workflow=pages.yml
 ```
 
-终端会打印：
+## 5. 已经做过的关键决定
 
-- 本机：`http://127.0.0.1:8765/`
-- 手机（同一 Wi-Fi）：`http://<LAN-IP>:8765/`
+- **音频单声道**：Hamilton 128k 立体声 → 96k 单声道（原文件备份在 `~/Desktop/musical-english-original-audio/`）；魅影源就是 64k 立体声 → 64k 单声道（源在 `~/Desktop/The Phantom of the Opera - Original London Cast (1986)/`）。
+- **仓库重建过**：现在是单条提交，`.git` 约 144 MB；以后音频大改可再来一次（`rm -rf .git && git init && commit && push -f`）。
+- **发布手动化**：`.github/workflows/pages.yml` 只保留 `workflow_dispatch`，避免本地改动一 push 就上线。
+- **免责声明**：页面底部 + 设置页 + `NOTICE.md`，邮箱 `shenziche@gmail.com`（改的话三处一起改）；`index.html` 有 noindex。
+- **赞赏**：页面底部 + README 末尾，图片 `assets/support-qr.png`（微信赞赏码，文案「投喂」）。
+- **README 面向访客**：开头三问（这是什么/怎么用/数据在哪）+ 内容表格 + 两张截图。
 
-只想本机：`python3 server.py --local`。
+## 6. 坑（都踩过）
 
-建仓发布见第 9 节和 `MAC_SETUP.md` / `DEPLOY.md`。
+1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。
+2. **iOS 音频**：不能给 audio 元素 `display:none`（要移出屏幕）；不要 `src → load() → play()` 同帧；`audio.ready` 不能依赖 `loadedmetadata`。已改成「有 src 即 ready + safePlay 重试 + 1.6s 卡顿恢复」。
+3. **微信内置浏览器**：可能无声音/下载被拦；页面有提示条，建议在 Safari 打开。
+4. **首次播放慢**是正常的：单曲 2–4 MB，GitHub Pages 首包 0.6–1 s。
+5. **`Entr'acte` 是纯音乐**：1 行占位 + 校验器会给「富注释不足」warning，属预期。
+6. **`line.bg` 行内背景链接很少**（作者手挂），精读页底部有「本曲背景阅读」入口兜底。
+7. **`_headers` 只对 Cloudflare/Netlify 有效**，GitHub Pages 忽略；noindex 靠 meta + robots.txt。
+8. **`python -m http.server` 不支持 Range**，逐句播放/拖进度条要用 `server.py`。
 
-## 4. 目录与关键文件
+## 7. 下一步（按优先级）
 
-```
-musical-english/
-├─ index.html                 页面骨架 + 剧目加载器（document.write）
-├─ assets/app.css             全部样式（暖黑 + 金色，响应式）
-├─ js/core.js                 存储、SRS、文本归一化、格式化
-├─ js/app.js                  全部交互（约 2000 行，ES5，无构建步骤）
-├─ content/
-│  ├─ shows.js                剧目清单（build_shows.py 生成）
-│  └─ hamilton/
-│     ├─ show.json            剧目信息 + files 列表
-│     ├─ tracks.js            46 首曲目
-│     ├─ lyrics.js            46 首歌词 + 中文
-│     ├─ times.js             46 首逐行时间轴
-│     ├─ <46 个 pack>.js      每首一个
-│     ├─ PACK_SPEC.md         pack 写作规范
-│     └─ BATCH_2.md           第 11–46 首的分组生产记录
-├─ audio/hamilton/            46 首 m4a
-├─ dev/                       构建、校验、导入脚本
-├─ .github/workflows/pages.yml GitHub Pages 自动部署
-├─ server.py                  本地 HTTP（Range、m4a MIME）
-├─ start.command / start.bat  Mac / Windows 启动
-├─ README.md / DEPLOY.md / MAC_SETUP.md / SHOWS.md
-└─ HANDOFF.md                 本文档
-```
+1. 第三部剧：`python3 dev/new_show.py <id> "Title" "Subtitle"` → 放 tracks/lyrics/times/音频 → 写 pack → `integrate_packs` → `build_shows` → 校验。
+2. 单句循环 / 跟读 / 录音回放。
+3. PWA：外壳与文本离线缓存（音频不全量缓存）。
+4. 音频上对象存储/CDN（R2 或国内 OSS），`tracks.js` 的 `file` 写绝对 URL 即可。
+5. 访问控制（可选）：Cloudflare Access 需要自定义域名。
 
-## 5. 数据契约
-
-全局对象（普通 `<script>` 注入，不是 ES module）：
-
-```js
-window.MUSICAL_TRACKS[showId] = { tracks: [
-  { n, act, title, file, seconds, content? }
-] };
-
-window.MUSICAL_LYRICS[showId] = {
-  "1": { title, lines: [[en, zh, speaker?], ...] }
-};
-
-window.MUSICAL_TIMES[showId] = {
-  "1": [[start, end], ...]   // 与 lines 等长，秒
-};
-
-window.MUSICAL_SONGS[packId] = {
-  id, showId, n, title, runtime, audioSrc,
-  sections: [{ id, title, zh, lines: [
-    { id: "l1", text, zh, speaker?, note,
-      grammar?: [{ t, d, card? }],
-      words?: [{ w, ipa, pos, zh, d }],
-      phrases?: [{ p, type, zh, ex, exZh, d }] }
-  ]}],
-  background: [{ id, title, titleEn, kind, bodyEn,
-    glossary: [{ w, zh }],
-    quiz: [{ q, options, answer, explain }],
-    sources: [{ title, url }] }],
-  timeline: [{ year, event }]
-};
-```
-
-硬约束：
-
-- `sections` 按顺序覆盖全部歌词行；行 id `l1..lN`；`text` 必须与 `lyrics.js` 一致；
-- 每行有 `note`；
-- `tracks[].n` = pack `n` = 歌词/times 的键；
-- 音频路径相对项目根，例如 `audio/hamilton/01-alexander-hamilton.m4a`；
-- `show.json.files` 的顺序：tracks → lyrics → times → packs；`index.html` 按这个顺序加载。
-
-## 6. 功能地图
-
-- **导航**：顶部 `曲库 / 歌词`；右上角剧目下拉；剧集页顶部 `剧目 › 第 N 首` 面包屑 + 全剧曲目下拉 + `精读 / 背景 / 短语 / 复习`。
-- **精读**：逐行讲解；展开语法/词汇/短语；右侧 ✓ 掌握；每行 ▶ 只播这一句。
-- **背景**：英文记叙文；生词虚线查中文；2 道四选一；底部“参考”链接。
-- **短语**：卡片（中文释义 + 英文例句 + 例句翻译 + 用法），可筛选/搜索/跳回原句。
-- **复习**：词汇/短语四选一；语法翻面 + 四档自评；简化 SM-2。
-- **歌词**：英中对照；逐句 ▶；播放时高亮当前句并自动滚动。
-- **播放器**：底部 dock，播放/暂停、进度、倍速、换音频；逐句播放到句尾自动停。
-- **存储**：`localStorage` key `musical-en.v1`；掌握键 `songId:lineId`（如 `my-shot:l12`）。
-- **设置**：中文显隐、歌词导入、重置等。
-
-## 7. 内容生产（已完成的流水线）
-
-1. 歌词/译文：`lyrics.js`（来源 txt 整理；已去制作名单）
-2. 逐行时间轴：`times.js`（LRC 抓取 + 对齐；`build_lrc.py` 是 Hamilton 模板）
-3. pack：按 `PACK_SPEC.md`，每首一个文件；46 首由多批子代理并行写，再统一校验
-4. 接入：`integrate_packs.js` 更新 `show.json` + `tracks.js`
-5. 校验：`validate_packs.js`（全量）+ `smoke.js`（UI）
-6. 构建：`build_static.py` → `dist/`
-7. 发布：GitHub Actions → Pages
-
-## 8. 常用命令
-
-```bash
-cd ~/Documents/musical-english
-
-python3 dev/build_shows.py            # 扫描 content/*/show.json → shows.js
-node dev/integrate_packs.js hamilton  # 更新 show.json + tracks.js 的 content
-node dev/validate_packs.js            # 全剧目内容校验（推荐每次改完跑）
-node dev/smoke.js                     # UI 回归（目前只跑 hamilton）
-python3 dev/build_static.py           # 生成 dist/
-python3 -m http.server 8791 --directory dist   # 静态预览（不支持 Range）
-```
-
-Node 18+、Python 3.8+ 即可。Mac 没有 Node 也能发布（Actions 云端跑校验/构建）；本地改内容才需要。
-
-## 9. 建仓发布
-
-> 现在推荐 Cloudflare Pages（国内可达性更好、带宽不计费）；下面的 GitHub Pages 流程保留作备用，`github.io` 在国内线路实测时通时不通。
-
-详见 `MAC_SETUP.md` 与 `DEPLOY.md`。GitHub Pages 最短路径：
-
-1. GitHub Desktop → Add local repository → create repository here；
-2. Name `musical-english`，不要 Initialize with README；
-3. Commit → Publish repository（取消 Keep private）；
-4. 仓库 Settings → Pages → Source 选 **GitHub Actions**；
-5. Actions 里跑 `Deploy to GitHub Pages`；
-6. 地址 `https://<用户名>.github.io/musical-english/`。
-
-## 10. 已知限制 / 坑
-
-- **版权**：歌词和录音有版权；公开仓库 = 所有人可下载。当前决定是公开，后续可加 Cloudflare Access / Netlify Pro。
-- **GitHub Pages 没有登录**：个人账号无访问控制；私有仓库的 Pages 仍是公开站点（访问控制只有 GitHub Enterprise Cloud）。
-- **容量**：GitHub Pages 站点 ≤1 GB；现在 100 MB，约 10 部剧。更多剧用 Cloudflare Pages 或对象存储。
-- **首次加载**：已改为按需加载——核心三件套 + 首曲 pack 预载（约 0.6 MB），其余 pack 打开时注入；原来是一次性 49 个脚本 2.4 MB。
-- **`smoke.js` 只测 Hamilton**：加新剧后先跑 `validate_packs.js`，UI 再手动点。
-- **`build_lyrics.py` / `build_lrc.py` 是 Hamilton 模板**：新剧要改输入路径和歌曲 ID。
-- **清制作名单**：`node dev/clean_credits.js <showId>`；重跑 `build_lyrics.py` 可能把名单带回来。
-- **本地预览的 Range**：`python -m http.server` 不支持 Range，进度条拖动会怪；用 `server.py` 或线上 Pages 测。
-- **iOS 音频**：已处理“先在手势里 play，再 seek”；真机最好再验一次。
-- **无同步**：进度只在本机 localStorage；换设备/域名不同步。
-- **无 PWA/离线**：没有 service worker；音频 98 MB 也不适合全量缓存。
-
-## 11. 下一步建议
-
-1. **发布并验证** Pages：首页、46 首角标、音频拖动、手机。
-2. **加访问控制**（可选）：Cloudflare Access（免费 ≤50 人）或 Netlify Pro。
-3. **第二部剧**：按 `SHOWS.md`；先跑 `new_show.py`。
-4. **PWA**：manifest + service worker，缓存外壳/文本，音频按需流式。
-5. ~~优化首屏~~：已完成（按需加载）；下一步可按剧目拆包、加 service worker。
-
-## 12. 给新会话的启动提示（复制粘贴）
+## 8. 给新会话的启动提示
 
 ```text
-我在 Mac 上继续一个叫「剧读」的项目，目录 ~/Documents/musical-english。
-请先读 HANDOFF.md、README.md、DEPLOY.md、SHOWS.md、content/hamilton/PACK_SPEC.md，再开始。
-
-项目现状：Hamilton 46 首已全部完成（46 个 pack、3416 行、154 篇背景、300 条来源），
-本地校验 node dev/validate_packs.js 和 node dev/smoke.js 都通过；
-还没发布到 GitHub Pages，Mac 压缩包是 musical-english-mac.zip。
-
-当前目标：把项目发布到 GitHub Pages（公开仓库），验证 46 首在静态站上正常，
-再决定是否加访问控制。不要改动歌词/音频的版权说明。
-
-约束：
-- 改完内容必须跑 node dev/validate_packs.js 和 node dev/smoke.js；
-- 不要直接编辑 dist/，它由 python3 dev/build_static.py 生成；
-- 新剧按 SHOWS.md 的流程，先 new_show.py，再 integrate/build_shows/validate；
-- 遇到不确定的史实，联网核对后再写，保留 sources。
-
-第一步：检查仓库是否已建、Pages 是否已启用，缺什么补什么。
+项目在 /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac
+先读 HANDOFF.md、README.md、SHOWS.md、DEPLOY.md，再动手。
+线上 https://shenziche-afk.github.io/musical-english/ ，仓库 shenziche-afk/musical-english。
+Node 不在 PATH，用 /Users/shenjiahao/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node。
+发布是手动的：git push 后跑 gh workflow run pages.yml。
+改完内容先 node dev/validate_packs.js 和 node dev/smoke.js。
 ```
-
-## 13. 关键文件索引
-
-| 文件 | 用途 |
-| --- | --- |
-| `README.md` | 项目介绍、打开方式、内容规模 |
-| `MAC_SETUP.md` | Mac 解压/建仓 5 步 |
-| `DEPLOY.md` | GitHub Pages / Cloudflare / 登录保护 |
-| `SHOWS.md` | 加新剧目、维护命令、容量 |
-| `content/hamilton/PACK_SPEC.md` | pack 写作规范 |
-| `dev/validate_packs.js` | 全量校验 |
-| `dev/build_static.py` | 生成 dist |
-| `js/app.js` | 全部交互 |
-| `js/core.js` | 存储/SRS |

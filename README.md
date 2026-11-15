@@ -145,7 +145,7 @@ musical-english/
 │  └─ smoke.js           Node 冒烟测试
 ├─ NOTICE.md             版权与下架声明（页面底部、设置页共用同一段文案）
 ├─ SHOWS.md              多剧目数据契约与新增剧目流程
-├─ HANDOFF.md            原始交接文档（部分内容已过时，以 README 为准）
+├─ HANDOFF.md            交接文档：现状、命令、坑与下一步
 ├─ DEPLOY.md             部署方案：Cloudflare Pages / Netlify / GitHub Pages
 ├─ _headers              Cloudflare/Netlify 响应头（noindex、音频 MIME 与缓存）
 ├─ netlify.toml          Netlify 接 Git 时的构建配置
