@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e0c0a">
+<title>剧读 · 用音乐剧学英语</title>
+<meta name="description" content="从 Hamilton 开始，逐句拆解音乐剧：语法、短语、背景与间隔重复。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">MUSICAL ENGLISH · 剧读</div>
+      <div class="brand-title serif" id="songTitle">Alexander Hamilton</div>
+      <div class="brand-sub" id="songSub">Hamilton · Lin-Manuel Miranda · 2015</div>
+    </div>
+
+    <nav class="tabs" id="tabs" aria-label="主导航">
+      <button class="tab is-active" data-view="library">曲库</button>
+      <button class="tab" data-view="lyrics">歌词</button>
+    </nav>
+
+    <div class="top-actions">
+      <select id="showSelect" class="show-select" aria-label="选择剧目"></select>
+      <button class="ghost-btn is-on" id="zhToggle" title="显示 / 隐藏中文">中文</button>
+      <button class="ghost-btn icon-btn" id="settingsBtn" title="设置" aria-label="设置">⚙</button>
+    </div>
+  </div>
+
+  <div class="songbar" id="songbar" hidden>
+    <div class="songbar-inner">
+      <div class="songbar-meta" id="songbarMeta"></div>
+      <select id="songSelect" class="song-select" aria-label="选择曲目"></select>
+      <nav class="subtabs" id="subtabs" aria-label="本曲模块">
+        <button class="subtab is-active" data-sub="study">精读</button>
+        <button class="subtab" data-sub="story">背景</button>
+        <button class="subtab" data-sub="phrases">短语</button>
+        <button class="subtab" data-sub="review">复习<span class="badge" id="dueBadge" hidden></span></button>
+      </nav>
+      <div class="songnav">
+        <button class="songnav-btn" data-action="prev-song" id="prevSong" aria-label="上一首">‹</button>
+        <button class="songnav-btn" data-action="next-song" id="nextSong" aria-label="下一首">›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="progressline"><span id="progressFill"></span></div>
+</header>
+
+<main id="main">
+  <div class="wx-hint" id="wxHint" hidden>
+    <span>微信内可能没有声音：点右上角 <b>···</b> → <b>在浏览器打开</b>，或用 Safari 打开这个链接。</span>
+    <button class="wx-hint-close" id="wxHintClose" aria-label="关闭">×</button>
+  </div>
+  <section class="view" id="view-study"></section>
+  <section class="view" id="view-library"></section>
+  <section class="view" id="view-lyrics"></section>
+  <section class="view" id="view-phrases"></section>
+  <section class="view" id="view-story"></section>
+  <section class="view" id="view-review"></section>
+  <section class="view" id="view-settings"></section>
+
+  <footer class="legal-foot">
+    <p><b>声明</b> 本站仅用于个人英语学习，请勿商用、请勿再分发。</p>
+    <p>《Hamilton》歌词、录音、剧照版权归 Lin-Manuel Miranda、Atlantic Records 及相关权利人所有，本站不主张相关权利。</p>
+    <p>如有侵权，请邮件 <a href="mailto:shenziche@gmail.com">shenziche@gmail.com</a>，核实后 48 小时内下架 · <a href="NOTICE.md">完整声明</a></p>
+    <p class="legal-en">For personal study only. No commercial use or redistribution. Rights holders: email shenziche@gmail.com for takedown.</p>
+  </footer>
+</main>
+
+<footer class="dock" id="dock"></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/core.js"></script>
+<script src="content/shows.js"></script>
+<script>
+(function () {
+  var id = null;
+  try {
+    id = new URLSearchParams(location.search).get("show");
+  } catch (e) {}
+  if (!id) {
+    try {
+      id = localStorage.getItem("musical-show");
+    } catch (e) {}
+  }
+  var shows = window.MUSICAL_SHOWS || [];
+  var show = shows.filter(function (s) { return s.id === id; })[0] || shows[0];
+  if (!show) return;
+  window.MUSICAL_CURRENT_SHOW = show.id;
+  if (show.theme) {
+    var rootStyle = document.documentElement.style;
+    for (var tk in show.theme) {
+      if (Object.prototype.hasOwnProperty.call(show.theme, tk)) {
+        rootStyle.setProperty("--" + tk, show.theme[tk]);
+      }
+    }
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta && show.theme.bg) meta.setAttribute("content", show.theme.bg);
+  }
+  try {
+    localStorage.setItem("musical-show", show.id);
+  } catch (e) {}
+  var eagerPack = false;
+  show.files.forEach(function (src) {
+    // 核心数据（曲目 / 歌词 / 时间轴）全部预载；精读 pack 只预载第一首，
+    // 其余在打开某首歌时由 app.js 按需注入，首屏少下 ~1.8 MB。
+    var isCore = /(tracks|lyrics|times)\.js$/.test(src);
+    if (!isCore) {
+      if (eagerPack) return;
+      eagerPack = true;
+    }
+    document.write('<script src="' + src + '"><\/script>');
+  });
+})();
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

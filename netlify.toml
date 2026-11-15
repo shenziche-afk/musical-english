@@ -1,0 +1,9 @@
+# Netlify 配置（接 Git 自动构建时读取）
+[build]
+  command = "python dev/build_static.py"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# 音频/内容缓存与 noindex 走根目录的 _headers（Netlify 与 Cloudflare 语法相同）

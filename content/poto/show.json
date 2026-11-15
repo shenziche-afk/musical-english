@@ -1,0 +1,41 @@
+{
+  "id": "poto",
+  "title": "The Phantom of the Opera",
+  "subtitle": "Original London Cast · 1986",
+  "files": [
+    "content/poto/tracks.js",
+    "content/poto/lyrics.js",
+    "content/poto/times.js",
+    "content/poto/prologue.js",
+    "content/poto/overture.js",
+    "content/poto/think-of-me.js"
+  ],
+  "theme": {
+    "gold": "#78a9e0",
+    "gold-dim": "#4c6f9b",
+    "gold-rgb": "120, 169, 224",
+    "bg": "#07090e",
+    "panel": "#0f131a",
+    "panel-2": "#151b24",
+    "line": "#222b38",
+    "line-soft": "#19212c",
+    "ink": "#e9eff8",
+    "muted": "#97a7bb",
+    "muted-2": "#6c7c90",
+    "glow-a": "#101a2e",
+    "glow-b": "#0b1119",
+    "surface-a": "#121824",
+    "surface-b": "#0d121b",
+    "tip-bg": "#16202e",
+    "on-accent": "#07111d",
+    "text-en": "#e9eff8",
+    "text-body": "#a2b3c7",
+    "text-bright": "#dbe6f4",
+    "text-strong": "#d6e2f2",
+    "text-soft": "#c7d5e8",
+    "text-dim": "#a9b8cc",
+    "line-strong": "#2c3a4d",
+    "line-2": "#283646",
+    "line-3": "#22303f"
+  }
+}

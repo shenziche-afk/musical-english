@@ -1,0 +1,23 @@
+# Cloudflare Pages / Netlify 响应头（构建时由 dev/build_static.py 拷进 dist/）
+# 规则上限 100 条，单行 2000 字符；文件本身不会被当成静态资源发布
+
+/*
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+
+# 音频：指定 MIME + 缓存。若平台忽略 Content-Type，按 DEPLOY.md 的兜底方案处理
+/audio/*
+  Content-Type: audio/mp4
+  Cache-Control: public, max-age=604800
+
+# 精读 pack 是按需加载的 js，短缓存即可
+/content/*
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/js/*
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*
+  Cache-Control: public, max-age=3600
