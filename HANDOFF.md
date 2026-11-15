@@ -1,4 +1,4 @@
-# 剧读 · 交接文档（2026-11-15）
+# 剧读 · 交接文档（2026-11-15 晚）
 
 > 给下一个会话用。项目现状、约定、坑、下一步都在这里；细节以 `README.md` / `SHOWS.md` / `DEPLOY.md` 为准。
 
@@ -21,11 +21,17 @@
 合计 67 个 pack、4,625 行、204 张背景卡、408 题、395 条来源（Hamilton 300 + 魅影 95）。
 魅影 95 条来源只用了 4 个已实测可打开的域名：Gutenberg / Opéra national de Paris / 官方剧组 / 韦伯官网。
 
+精听（2026-11-15 加）：每句有 ▶ 单句播放、「环」单句循环，播放器底部有 环 / 跟 / 录 三个键——
+跟读是「播完一句 → 静音留白（默认 2.5 s，设置页 1.5–5 s）→ 重放这一句」，录音回放只在内存里、不落盘。
+快捷键 `R` 循环、`S` 跟读、`Esc` 停。
+
 ## 3. 数据与代码结构
 
 ```
 index.html            选剧目 → 写 :root 主题变量 → document.write 核心三件套 + 首个 pack
-js/app.js             全部交互（ES5 IIFE，约 2400 行）；按需加载 pack：content/<showId>/<packId>.js
+js/app.js             全部交互（ES5 IIFE，约 2900 行）：曲库/精读/歌词/短语/复习/播放器；
+                      单句循环 + 跟读在「单句循环 / 跟读」小节（armSegment / finishSegment / startGap）；
+                      按需加载 pack：content/<showId>/<packId>.js
 js/core.js            localStorage 状态、SM-2、每日快照、文本归一化
 content/<showId>/     show.json + tracks.js / lyrics.js / times.js + 每首一个 pack
 audio/<showId>/       m4a
@@ -44,7 +50,7 @@ export PATH="/Users/shenjiahao/.dsh/dsh-runtimes/dsh-primary-runtime/dependencie
 cd /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac
 
 node dev/validate_packs.js      # 全剧目内容校验（行数/文本/音频/题目/来源）
-node dev/smoke.js               # UI 回归（101 条，只跑 hamilton）
+node dev/smoke.js               # UI 回归（~130 条，只跑 hamilton；含循环/跟读/快捷键）
 node dev/integrate_packs.js poto
 python3 dev/build_shows.py
 python3 dev/build_static.py     # → dist/（147 MB）
@@ -78,11 +84,15 @@ gh run list --workflow=pages.yml
 6. **`line.bg` 行内背景链接很少**（作者手挂），精读页底部有「本曲背景阅读」入口兜底。
 7. **`_headers` 只对 Cloudflare/Netlify 有效**，GitHub Pages 忽略；noindex 靠 meta + robots.txt。
 8. **`python -m http.server` 不支持 Range**，逐句播放/拖进度条要用 `server.py`。
+9. **句尾收尾别只靠 `timeupdate`**：它 4 次/秒，循环会多播 0~250 ms。现在的做法是 `armSegment()` 按播放速度排一个精确 `setTimeout`，到点还差一点就再排一次（音频钟和墙钟有几十毫秒漂移），`timeupdate` 只做兜底。
+10. **`.w::after` 提示气泡曾是窄屏横向滚动的元凶**：`content: attr(data-tip)` 写在基础规则里，300 px 的绝对定位盒子即使 `opacity:0` 也会把 `scrollWidth` 撑到 471 px。现在 `content` 只在 `:hover/:focus` 里声明，不悬停就不生成盒子。
+11. **按钮字形用汉字而不是 emoji**：🔁/🎤 在暗色主题下会渲染成彩色小方块，和 ▶/✓ 不搭；现在统一成「环 / 跟 / 录 / 听」。
+12. **录音**：`getUserMedia` + `MediaRecorder` 需要 https 或 localhost；iOS 上回放元素要 `appendChild` 到 body 并移出屏幕，否则容易播不出声。
 
 ## 7. 下一步（按优先级）
 
-1. 第三部剧：`python3 dev/new_show.py <id> "Title" "Subtitle"` → 放 tracks/lyrics/times/音频 → 写 pack → `integrate_packs` → `build_shows` → 校验。
-2. 单句循环 / 跟读 / 录音回放。
+1. 第三部剧：`python3 dev/new_show.py <id> "Title" "Subtitle"` → 放 tracks/lyrics/times/音频 → 写 pack → `integrate_packs` → `build_shows` → 校验。本机 `~/Desktop` 目前只有 Hamilton 与魅影两套音源，第三部要先找音频。
+2. 跟读评分：拿录音和原句做对比（音量包络/时长已经够用，别上 ASR）。
 3. PWA：外壳与文本离线缓存（音频不全量缓存）。
 4. 音频上对象存储/CDN（R2 或国内 OSS），`tracks.js` 的 `file` 写绝对 URL 即可。
 5. 访问控制（可选）：Cloudflare Access 需要自定义域名。

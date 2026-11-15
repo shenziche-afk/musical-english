@@ -16,7 +16,7 @@
       v: 1,
       srs: {},
       lines: {},
-      settings: { newPerDay: 12, showZh: true, rate: 1 },
+      settings: { newPerDay: 12, showZh: true, rate: 1, shadowGap: 2500 },
       lyrics: {},
       bg: {},
       daily: {}

@@ -159,8 +159,14 @@
     q: "",
     type: "全部",
     lyricsN: 1,
-    segmentEnd: null,
-    playingIdx: -1
+    playingIdx: -1,
+    /* 当前这一句：{ n, i, start, end, mode }，mode = line（播完停）| loop（单句循环）| shadow（跟读） */
+    segment: null,
+    /* 上次播过的句子，dock 上的 🔁 / 🎤 用它做默认目标 */
+    lastSeg: null,
+    loopCount: 0,
+    /* 跟读留白剩余毫秒 */
+    shadowLeft: 0
   };
   var audio = { el: null, ready: false, name: "", track: null };
 
@@ -377,14 +383,28 @@
         var mm = /^l(\d+)$/.exec(String(line.id));
         var li = mm ? Number(mm[1]) - 1 : -1;
         var lt = li >= 0 ? lineTime(song.n, li) : null;
+        var onLoop =
+          !!(ui.segment && ui.segment.mode === "loop" && ui.segment.n === song.n && ui.segment.i === li) &&
+          lt;
         return (
+          '<span class="line-ctl">' +
           '<button class="line-play" data-action="play-line" data-n="' +
           song.n +
           '" data-i="' +
           li +
           '"' +
           (lt ? "" : " disabled") +
-          ' aria-label="播放这一句">▶</button>'
+          ' aria-label="播放这一句">▶</button>' +
+          '<button class="line-loop' +
+          (onLoop ? " is-on" : "") +
+          '" data-action="loop-line" data-n="' +
+          song.n +
+          '" data-i="' +
+          li +
+          '"' +
+          (lt ? "" : " disabled") +
+          ' aria-label="循环这一句" aria-pressed="false" title="循环这一句（R）">环</button>' +
+          "</span>"
         );
       })() +
       '<button class="master" data-action="master" data-id="' +
@@ -695,18 +715,220 @@
     );
   }
 
-  function playSegment(n, i) {
+  /* ---------------- 单句循环 / 跟读 ---------------- */
+
+  var segTimer = null;
+  var gapTimer = null;
+
+  function clearSegmentTimer() {
+    if (segTimer) clearTimeout(segTimer);
+    segTimer = null;
+  }
+
+  function stopGap() {
+    if (gapTimer) clearInterval(gapTimer);
+    gapTimer = null;
+    ui.shadowLeft = 0;
+  }
+
+  /* 排一个精确的收尾定时器（按播放速度换算）；timeupdate 里还有一道兜底。
+   * 音频钟和墙钟会有几十毫秒漂移，所以到点后如果还差一点就再排一次，不提前收尾。 */
+  function armSegment() {
+    clearSegmentTimer();
+    var el = audio.el;
+    var seg = ui.segment;
+    if (!el || !seg) return;
+    var rate = el.playbackRate || 1;
+    var remain = (seg.end - el.currentTime) / rate;
+    if (!isFinite(remain)) return;
+    segTimer = setTimeout(function () {
+      segTimer = null;
+      if (!ui.segment || !audio.el || audio.el.paused) return;
+      if (audio.el.currentTime < ui.segment.end - 0.12) {
+        armSegment();
+        return;
+      }
+      finishSegment();
+    }, Math.max(60, remain * 1000 + 40));
+    if (segTimer && segTimer.unref) segTimer.unref();
+  }
+
+  /* 一句播完：循环就回头，跟读就留白，普通模式就停 */
+  function finishSegment() {
+    var el = audio.el;
+    var seg = ui.segment;
+    clearSegmentTimer();
+    if (!el || !seg) return;
+    if (seg.mode === "loop") {
+      ui.loopCount += 1;
+      el.currentTime = seg.start;
+      safePlay(el);
+      armSegment();
+      updateSegChip();
+      return;
+    }
+    if (seg.mode === "shadow") {
+      el.pause();
+      startGap(seg);
+      return;
+    }
+    el.pause();
+    ui.segment = null;
+    renderDock();
+    markPlayingLine();
+  }
+
+  /* 跟读留白：这段静音是留给你自己重复的，倒计时结束再重放这一句 */
+  function startGap(seg) {
+    stopGap();
+    var gap = Number(state.settings.shadowGap) || 2500;
+    gap = Math.max(800, Math.min(8000, gap));
+    ui.shadowLeft = gap;
+    updateSegChip();
+    gapTimer = setInterval(function () {
+      ui.shadowLeft -= 250;
+      if (ui.shadowLeft > 0) {
+        updateSegChip();
+        return;
+      }
+      stopGap();
+      if (!ui.segment || ui.segment.mode !== "shadow" || !audio.el) return;
+      audio.el.currentTime = ui.segment.start;
+      safePlay(audio.el);
+      armSegment();
+      updateSegChip();
+    }, 250);
+    if (gapTimer && gapTimer.unref) gapTimer.unref();
+  }
+
+  function stopSegment(silent) {
+    clearSegmentTimer();
+    stopGap();
+    if (audio.el && !audio.el.paused) audio.el.pause();
+    ui.segment = null;
+    renderDock();
+    markPlayingLine();
+    if (!silent) toast("已停止");
+  }
+
+  function segTarget() {
+    if (ui.segment) return { n: ui.segment.n, i: ui.segment.i };
+    return ui.lastSeg;
+  }
+
+  function toggleLoop() {
+    var t = segTarget();
+    if (!t) {
+      toast("先点某一句左边的 ▶");
+      return;
+    }
+    if (ui.segment && ui.segment.mode === "loop" && ui.segment.n === t.n && ui.segment.i === t.i) {
+      stopSegment();
+      return;
+    }
+    playSegment(t.n, t.i, "loop");
+  }
+
+  function toggleShadow() {
+    var t = segTarget();
+    if (!t) {
+      toast("先点某一句左边的 ▶");
+      return;
+    }
+    if (ui.segment && ui.segment.mode === "shadow" && ui.segment.n === t.n && ui.segment.i === t.i) {
+      stopSegment();
+      return;
+    }
+    playSegment(t.n, t.i, "shadow");
+    toast("跟读：每句播完留 " + (Number(state.settings.shadowGap) || 2500) / 1000 + " 秒给你重复");
+  }
+
+  function segChipParts() {
+    var seg = ui.segment;
+    if (!seg) return null;
+    if (seg.mode === "loop") {
+      return { label: "单句循环", val: ui.loopCount ? "×" + ui.loopCount : "第 " + (seg.i + 1) + " 句" };
+    }
+    if (seg.mode === "shadow") {
+      return {
+        label: "跟读",
+        val: ui.shadowLeft > 0 ? "留白 " + (ui.shadowLeft / 1000).toFixed(1) + "s" : "第 " + (seg.i + 1) + " 句"
+      };
+    }
+    return null;
+  }
+
+  /* 行内「环」键的点亮状态：精读和歌词共用一套 data-n / data-i */
+  function syncLineLoop() {
+    var seg = ui.segment;
+    var lit = seg && seg.mode === "loop" ? seg.n + ":" + seg.i : "";
+    document.querySelectorAll(".line-loop").forEach(function (b) {
+      var key = b.getAttribute("data-n") + ":" + b.getAttribute("data-i");
+      var on = !!lit && key === lit;
+      b.classList.toggle("is-on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  /* 只改 dock 上的模式按钮和状态条，不重绘整个 dock（否则拖动进度条会断） */
+  function updateSegChip() {
+    var box = document.getElementById("segChip");
+    if (box) {
+      var p = segChipParts();
+      box.innerHTML = p
+        ? '<span class="seg-label">' +
+          ME.esc(p.label) +
+          '</span><span class="seg-val">' +
+          ME.esc(p.val) +
+          '</span><button class="seg-x" data-action="stop-seg" aria-label="停止">×</button>'
+        : "";
+    }
+    var seg = ui.segment;
+    var lbtn = document.querySelector('.mode-btn[data-action="toggle-loop"]');
+    if (lbtn) {
+      var loopOn = !!(seg && seg.mode === "loop");
+      lbtn.classList.toggle("is-on", loopOn);
+      lbtn.setAttribute("aria-pressed", loopOn ? "true" : "false");
+    }
+    var sbtn = document.querySelector('.mode-btn[data-action="toggle-shadow"]');
+    if (sbtn) {
+      var shadowOn = !!(seg && seg.mode === "shadow");
+      sbtn.classList.toggle("is-on", shadowOn);
+      sbtn.setAttribute("aria-pressed", shadowOn ? "true" : "false");
+    }
+    syncLineLoop();
+  }
+
+  /* 精读页高亮正在播的那一行（歌词页由 updateLyricHighlight 处理） */
+  function markPlayingLine() {
+    if (ui.view !== "study") return;
+    var prev = document.querySelector(".line.is-playing");
+    if (prev) prev.classList.remove("is-playing");
+    var seg = ui.segment;
+    if (!seg || !song || seg.n !== song.n) return;
+    var el = document.querySelector('.line[data-line="l' + (seg.i + 1) + '"]');
+    if (el) el.classList.add("is-playing");
+  }
+
+  /* 播放一句：mode = "line"（播完停）| "loop"（单句循环）| "shadow"（跟读） */
+  function playSegment(n, i, mode) {
     var t = lineTime(n, i);
     var track = trackByN(n);
     if (!t || !track || !audio.el) return;
     var start = t[0];
     var end = t[1];
-    ui.segmentEnd = end;
+    clearSegmentTimer();
+    stopGap();
+    ui.segment = { n: n, i: i, start: start, end: end, mode: mode || "line" };
+    ui.lastSeg = { n: n, i: i };
+    ui.loopCount = 0;
 
     function seekAndPlay() {
       audio.el.currentTime = start;
-      ui.segmentEnd = end;
       safePlay(audio.el);
+      armSegment();
+      updateSegChip();
+      markPlayingLine();
     }
 
     if (audio.track && audio.track.n === n) {
@@ -739,7 +961,12 @@
       return x.n === n;
     })[0];
     if (!t || !audio.el) return;
-    ui.segmentEnd = null;
+    /* 整首播放：退出单句循环 / 跟读 */
+    clearSegmentTimer();
+    stopGap();
+    ui.segment = null;
+    updateSegChip();
+    markPlayingLine();
     var same = audio.track && audio.track.n === n;
 
     if (same) {
@@ -806,6 +1033,7 @@
           "</p>" +
           (pair[1] ? '<p class="lyric-zh">' + ME.esc(pair[1]) + "</p>" : "") +
           "</div>" +
+          '<span class="line-ctl">' +
           '<button class="line-play" data-action="play-line" data-n="' +
           n +
           '" data-i="' +
@@ -813,6 +1041,16 @@
           '"' +
           (lt ? "" : " disabled") +
           ' aria-label="播放这一句">▶</button>' +
+          '<button class="line-loop' +
+          (ui.segment && ui.segment.mode === "loop" && ui.segment.n === n && ui.segment.i === i ? " is-on" : "") +
+          '" data-action="loop-line" data-n="' +
+          n +
+          '" data-i="' +
+          i +
+          '"' +
+          (lt ? "" : " disabled") +
+          ' aria-label="循环这一句" aria-pressed="false" title="循环这一句（R）">环</button>' +
+          "</span>" +
           "</div>"
         );
       })
@@ -1656,6 +1894,26 @@
       '">' +
       "</div>" +
       '<div class="panel">' +
+      "<h3>跟读留白</h3>" +
+      "<p>跟读模式下，每句播完会静音等待，这段时间留给你自己重复一遍，时间到了自动重放。手机上用底部 🎤 开启。</p>" +
+      '<select id="shadowGap" class="study-select" aria-label="跟读留白">' +
+      [1500, 2000, 2500, 3000, 4000, 5000]
+        .map(function (ms) {
+          return (
+            '<option value="' +
+            ms +
+            '"' +
+            (Number(state.settings.shadowGap) === ms ? " selected" : "") +
+            ">" +
+            ms / 1000 +
+            " 秒</option>"
+          );
+        })
+        .join("") +
+      "</select>" +
+      '<p class="hint">句子越长可以留得越久；速度调慢时留白不变。</p>' +
+      "</div>" +
+      '<div class="panel">' +
       "<h3>学习数据</h3>" +
       "<p>进度存在这台电脑的浏览器里。换设备或清浏览器数据前，先导出一份。</p>" +
       '<div class="row"><button class="primary" data-action="export">导出进度 JSON</button>' +
@@ -1814,6 +2072,21 @@
       '</span><span id="audioTime">0:00 / 0:00</span></div>' +
       '<input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放进度">' +
       "</div>" +
+      '<div class="dock-modes">' +
+      '<button class="mode-btn" data-action="toggle-loop" title="单句循环（R）" aria-label="单句循环" aria-pressed="false">环</button>' +
+      '<button class="mode-btn" data-action="toggle-shadow" title="跟读模式（S）" aria-label="跟读" aria-pressed="false">跟</button>' +
+      (canRecord()
+        ? '<button class="mode-btn' +
+          (rec.on ? " is-rec" : "") +
+          '" data-action="record" title="录音回放（再点停止）" aria-label="录音">' +
+          (rec.on ? "■" : "录") +
+          "</button>"
+        : "") +
+      (rec.url
+        ? '<button class="mode-btn" data-action="play-rec" title="回放录音" aria-label="回放录音">听</button>'
+        : "") +
+      '<span class="seg-chip" id="segChip"></span>' +
+      "</div>" +
       '<select id="rateSel" aria-label="播放速度">' +
       [0.5, 0.75, 1, 1.25, 1.5]
         .map(function (r) {
@@ -1823,6 +2096,7 @@
       "</select>" +
       '<button class="ghost-btn small" data-action="pick-audio">换音频</button>' +
       "</div>";
+    updateSegChip();
     updateAudioUI();
   }
 
@@ -1842,6 +2116,8 @@
     }
     var prev = document.querySelector(".lyric-line.is-playing");
     if (prev) prev.classList.remove("is-playing");
+    /* 跟读留白时音频是暂停的，时间轴算不出当前句，直接用 segment 兜底，别让高亮跳走 */
+    if (active < 0 && ui.segment && ui.segment.n === n) active = ui.segment.i;
     if (active >= 0) {
       var el = document.querySelector('.lyric-line[data-idx="' + active + '"]');
       if (el) {
@@ -1855,19 +2131,22 @@
   }
 
   function updateAudioUI() {
-    if (ui.segmentEnd && audio.el && audio.el.currentTime >= ui.segmentEnd - 0.05) {
-      audio.el.pause();
-      ui.segmentEnd = null;
-    }
-    var btn = document.querySelector(".play-btn");
-    if (btn && audio.el) btn.textContent = audio.el.paused ? "▶" : "❚❚";
-    var t = document.getElementById("audioTime");
-    if (t && audio.el) t.textContent = ME.formatClock(audio.el.currentTime) + " / " + ME.formatClock(audio.el.duration || 0);
-    var seek = document.getElementById("seek");
-    if (seek && audio.el && audio.el.duration) {
-      if (document.activeElement !== seek) seek.value = String(Math.round((audio.el.currentTime / audio.el.duration) * 1000));
+    var el = audio.el;
+    var seg = ui.segment;
+    /* timeupdate 兜底：定时器被系统节流时也能收住句尾 */
+    if (seg && el && !el.paused && el.currentTime >= seg.end - 0.03) finishSegment();
+    if (el) {
+      var btn = document.querySelector(".play-btn");
+      if (btn) btn.textContent = el.paused ? "▶" : "❚❚";
+      var t = document.getElementById("audioTime");
+      if (t) t.textContent = ME.formatClock(el.currentTime) + " / " + ME.formatClock(el.duration || 0);
+      var seek = document.getElementById("seek");
+      if (seek && el.duration) {
+        if (document.activeElement !== seek) seek.value = String(Math.round((el.currentTime / el.duration) * 1000));
+      }
     }
     updateLyricHighlight();
+    markPlayingLine();
   }
 
   function pickAudio() {
@@ -1888,6 +2167,93 @@
     input.click();
   }
 
+  /* ---------------- 录音回放（跟读自测，不落盘、不上传） ---------------- */
+
+  var rec = { on: false, mr: null, stream: null, url: "", chunks: [], el: null };
+
+  function canRecord() {
+    return (
+      typeof navigator !== "undefined" &&
+      !!navigator.mediaDevices &&
+      typeof navigator.mediaDevices.getUserMedia === "function" &&
+      typeof window !== "undefined" &&
+      typeof window.MediaRecorder === "function"
+    );
+  }
+
+  function stopRecord() {
+    if (rec.mr && rec.mr.state !== "inactive") rec.mr.stop();
+  }
+
+  function toggleRecord() {
+    if (rec.on) {
+      stopRecord();
+      return;
+    }
+    if (!canRecord()) {
+      toast("这个浏览器不能录音，换 Safari / Chrome 打开");
+      return;
+    }
+    /* 录音前先停掉伴奏和循环，免得把音乐录进去 */
+    clearSegmentTimer();
+    stopGap();
+    if (audio.el && !audio.el.paused) audio.el.pause();
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then(function (stream) {
+        var mr = new window.MediaRecorder(stream);
+        rec.chunks = [];
+        rec.stream = stream;
+        mr.ondataavailable = function (e) {
+          if (e.data && e.data.size) rec.chunks.push(e.data);
+        };
+        mr.onstop = function () {
+          rec.on = false;
+          rec.mr = null;
+          try {
+            stream.getTracks().forEach(function (t) {
+              t.stop();
+            });
+          } catch (e) {}
+          rec.stream = null;
+          var blob = new Blob(rec.chunks, { type: mr.mimeType || "audio/webm" });
+          if (rec.url) URL.revokeObjectURL(rec.url);
+          rec.url = URL.createObjectURL(blob);
+          renderDock();
+          toast("录好了 · 点「听」回放（只在内存里，刷新即丢）");
+        };
+        mr.start();
+        rec.mr = mr;
+        rec.on = true;
+        renderDock();
+        toast("录音中…读完再点 ■");
+      })
+      .catch(function () {
+        rec.on = false;
+        renderDock();
+        toast("麦克风打不开：检查权限（需要 https 或 localhost）");
+      });
+  }
+
+  /* 回放必须由点击触发，iOS 才放行 */
+  function playRecording() {
+    if (!rec.url) return;
+    if (!rec.el) {
+      rec.el = new Audio();
+      /* 和主播放器一样移出屏幕，iOS 上不在文档里的元素容易被拦 */
+      rec.el.style.cssText =
+        "position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none;";
+      document.body.appendChild(rec.el);
+    }
+    rec.el.src = rec.url;
+    var p = rec.el.play && rec.el.play();
+    if (p && p.catch) {
+      p.catch(function () {
+        toast("再点一次「听」回放");
+      });
+    }
+  }
+
   function toggleAudio() {
     if (!audio.el) return;
     if (!audio.el.src && audio.track) {
@@ -1897,10 +2263,15 @@
       renderDock();
     }
     if (audio.el.paused) {
-      ui.segmentEnd = null;
+      /* 循环 / 跟读中按下播放键：从这一句的开头接着来，而不是播整首 */
+      if (ui.segment && audio.el.currentTime >= ui.segment.end - 0.1) {
+        audio.el.currentTime = ui.segment.start;
+      }
       safePlay(audio.el);
+      if (ui.segment) armSegment();
     } else {
       audio.el.pause();
+      clearSegmentTimer();
     }
   }
 
@@ -2129,7 +2500,24 @@
       ui.lyricsN = Number(target.getAttribute("data-n"));
       switchView("lyrics");
     } else if (action === "play-line") {
-      playSegment(Number(target.getAttribute("data-n")), Number(target.getAttribute("data-i")));
+      /* 跟读模式里点下一句，继续保持跟读 */
+      var pMode = ui.segment && ui.segment.mode === "shadow" ? "shadow" : "line";
+      playSegment(Number(target.getAttribute("data-n")), Number(target.getAttribute("data-i")), pMode);
+    } else if (action === "loop-line") {
+      var lN = Number(target.getAttribute("data-n"));
+      var lI = Number(target.getAttribute("data-i"));
+      if (ui.segment && ui.segment.mode === "loop" && ui.segment.n === lN && ui.segment.i === lI) stopSegment();
+      else playSegment(lN, lI, "loop");
+    } else if (action === "toggle-loop") {
+      toggleLoop();
+    } else if (action === "toggle-shadow") {
+      toggleShadow();
+    } else if (action === "stop-seg") {
+      stopSegment();
+    } else if (action === "record") {
+      toggleRecord();
+    } else if (action === "play-rec") {
+      playRecording();
     } else if (action === "play-track") {
       playTrack(Number(target.getAttribute("data-n")));
     } else if (action === "open-song") {
@@ -2271,8 +2659,12 @@
       ui.q = e.target.value;
       renderPhraseList();
     } else if (e.target.id === "seek" && audio.el && audio.el.duration) {
-      ui.segmentEnd = null;
+      /* 手动拖进度条就退出单句控制，交还给整首播放 */
+      clearSegmentTimer();
+      stopGap();
+      ui.segment = null;
       audio.el.currentTime = (Number(e.target.value) / 1000) * audio.el.duration;
+      updateSegChip();
     }
   });
 
@@ -2300,6 +2692,14 @@
       state.settings.newPerDay = Math.max(0, Math.min(60, Number(e.target.value) || 0));
       ME.saveState(state);
       toast("每日新卡上限：" + state.settings.newPerDay);
+    } else if (e.target.id === "shadowGap") {
+      state.settings.shadowGap = Number(e.target.value) || 2500;
+      ME.saveState(state);
+      toast("跟读留白：" + state.settings.shadowGap / 1000 + " 秒");
+      if (ui.segment && ui.segment.mode === "shadow") {
+        stopGap();
+        startGap(ui.segment);
+      }
     }
   });
 
@@ -2356,6 +2756,28 @@
       } else if (/^[1-4]$/.test(e.key) && s.revealed) {
         grade(Number(e.key) - 1);
       }
+      return;
+    }
+
+    /* 单句循环 / 跟读：R 循环、S 跟读、Esc 停 */
+    if (e.key === "Escape") {
+      if (rec.on) {
+        stopRecord();
+        return;
+      }
+      if (ui.segment) {
+        stopSegment();
+        return;
+      }
+    }
+    if ((e.key === "r" || e.key === "R") && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      toggleLoop();
+      return;
+    }
+    if ((e.key === "s" || e.key === "S") && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      toggleShadow();
       return;
     }
 
