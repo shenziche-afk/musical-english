@@ -30,6 +30,7 @@
   }
 
   var S = {
+    hintTimes: "",
     token: "",
     root: "",
     shows: [],
@@ -230,6 +231,17 @@
 
   /* ---------------- 渲染 ---------------- */
 
+  var HINTS = {
+    text: "<b>这里是完整原文</b>：译文、注释、节奏提示、词条释义、短语例句、语法讲解都能直接改；改完 ⌘S 保存。",
+    bg: "背景卡：中英标题、英文正文、生词中文、阅读题题干 / 选项 / 正确答案 / 解析，都能直接改。"
+  };
+
+  function setHint(tab) {
+    var el = $("hint");
+    el.hidden = false;
+    el.innerHTML = tab === "times" ? S.hintTimes || "" : HINTS[tab] || "";
+  }
+
   function renderAll() {
     renderTimes();
     renderText();
@@ -245,7 +257,10 @@
     if (arr.length !== S.lines.length) {
       hint += ' <span class="bad">时间轴段数对不上（' + arr.length + " vs " + S.lines.length + "），先去 validate_packs 查。</span>";
     }
-    $("hint").innerHTML = hint + " 每句可以 ±0.05/±0.1 微调，也可以「用当前播放位置」。";
+    S.hintTimes =
+      hint +
+      " <b>译文点一下就能改</b>；时间是 ±0.05/±0.1 微调，或「起点=现在 / 终点=现在」。注释和节奏提示在每行下面折叠着。";
+    if (S.tab === "times") setHint("times");
 
     var rows = S.lines.map(function (item, i) {
       var t = arr[i] || [0, 0];
@@ -258,15 +273,8 @@
       if (next && t[1] > next[0] + 0.001) issues.push(["bad", "压到下一句 " + (t[1] - next[0]).toFixed(2) + "s"]);
       var cls = "trow" + (i === S.line ? " is-now" : "") + (issues.some(function (x) { return x[0] === "bad"; }) ? " is-bad" : "");
       var base = [S.trackKey, i];
-
-      return (
-        '<div class="' + cls + '" data-row="' + i + '">' +
-        '<div class="tno">' + pad2(i + 1) + "</div>" +
-        '<div class="tmain">' +
-        '<div class="thead"><div class="ten">' +
-        (item.line.speaker ? '<span class="sp">' + esc(item.line.speaker) + "</span>" : "") + esc(item.line.text) +
-        '</div><button class="tplay" data-play="' + i + '" title="试听这一句">▶</button></div>' +
-        (item.line.zh ? '<div class="tzh">' + esc(item.line.zh) + "</div>" : "") +
+      var lineBase = ["sections", item.si, "lines", item.li];
+      var ctl =
         '<div class="tctl">' +
         '<div class="timebox"><label>起点</label><input type="number" step="0.01" data-kind="times" data-type="number" data-path=\'' +
         jsonAttr(base.concat([0])) + "' value='" + Number(t[0]).toFixed(2) + "'></div>" +
@@ -286,10 +294,47 @@
         '<button class="nowset" data-now="1" data-i="' + i + '" title="把这一句的终点设成音频当前播放位置">终点=现在</button>' +
         '<span class="tdur">' + (t[1] - t[0]).toFixed(2) + "s</span>" +
         issues.map(function (x) { return '<span class="' + x[0] + '">' + esc(x[1]) + "</span>"; }).join("") +
-        "</div></div></div>"
+        "</div>";
+
+      var more =
+        '<details class="sub tmore"><summary>注释 / 节奏提示</summary>' +
+        '<div class="field"><label>注释</label><textarea rows="2" data-kind="pack" data-path=\'' +
+        jsonAttr(lineBase.concat(["note"])) + "'>" + esc(item.line.note || "") + "</textarea></div>" +
+        (item.line.sound != null
+          ? '<div class="field"><label>节奏 / 发音提示</label><textarea rows="2" data-kind="pack" data-path=\'' +
+            jsonAttr(lineBase.concat(["sound"])) + "'>" + esc(item.line.sound) + "</textarea></div>"
+          : "") +
+        "</details>";
+
+      return (
+        '<div class="' + cls + '" data-row="' + i + '">' +
+        '<div class="tno">' + pad2(i + 1) + "</div>" +
+        '<div class="tmain">' +
+        '<div class="thead"><div class="ten">' +
+        (item.line.speaker ? '<span class="sp">' + esc(item.line.speaker) + "</span>" : "") + esc(item.line.text) +
+        '</div><button class="tplay" data-play="' + i + '" title="试听这一句">▶</button></div>' +
+        '<textarea class="tzh-edit" rows="1" data-kind="pack" data-path=\'' +
+        jsonAttr(lineBase.concat(["zh"])) + "' placeholder='（没有译文，点这里补）'>" +
+        esc(item.line.zh || "") + "</textarea>" +
+        ctl +
+        more +
+        "</div></div>"
       );
     });
     $("pane-times").innerHTML = rows.join("");
+    autoGrowAll($("pane-times"));
+  }
+
+  /* 译文框像正文，但点进去就是输入框：按内容撑高，别出现内部滚动条 */
+  function autoGrow(el) {
+    if (!el || el.tagName !== "TEXTAREA" || !el.classList.contains("tzh-edit")) return;
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+
+  function autoGrowAll(root) {
+    if (!root) return;
+    root.querySelectorAll("textarea.tzh-edit").forEach(autoGrow);
   }
 
   function renderText() {
@@ -722,6 +767,7 @@
   document.addEventListener("input", function (e) {
     var el = e.target;
     if (el.matches("[data-kind][data-path]") && el.tagName !== "SELECT") commitInput(el);
+    autoGrow(el);
   });
 
   document.addEventListener("change", function (e) {
@@ -743,7 +789,7 @@
       $("pane-times").hidden = S.tab !== "times";
       $("pane-text").hidden = S.tab !== "text";
       $("pane-bg").hidden = S.tab !== "bg";
-      $("hint").hidden = S.tab !== "times";
+      setHint(S.tab);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }

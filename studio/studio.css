@@ -157,6 +157,28 @@ main {
 }
 .ten .sp { color: var(--muted-2); font-size: 12px; margin-right: 6px; letter-spacing: 0.06em; }
 .tzh { color: var(--muted); font-size: 12.5px; margin-top: 2px; overflow-wrap: break-word; }
+
+/* 译文框：平时看着像正文，点进去才显出输入框的边 */
+.tzh-edit {
+  display: block;
+  width: 100%;
+  margin: 2px 0 0 -5px;
+  padding: 2px 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+  resize: none;
+  overflow: hidden;
+}
+.tzh-edit::placeholder { color: var(--muted-2); opacity: 0.7; }
+.tzh-edit:hover { border-color: var(--line); }
+.tzh-edit:focus { background: var(--panel); border-color: var(--gold-dim); color: var(--ink); outline: none; }
+
+.tmore { margin-top: 4px; }
+.tmore > summary { font-size: 11.5px; }
 .tmeta { font-size: 11.5px; color: var(--muted-2); margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; }
 .tctl .warn { color: var(--warn); font-size: 11.5px; }
 .tctl .bad { color: var(--bad); font-size: 11.5px; }
