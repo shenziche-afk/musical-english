@@ -2365,6 +2365,19 @@
     }
   });
 
+  /* ---------------- 赞赏码（图片存在才显示） ---------------- */
+  (function initSupport() {
+    var box = document.getElementById("support");
+    if (!box) return;
+    var img = box.querySelector("img");
+    if (!img) return;
+    var probe = new Image();
+    probe.onload = function () {
+      box.hidden = false;
+    };
+    probe.src = img.getAttribute("src");
+  })();
+
   /* ---------------- 微信内置浏览器提示 ---------------- */
   (function wechatHint() {
     var ua = navigator.userAgent || "";
