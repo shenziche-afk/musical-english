@@ -840,7 +840,10 @@ main {
   color: var(--gold);
 }
 
-.line-loop.is-on {
+/* 点亮后要压住 hover 的 gold 文字色，否则金底金字看不出字 */
+.line-loop.is-on,
+.line-loop.is-on:hover:not(:disabled),
+.line-loop.is-on:focus-visible {
   border-color: var(--gold);
   background: var(--gold);
   color: var(--on-accent);
