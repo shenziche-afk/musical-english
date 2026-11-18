@@ -750,9 +750,9 @@ window.MUSICAL_SONGS["aaron-burr-sir"] = {
     },
     {
       "id": "advice",
-      "title": "Talk less, smile more",
+      "title": "少言多笑之道",
       "body": "在酒馆里，伯尔请年轻的汉密尔顿喝了一杯，顺便送他几句免费的建议：少说话，多微笑，别让人知道你的立场。听起来像礼貌，其实是一套生存策略：不给敌人靶子，等待自己的时机。伯尔一生都照做，这让他比汉密尔顿活得久，也让他一辈子没有为什么值得记住的东西站过台。汉密尔顿正好相反：他宁可说错，也不肯什么都不说。整部剧的冲突就从这点差别长出来。",
-      "titleEn": "Talk Less, Smile More",
+      "titleEn": "Talk less, smile more",
       "bodyEn": "In a tavern, over a drink, Burr offers the young Hamilton some free advice. Talk less. Smile more. Do not let them know what you are against or what you are for. It sounds like politeness. It is actually a survival strategy: never give an enemy a target, and wait for your moment. Burr followed it for the rest of his life, and it kept him alive longer than Hamilton—but it also kept him from ever standing for anything worth remembering. Hamilton does the opposite. He would rather say the wrong thing than say nothing, and the whole musical grows out of that difference.",
       "glossary": [
         {

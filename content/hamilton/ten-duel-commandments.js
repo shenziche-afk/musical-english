@@ -570,7 +570,7 @@ window.MUSICAL_SONGS["ten-duel-commandments"] = {
   "background": [
     {
       "id": "rules-of-honor",
-      "title": "The Rules of Honor",
+      "title": "荣誉的规则",
       "titleEn": "The Rules of Honor",
       "kind": "story",
       "bodyEn": "Honor was serious business in the eighteenth century. A man who felt insulted could demand 'satisfaction', and if the other man refused to apologize, the two might meet with pistols. This was not a street fight. It was a ceremony with rules. Each side brought a 'second', a friend who spoke for him and tried to make peace. A doctor came along, was paid in advance, and often turned his back so he could later claim he had seen nothing. Duels were illegal, but the law was rarely enforced against gentlemen. Most affairs ended without blood. The National Park Service notes that Hamilton was involved in ten affairs of honor before 1804, and none of them caused bodily harm.",
@@ -633,7 +633,7 @@ window.MUSICAL_SONGS["ten-duel-commandments"] = {
     },
     {
       "id": "laurens-lee",
-      "title": "Laurens and Lee",
+      "title": "劳伦斯与李",
       "titleEn": "Laurens and Lee",
       "kind": "story",
       "bodyEn": "In December 1778, John Laurens challenged General Charles Lee to a duel. Lee had been court-martialed after Monmouth, and he had insulted Washington and mocked Laurens and Hamilton. Hamilton acted as Laurens's second. On a winter afternoon near Philadelphia, the two men faced each other with pistols and advanced to about six paces. They fired at the same moment. Laurens was unhurt. Lee was struck in the side, but the ball only grazed him. Lee demanded another shot and insisted on reloading. The seconds protested, and the affair finally ended. Lee later admitted that Laurens had behaved like a gentleman and said he had gained 'an odd sort of respect' for him. The musical turns this real duel into a counting lesson.",
@@ -696,7 +696,7 @@ window.MUSICAL_SONGS["ten-duel-commandments"] = {
     },
     {
       "id": "duel-that-ends-show",
-      "title": "The Duel That Ends the Show",
+      "title": "终结全剧的决斗",
       "titleEn": "The Duel That Ends the Show",
       "kind": "story",
       "bodyEn": "The musical teaches the audience how a duel works early, so it can use those rules later. In 1804, Aaron Burr challenged Alexander Hamilton, and the two men met at Weehawken, New Jersey, on July 11. They rowed across the Hudson at dawn, each with a second, and a doctor was on the scene. The accounts disagree about who fired first. Hamilton's pistol fired wide; Burr's bullet struck him in the abdomen, and he died the next day. The show returns to the same count—ten paces, then fire—in its final duel. In 'Ten Duel Commandments', counting is a lesson. By 1804, it is a countdown. Hamilton had been Burr's rival in politics for fifteen years; in June 1804 he himself described a 'course of fifteen years competition' between them.",

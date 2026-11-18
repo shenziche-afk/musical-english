@@ -2054,7 +2054,7 @@ window.MUSICAL_SONGS["notes-prima-donna"] = {
   "background": [
     {
       "id": "letters-signed-og",
-      "title": "Letters Signed O.G.",
+      "title": "署名 O.G. 的信件",
       "titleEn": "Letters Signed O.G.",
       "kind": "story",
       "bodyEn": "In Leroux's novel the theatre has two new managers, and on their first night a letter is waiting for them. It is signed with two letters, O.G., and it asks for twenty thousand francs a month, a box kept empty for the writer, and a free hand in the programme. The managers read it, laugh, and put it in a drawer. More letters follow. Each one is polite, each one is precise, and each one is a little more frightening than the last. When the demands are ignored, the building answers with accidents: a singer loses her voice, a scene changes without permission, a chandelier falls. In the musical the same scene becomes comedy, because Firmin and André read their notes aloud while the box office breaks records. The joke is that the ghost is right about almost everything except the money.",
@@ -2113,7 +2113,7 @@ window.MUSICAL_SONGS["notes-prima-donna"] = {
     },
     {
       "id": "prima-donna-tradition",
-      "title": "The Woman They Called Prima Donna",
+      "title": "被称为首席女伶的女人",
       "titleEn": "The Woman They Called Prima Donna",
       "kind": "story",
       "bodyEn": "In the nineteenth century, in an Italian opera house, the prima donna was not simply the best singer in the building. She was the first lady of the company, and the whole evening was arranged around her: her entrance, her aria, her curtain call. If she was unhappy, the performance stopped, and the managers learned to beg. Carlotta in the musical comes straight out of that tradition. When she reads the note that hands the silent pageboy to Christine, she does not argue with reasons. She argues in Italian, quotes an old lament, and threatens to walk out. The managers answer with a song that lists her glory: her public, her queues, her name in lights. She gives in, but only after making them say it twice. Her vanity, the show suggests, is also her craft.",
@@ -2172,7 +2172,7 @@ window.MUSICAL_SONGS["notes-prima-donna"] = {
     },
     {
       "id": "a-theatre-with-a-lake",
-      "title": "A Theatre With a Lake Underneath",
+      "title": "地下有湖的剧院",
       "titleEn": "A Theatre With a Lake Underneath",
       "kind": "story",
       "bodyEn": "The Palais Garnier opened in 1875, and from the first night it was a building with secrets. Under the stage there was a water tank, a reservoir for the fire brigade and a way of holding back the water that pressed in from the ground; the workmen called it the lake. Above the auditorium hung a chandelier of bronze and crystal. Box Five, near the front, was the box that singers refused to book, because of a story that a voice spoke there during the interval. In 1896 a counterweight from the chandelier came loose and fell into the audience, and one person died. Gaston Leroux, a reporter, collected these pieces: the water, the box, the falling weight, the rumour of a man who lived below. His novel of 1910 put them under one roof, and the musical kept the building and the whisper.",

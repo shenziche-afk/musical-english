@@ -1255,7 +1255,7 @@ window.MUSICAL_SONGS["the-room-where-it-happens"] = {
   "background": [
     {
       "id": "the-dinner",
-      "title": "The Dinner on Maiden Lane",
+      "title": "梅登巷的晚宴",
       "titleEn": "The Dinner on Maiden Lane",
       "kind": "story",
       "body": "1790 年 6 月，汉密尔顿让联邦政府承接各州战债的方案卡在国会。弗吉尼亚早已还清大部分债务，最反对这个主意；同一时间还有另一场争执：首都该放在哪里。汉密尔顿希望它留在纽约附近，南方各州则要波托马克河。按杰斐逊的说法，他在 Maiden Lane 的住处请两个对头吃饭。酒过几巡，汉密尔顿和麦迪逊谈成一笔交易：南方给承接方案的票，北方给南方一个首都。杰斐逊后来写道，汉密尔顿「求」他帮忙。历史学家提醒：这份记述是事后追写的，写的人希望自己的角色看起来最关键——但它描述的这笔交易确实发生了。",
@@ -1315,7 +1315,7 @@ window.MUSICAL_SONGS["the-room-where-it-happens"] = {
     },
     {
       "id": "compromise-1790",
-      "title": "The Compromise of 1790",
+      "title": "1790年的妥协",
       "titleEn": "The Compromise of 1790",
       "kind": "story",
       "body": "交易成了，但不是一夜之间。1790 年 6 月到 7 月，国会同时吵两个法案：一个是筹资法案，负责偿还联邦与各州债务；一个是定都法案。7 月签署的《首都选址法》把首都放在费城十年，之后再迁到波托马克河畔——也就是后来的华盛顿特区。包含「承接」条款的筹资法案随后通过。对汉密尔顿来说，收获巨大：国债握在联邦政府手里，年轻的国家就有了金融体系、收税的理由，以及各州比不上的忠诚向心力。对麦迪逊和杰斐逊来说，收获是一座远离纽约商人的首都。双方都得到了最想要的，也都告诉自己有舍才有得。",
@@ -1375,7 +1375,7 @@ window.MUSICAL_SONGS["the-room-where-it-happens"] = {
     },
     {
       "id": "no-one-else",
-      "title": "No One Else Was in the Room",
+      "title": "屋内再无他人",
       "titleEn": "No One Else Was in the Room",
       "kind": "craft",
       "body": "全曲最有名的那句歌词，其实是在谈证据：「除了那间屋子里的人，谁也不知道」。可历史恰恰相反：这场晚餐发生了什么，几乎只有一个来源——杰斐逊自己的记述，而且是事后写的。汉密尔顿和麦迪逊都没留下详细记录；麦迪逊的文件里只有一位弗吉尼亚同乡的短笺，把定都问题和承接州债连在一起。麦迪逊文集的编者甚至承认：「文献太少，根本无法还原」那场政治操作。米兰达把这个空白点变成了戏：反复的乐句变成咒语，伯尔的嫉妒随着合唱一遍遍上涨。历史的空白处，正是音乐剧找到戏剧性的地方，也是那句最著名的歌词的来源。",
@@ -1401,7 +1401,12 @@ window.MUSICAL_SONGS["the-room-where-it-happens"] = {
       "quiz": [
         {
           "q": "According to the passage, our knowledge of the dinner rests mainly on whose account?",
-          "options": ["Hamilton's", "Madison's", "Jefferson's", "Washington's"],
+          "options": [
+            "Hamilton's",
+            "Madison's",
+            "Jefferson's",
+            "Washington's"
+          ],
           "answer": 2,
           "explain": "文中说晚餐的经过几乎只有一个来源：杰斐逊事后写下的记述。"
         },
@@ -1430,7 +1435,7 @@ window.MUSICAL_SONGS["the-room-where-it-happens"] = {
     },
     {
       "id": "burr-outside",
-      "title": "Burr, Outside the Room",
+      "title": "门外的伯尔",
       "titleEn": "Burr, Outside the Room",
       "kind": "story",
       "body": "亚伦·伯尔不在那顿晚餐上——音乐剧把这一点写成他全部性格的来源。历史上的伯尔其实天赋极高：独立战争中在华盛顿幕僚班子任职，1782 年起在纽约做律师，1789 到 1791 年任纽约州总检察长，1791 到 1797 年任联邦参议员，1801 年当上副总统。但他从没像汉密尔顿那样提出过一套完整的纲领。历史学家南希·艾森伯格指出，伯尔的大部分私人文件 1813 年随女儿西奥多西娅一同沉入海底，所以后世记住的多半是「那个杀了汉密尔顿的恶人」。这首歌给了他档案没能保存的东西：一个声音。反复的「我想进那间屋子」让野心变得几乎令人同情。",

@@ -521,7 +521,7 @@ window.MUSICAL_SONGS["the-story-of-tonight-reprise"] = {
   "background": [
     {
       "id": "valley-forge-friends",
-      "title": "The Friends of Valley Forge",
+      "title": "福吉谷的友人",
       "titleEn": "The Friends of Valley Forge",
       "kind": "story",
       "bodyEn": "The four friends of the musical were not a single historical group, but Hamilton, John Laurens, and the Marquis de Lafayette really did serve in George Washington’s military family. The friendship between Hamilton and Laurens deepened at Valley Forge in the winter of 1777–78, when both young officers lived and worked in the house Washington used as his headquarters. Laurens, a South Carolina aristocrat, had crossed the Atlantic to fight; Lafayette, a French nobleman, had done the same. Their letters and jokes survive, and the musical turns that warmth into a brotherhood that sings together at Hamilton’s wedding. The drinking scene itself is invented, but the closeness was not. What the show adds is a fourth presence, Hercules Mulligan, and a tone of loud celebration that suits the story it wants to tell.",
@@ -580,7 +580,7 @@ window.MUSICAL_SONGS["the-story-of-tonight-reprise"] = {
     },
     {
       "id": "other-side-of-the-war",
-      "title": "The Other Side of the War",
+      "title": "战争的另一面",
       "titleEn": "The Other Side of the War",
       "kind": "story",
       "bodyEn": "In the musical, Burr and his friends part with the line “I’ll see you on the other side of the war.” For John Laurens, that promise never came true. On August 27, 1782, he was killed in a skirmish on the Combahee River in South Carolina, attacking a larger British force that was foraging. He was twenty-seven. The war was winding down, but the peace treaty had not yet been signed; American independence was not formally recognized until 1783. Washington wrote that Laurens had no fault he could discover “unless intrepidity bordering upon rashness could come under that denomination.” Laurens’s father learned of the death while negotiating peace in France. Hamilton lost one of his closest friends, and the show’s wedding toast, written to sound like a promise, becomes a quiet reminder of who never made it back.",
@@ -635,7 +635,7 @@ window.MUSICAL_SONGS["the-story-of-tonight-reprise"] = {
     },
     {
       "id": "burr-and-theodosia",
-      "title": "A Married Woman",
+      "title": "有夫之妇",
       "titleEn": "A Married Woman",
       "kind": "story",
       "bodyEn": "Near the end of the wedding celebration, Burr admits that he has “a special someone on the side,” and then explains why he cannot bring her: she is married, and her husband is a British officer. The woman was Theodosia Bartow Prevost, ten years older than Burr. She lived at the Hermitage in Ho-Ho-Kus, New Jersey, with children from her marriage to James Marcus Prevost, a major in the British army’s 60th Regiment. While her husband was away, Burr visited, wrote, and waited. Prevost died in 1781, and in 1782 Burr married Theodosia. Their daughter, also named Theodosia, was born in 1783. In the musical, Burr’s caution is played for comedy. In the record, it was a patient courtship that ended in marriage once she was free.",

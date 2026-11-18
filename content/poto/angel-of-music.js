@@ -353,7 +353,7 @@ window.MUSICAL_SONGS["angel-of-music"] = {
   "background": [
     {
       "id": "the-promise-of-the-angel",
-      "title": "The Promise of the Angel",
+      "title": "音乐天使的许诺",
       "titleEn": "The Promise of the Angel",
       "kind": "story",
       "bodyEn": "Christine Daaé came to Paris from Sweden with a voice and very little else. Her father, a violinist, had told her that after he died he would send an Angel of Music to teach her to sing. He died while she was still young. In the ballet chorus at the Palais Garnier she was nobody in particular, and her only close friend was Meg, the ballet mistress's daughter. Then Carlotta, the leading soprano, lost her voice in the middle of a performance, and Christine was pushed onto the stage to finish the act. She sang, and the house stopped breathing. Afterwards Meg found her shaking in the wings and asked who her new tutor was. Christine said an angel had been teaching her, in her dressing room, behind the mirror. Meg called it a dream. That same night the mirror answered her out loud.",
@@ -412,7 +412,7 @@ window.MUSICAL_SONGS["angel-of-music"] = {
     },
     {
       "id": "the-voice-behind-the-mirror",
-      "title": "The Voice Behind the Mirror",
+      "title": "镜后的声音",
       "titleEn": "The Voice Behind the Mirror",
       "kind": "story",
       "bodyEn": "Nobody in the Palais Garnier ever sees Christine's teacher. The voice comes from behind the mirror of her dressing room, and it knows exactly how she breathes. It tells her where to place a note, how long to hold it, when to stop. Christine calls it her angel because that is the word her father used. Gaston Leroux built the trick out of ordinary stagecraft: a hidden panel, a double wall, a man who has lived in the building long enough to know every corridor. For a while the voice tells no lies. Christine really does improve, and the audience really does hear it. The lie is the identity behind the voice. When Raoul appears, the teacher turns jealous, and the same angel who praised her begins to call himself Master. The promise becomes a claim of ownership, and the mirror is where that claim finally becomes visible.",

@@ -394,7 +394,7 @@ window.MUSICAL_SONGS["wishing-you-were-somehow-here-again"] = {
   "background": [
     {
       "id": "the-voice-at-the-grave",
-      "title": "The Voice at the Grave",
+      "title": "墓前的声音",
       "titleEn": "The Voice at the Grave",
       "kind": "story",
       "bodyEn": "Christine comes to the cemetery at dusk, carrying flowers she does not know where to put. The stones are cold, the angels are carved and enormous, and none of it looks like the man she remembers. She talks to him anyway. She reminds him of the promise he made when she was a child, the angel he said he would send, and then she admits what she has never said aloud: the angel came, and it was not what he meant. The music lifts here. She stops asking for a father and starts asking for the strength to live without one. By the last line her voice is steady, and she walks out of the gate alone. The next voice she hears will not be her father's.",
@@ -453,7 +453,7 @@ window.MUSICAL_SONGS["wishing-you-were-somehow-here-again"] = {
     },
     {
       "id": "a-violin-in-sweden",
-      "title": "A Violin in Sweden",
+      "title": "瑞典的一把小提琴",
       "titleEn": "A Violin in Sweden",
       "kind": "story",
       "bodyEn": "Before the opera house, there was a small house in Sweden and a man who played the violin. Christine was a child who followed him from room to room, and when he grew ill she sat by the bed and made him promise something impossible: that he would not really leave her, that he would send an angel to teach her to sing. He died, and the promise stayed. Years later a voice began to come through the wall of her dressing room, patient and exact, teaching her the music her father had promised. She believed it for as long as she could. That is the cruel joke at the centre of the story: the promise was kept, but by the wrong angel, and now she has to bury the promise along with the man.",

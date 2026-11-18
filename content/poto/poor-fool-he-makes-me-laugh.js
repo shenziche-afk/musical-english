@@ -339,7 +339,7 @@ window.MUSICAL_SONGS["poor-fool-he-makes-me-laugh"] = {
   "background": [
     {
       "id": "the-pageboy-song",
-      "title": "The Pageboy's Song",
+      "title": "侍童之歌",
       "titleEn": "The Pageboy's Song",
       "kind": "story",
       "bodyEn": "On stage the servants are quarrelling about a silent lover, and the house settles in for a comedy. Carlotta has taken the part of the pageboy, a young man written for a woman's voice, and she plays it for laughs: a small black wig, a saucy tilt of the chin, a song about a fool who does not know he is being mocked. The audience loves it. They have come to the Opera House to be amused, and the tune is light enough to whistle on the way home. Backstage, however, the company is counting seats. Box Five is occupied, and the managers promised it would stay empty. Carlotta keeps singing, pleased with her own joke, while the dancers wait in the wings and listen for a sound that does not belong to the orchestra.",
@@ -398,7 +398,7 @@ window.MUSICAL_SONGS["poor-fool-he-makes-me-laugh"] = {
     },
     {
       "id": "a-voice-from-box-five",
-      "title": "A Voice From Box Five",
+      "title": "五号包厢的声音",
       "titleEn": "A Voice From Box Five",
       "kind": "story",
       "bodyEn": "The pageboy is halfway through the second verse when the house hears a new voice, and it is not on stage. It comes from Box Five, the box the managers swore would stay empty, and it answers Carlotta's insult word for word. She has just called the understudy a little toad. The voice agrees, then turns the word around and gives it back to her. For a second nobody breathes. Carlotta lifts her chin and sings on, louder than before, as if volume could settle the argument. It cannot. On the next line her throat produces a sound no soprano would rehearse, a dry croak that travels to the back of the gallery. The orchestra keeps playing for a bar, then stops.",
@@ -457,7 +457,7 @@ window.MUSICAL_SONGS["poor-fool-he-makes-me-laugh"] = {
     },
     {
       "id": "simply-an-accident",
-      "title": "Simply an Accident",
+      "title": "不过一场意外",
       "titleEn": "Simply an Accident",
       "kind": "story",
       "bodyEn": "The ballet from the third act begins, and the stage fills with dancers in white. High above them, in the flies, ropes and counterweights wait in the dark. Then something falls. It is not a sandbag. The dancers scatter, the music breaks off, and the house understands at once that the evening has cost someone his life. On the far side of the curtain the managers choose their words with care. An accident, they say. Nothing to fear. Please remain in your seats. They repeat the phrase until it sounds less like information and more like a plea. In the wings, Christine is pulled away from the stage by Raoul, and the two of them run.",

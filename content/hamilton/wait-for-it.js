@@ -813,7 +813,7 @@ window.MUSICAL_SONGS["wait-for-it"] = {
   "background": [
     {
       "id": "orphans-inheritance",
-      "title": "An Orphan's Inheritance",
+      "title": "孤儿的遗产",
       "titleEn": "An Orphan's Inheritance",
       "kind": "story",
       "bodyEn": "Aaron Burr was born in Newark, New Jersey, on February 6, 1756. His father, Aaron Burr Sr., was a Presbyterian minister and president of the College of New Jersey, the future Princeton. His mother, Esther Edwards, was the daughter of the theologian Jonathan Edwards. Both parents died while Aaron was very young, and he and his sister Sarah were raised by relatives. The boy grew up with a famous name and no one at home to tell him what to do with it. In the musical he sings that his parents left no instructions, just a legacy to protect, and the line is close to the truth. His grandfather’s sermons and his father’s college gave him a standard to meet; his own talent and ambition had to do the rest.",
@@ -872,7 +872,7 @@ window.MUSICAL_SONGS["wait-for-it"] = {
     },
     {
       "id": "widow-of-the-hermitage",
-      "title": "The Widow of the Hermitage",
+      "title": "隐修居的遗孀",
       "titleEn": "The Widow of the Hermitage",
       "kind": "story",
       "bodyEn": "Theodosia Bartow Prevost was born in 1746, married James Marcus Prevost, a major in the British army’s 60th Regiment, and settled at the Hermitage in Ho-Ho-Kus, New Jersey. When her husband was away on campaign, she ran the household and entertained officers; in July 1778 George Washington even used her house as headquarters for a few days. Burr met her during the war, and he kept coming back. Her husband died in 1781, and the following year Burr married her. Their only child, Theodosia, was born in 1783. The musical has Burr describe her as a married woman he cannot bring to the wedding. In the record, this was a patient, years-long attachment that became a marriage once it was lawful. She died in 1794, and Burr was devastated.",
@@ -931,7 +931,7 @@ window.MUSICAL_SONGS["wait-for-it"] = {
     },
     {
       "id": "the-waiting-game",
-      "title": "The Waiting Game",
+      "title": "耐心等待的博弈",
       "titleEn": "The Waiting Game",
       "kind": "story",
       "bodyEn": "Burr sang about waiting, and for a while the strategy worked. He studied law, served in the Continental Army, and built a careful political career in New York. In 1791 he defeated Philip Schuyler, Hamilton’s father-in-law, for a seat in the United States Senate. In 1800 he ran for vice president with Thomas Jefferson and ended up tied with him in the electoral college; Hamilton’s opposition helped decide the election in Jefferson’s favor, and Burr became vice president. Waiting, however, had costs. Because he had taken few clear positions, allies never fully trusted him. After the 1804 duel with Hamilton, his career collapsed. He was later tried for treason and acquitted, then lived abroad and in poverty. The musical’s Burr sings that he is not standing still, and the line is both true and terribly ironic.",

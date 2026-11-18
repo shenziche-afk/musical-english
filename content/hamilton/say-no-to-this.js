@@ -972,7 +972,7 @@ window.MUSICAL_SONGS["say-no-to-this"] = {
   "background": [
     {
       "id": "reynolds-affair",
-      "title": "The Reynolds Affair",
+      "title": "雷诺兹事件",
       "titleEn": "The Reynolds Affair",
       "kind": "story",
       "body": "1791 年夏天，汉密尔顿在费城主持财政部。一个年轻女人玛丽亚·雷诺兹找上门，说丈夫抛弃了她、自己无处可去。汉密尔顿给了她钱，送她回家，几天后两人成了情人。她的丈夫詹姆斯是个骗子，很快发现了这段关系，开始要钱换沉默。1791 年 12 月，信件变成赤裸裸的威胁。次年雷诺兹因伪造罪入狱，把故事讲给了汉密尔顿的政敌。1797 年，在记者重提旧事后，汉密尔顿出版小册子承认私情，以证明自己没有贪腐公款——他的政治生涯从此再未完全恢复。",
@@ -1032,7 +1032,7 @@ window.MUSICAL_SONGS["say-no-to-this"] = {
     },
     {
       "id": "maria-reynolds",
-      "title": "Maria Reynolds",
+      "title": "玛丽亚·雷诺兹",
       "titleEn": "Maria Reynolds",
       "kind": "story",
       "body": "1791 年时玛丽亚·雷诺兹 23 岁，汉密尔顿 34 岁。她嫁给了靠行骗为生的詹姆斯·雷诺兹。她敲开汉密尔顿的门时，讲的是被虐待、被抛弃的故事；音乐剧把它写成一段哀求，却让观众不确定该信几分。历史学家至今仍在争论：她是受害者、同谋，还是两者兼有？现存文件能证明的是：1791 年 12 月她写信给汉密尔顿，求他快来，因为丈夫威胁要写信给他的妻子；她说自己无依无靠，甚至说希望自己从没出生。无论眼泪是真是假，她的名字都成了美国政治史上第一桩大性丑闻的一部分。",
@@ -1058,7 +1058,12 @@ window.MUSICAL_SONGS["say-no-to-this"] = {
       "quiz": [
         {
           "q": "How old was Maria Reynolds when the affair began, according to the passage?",
-          "options": ["Twenty-three.", "Nineteen.", "Thirty-four.", "Thirty."],
+          "options": [
+            "Twenty-three.",
+            "Nineteen.",
+            "Thirty-four.",
+            "Thirty."
+          ],
           "answer": 0,
           "explain": "文中第一句：1791 年她 23 岁，汉密尔顿 34 岁。"
         },
@@ -1087,7 +1092,7 @@ window.MUSICAL_SONGS["say-no-to-this"] = {
     },
     {
       "id": "the-letters",
-      "title": "The Blackmail Letters",
+      "title": "勒索信件",
       "titleEn": "The Blackmail Letters",
       "kind": "story",
       "body": "到 1791 年 12 月，这段私情已经留下了一串文件。12 月 15 日，玛丽亚·雷诺兹慌慌张张写信给汉密尔顿：丈夫当天早上已经给他写了信，还发誓如果他不回信，就写信给汉密尔顿太太。她求他「不要留下任何把柄」。同一天詹姆斯·雷诺兹也来信，四天后又写了一封，威胁里夹着自怜：「是你赢得了她的爱。」汉密尔顿回了信，也付了钱。奇怪的是，他几乎把所有信件和付款记录都留了下来。1797 年，他把整批材料印出来为自己辩护——本可以毁掉他的证据，成了他洗清名誉的工具。",
@@ -1147,7 +1152,7 @@ window.MUSICAL_SONGS["say-no-to-this"] = {
     },
     {
       "id": "confession-frame",
-      "title": "A Confession, Not a History Lesson",
+      "title": "一场忏悔，而非历史课",
       "titleEn": "A Confession, Not a History Lesson",
       "kind": "craft",
       "body": "米兰达把这首歌写成一份告解，而不是一堂历史课。汉密尔顿用第一人称开口，对观众说话，像坐在告解室里：「主啊，教我如何说不。」音乐放慢成一首带灵魂乐味道的叙事歌，合唱反复念着歌名，一半是诱惑，一半是祈祷。等到勒索信出现，音乐先引用 18 世纪书信那种平淡客套的语言——「见信安好」——再一头扎进脏话和威胁。米兰达还借用了汉密尔顿 1797 年小册子的结构：财政部长宁愿把整个故事讲出来，也不肯遮掩。于是我们听到一个停不下来解释自己的人，听遍他的借口和誓言，再看着它们一一失效。",

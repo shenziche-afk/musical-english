@@ -330,7 +330,7 @@ window.MUSICAL_SONGS["the-music-of-the-night"] = {
   "background": [
     {
       "id": "the-lair-on-the-lake",
-      "title": "The Lair on the Lake",
+      "title": "湖上的巢穴",
       "titleEn": "The Lair on the Lake",
       "kind": "story",
       "bodyEn": "The boat slides out of the tunnel and stops at a stone step. The Phantom lifts Christine onto the shore without asking, and she lets him. Candles stand on every surface. A bed waits behind a curtain, an organ waits at the desk, and a figure in a white dress sits motionless in the corner: a dress, a veil, and no face she wants to look at twice.\n\nShe is shaking. He sees it and does not mock her. Instead he begins to sing, and the room changes shape. The fear that had been pressing on her chest loosens, the candles seem to lean closer, and for a few minutes she is not a prisoner but a guest.\n\nWhen the song ends he is kneeling. She has stopped trembling. What she does next is reach for his face.",
@@ -389,7 +389,7 @@ window.MUSICAL_SONGS["the-music-of-the-night"] = {
     },
     {
       "id": "the-last-two-lines",
-      "title": "The Last Two Lines",
+      "title": "最后两行歌词",
       "titleEn": "The Last Two Lines",
       "kind": "story",
       "bodyEn": "For five minutes the song tells Christine what the night will give her: warmth, music, a world where nobody laughs at her. Every line is an instruction. Close your eyes, turn your face, let your mind start a journey. The Phantom never asks a question, because a question would admit that she has a choice.\n\nThen the grammar changes. In the last two lines he stops commanding and starts asking. He tells her that only she can make his music fly, then admits that he needs her help. The mask of the teacher slips, and what is left is a man who has built an entire underground world and still needs one girl to make it mean anything.\n\nChristine does not answer. She is asleep, or pretending to be. The audience hears the request, and that is enough.",

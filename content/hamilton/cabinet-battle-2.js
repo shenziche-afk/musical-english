@@ -696,7 +696,7 @@ window.MUSICAL_SONGS["cabinet-battle-2"] = {
   "background": [
     {
       "id": "verge-of-war",
-      "title": "France on the Verge of War",
+      "title": "濒临战争的法国",
       "titleEn": "France on the Verge of War",
       "kind": "story",
       "bodyEn": "In February 1793, revolutionary France declared war on Britain and the Dutch Republic. The news reached Philadelphia in April and put George Washington's cabinet in an impossible position. In 1778 the United States had signed a treaty of alliance with King Louis XVI; it promised American help if Britain attacked France. But Louis had been executed in January, and France was now a republic at war with almost every monarchy in Europe. Jefferson argued that a treaty is a treaty and that gratitude to France should guide the decision. Hamilton replied that the treaty had died with the king and that the young nation could not afford a European war. On April 22, 1793, Washington issued a proclamation of neutrality, warning Americans to stay out of the fighting. It was the first great foreign-policy decision of the new republic, and it deepened the split inside the cabinet.",
@@ -763,7 +763,7 @@ window.MUSICAL_SONGS["cabinet-battle-2"] = {
     },
     {
       "id": "citizen-genet",
-      "title": "Citizen Genêt",
+      "title": "公民热内",
       "titleEn": "Citizen Genêt",
       "kind": "story",
       "bodyEn": "In April 1793, while Washington was drafting his neutrality proclamation, a French diplomat named Edmond-Charles Genêt arrived in Charleston, South Carolina. He was young, charming and determined to turn American sympathy for France into soldiers and ships. Genêt commissioned American privateers to attack British vessels and openly appealed to the American people over the president's head. Washington's cabinet, including Jefferson, agreed that this was unacceptable and demanded that France recall him. Hamilton defended the government's position in newspaper essays signed \"Pacificus\", while Madison answered as \"Helvidius\". Genêt's mission collapsed; with the Terror raging in France, he did not dare go home and instead settled in New York. The affair convinced Washington that neutrality would be attacked from both sides, and it hardened Jefferson's distrust of Hamilton.",
@@ -822,7 +822,7 @@ window.MUSICAL_SONGS["cabinet-battle-2"] = {
     },
     {
       "id": "two-visions",
-      "title": "Two Visions of America",
+      "title": "两种美国愿景",
       "titleEn": "Two Visions of America",
       "kind": "story",
       "bodyEn": "Behind the debate over France lay a deeper quarrel about what kind of nation the United States should become. Hamilton, the secretary of the treasury, wanted a strong federal government, a national bank, protective tariffs and close commercial ties with Britain. Jefferson, the secretary of state, imagined a republic of independent farmers, friendly to revolutionary France and suspicious of banks and cities. Washington's cabinet contained both men, and every meeting became a battle. In the musical, Miranda turns these arguments into a rap contest, but the real cabinet meetings were just as tense. Washington tried to keep the peace, usually sided with Hamilton on foreign policy, and watched his two most talented advisers become leaders of rival parties. The split that Jefferson and Hamilton opened in 1793 never closed.",

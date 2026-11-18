@@ -1136,7 +1136,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
   "background": [
     {
       "id": "schuyler-family",
-      "title": "The Schuyler Family of Albany",
+      "title": "奥尔巴尼的斯凯勒家族",
       "titleEn": "The Schuyler Family of Albany",
       "kind": "story",
       "bodyEn": "Eliza Hamilton was born Elizabeth Schuyler, one of eight children of Philip Schuyler, among the wealthiest landowners in New York. The family mansion stood on a bluff above the Hudson at Albany, surrounded by an eighty-acre estate of orchards, gardens and farm fields, and it was home to more than fifty enslaved laborers and servants. Philip Schuyler had been a major general in the Revolution and became one of New York’s first senators. In the musical, his upstate estate is a summer refuge where the family can escape the capital. Historians describe the Schuylers as a political dynasty with Dutch roots and vast land holdings. Their wealth and connections shaped their daughters’ marriages: Angelica eloped with John Barker Church, and Eliza married Alexander Hamilton in the family home in 1780.",
@@ -1199,7 +1199,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
     },
     {
       "id": "angelica-in-london",
-      "title": "Angelica Across the Ocean",
+      "title": "远渡重洋的安杰莉卡",
       "titleEn": "Angelica Across the Ocean",
       "kind": "story",
       "bodyEn": "Angelica Schuyler was twenty-one when she eloped with John Barker Church, a British-born businessman who had fled England after a duel. During the Revolution he supplied the American and French armies and grew rich. After the war the couple settled in London, where Church sat in Parliament and Angelica became a celebrated hostess. Her salon on Sackville Street drew diplomats, painters and politicians, and she moved easily between London and Paris. She wrote constantly to her sister Eliza and to Hamilton, and their letters mix family news, politics and literary jokes. The musical turns that correspondence into romance: Angelica arrives from London, says she came across the ocean for the family, and sings about a love she cannot act on. Historically she was already married when Eliza met Hamilton, and there is no evidence of an affair. The letters were affectionate and playful rather than scandalous.",
@@ -1262,7 +1262,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
     },
     {
       "id": "my-dearest-angelica",
-      "title": "My Dearest, Angelica",
+      "title": "我最亲爱的安杰莉卡",
       "titleEn": "My Dearest, Angelica",
       "kind": "story",
       "bodyEn": "The comma in the song comes from a real letter. On December 6, 1787, Hamilton wrote to Angelica Church in London. She had sent him a letter, and he teased her about it: “There was a most critical comma in your last letter. It is my interest that it should have been designed; but I presume it was accidental.” He invited her to explain herself and to repeat the mistake in her next letter. In the musical the direction is reversed. Angelica reads Hamilton’s letter and wonders whether he meant “My dearest Angelica” or “My dearest, Angelica.” That one comma changes a formal greeting into an intimate declaration. Miranda makes punctuation carry the whole flirtation. The historical letter is lighter and wittier than the show’s version: a brother-in-law’s joke between two clever people who enjoyed language. It is a small example of how the musical builds fiction out of real documents.",
@@ -1325,7 +1325,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
     },
     {
       "id": "macbeth-in-the-lyrics",
-      "title": "Macbeth in the Lyrics",
+      "title": "歌词中的麦克白",
       "titleEn": "Macbeth in the Lyrics",
       "kind": "craft",
       "bodyEn": "Take a Break opens its letter section with Shakespeare. Hamilton quotes Macbeth: “Tomorrow and tomorrow and tomorrow / Creeps in this petty pace from day to day.” In the play the words come from a man who has just learned that his wife is dead; life, he says, is a tale told by an idiot. Miranda puts the same words in Hamilton’s mouth while he calls himself Macbeth and his enemies Banquo and Macduff. The jokes are literary and political at once: ambition is Hamilton’s folly, and Congress becomes Birnam Wood marching toward Dunsinane. Angelica answers later with Lady Macbeth’s line, “Screw your courage to the sticking place.” The references flatter the audience, since both characters are readers, and they hint at doom. Macbeth’s ambition destroys him, and the audience knows that Hamilton’s ambition will destroy his family and eventually himself.",

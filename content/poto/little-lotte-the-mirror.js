@@ -473,7 +473,7 @@ window.MUSICAL_SONGS["little-lotte-the-mirror"] = {
   "background": [
     {
       "id": "little-lotte-and-the-attic",
-      "title": "Little Lotte and the Attic",
+      "title": "小洛蒂与阁楼",
       "titleEn": "Little Lotte and the Attic",
       "kind": "story",
       "bodyEn": "Raoul finds Christine on the roof of the opera house, with snow falling and the city far below. He begins with a book they both knew as children: Little Lotte, a girl who cannot decide whether she prefers dolls, goblins, riddles, frocks or chocolates. Raoul remembers the picnics they held in the attic, Christine's father playing the violin while the two of them read dark northern stories aloud. For a few minutes they are children again, and Christine smiles. Then the memory turns. She says the part she loved best was falling asleep and hearing the Angel of Music sing inside her head. Raoul thinks this is charming. He does not understand that she is describing her teacher. The duet ends happily, and the happiness is the trap: he has just reminded her of the exact promise the Phantom is using to keep her.",
@@ -532,7 +532,7 @@ window.MUSICAL_SONGS["little-lotte-the-mirror"] = {
     },
     {
       "id": "the-mirror-opens",
-      "title": "The Mirror Opens",
+      "title": "镜子开启",
       "titleEn": "The Mirror Opens",
       "kind": "story",
       "bodyEn": "Christine runs back to her dressing room and speaks to the mirror as if it were a person. She apologises for doubting, asks the angel to stay, and finally says the words that close the door on her old life: enter at last, Master. The answer is not the voice she expects. It is a man's voice, close and pleased, telling her to look at her own face in the glass, because he is there inside it. Then the mirror moves. In the stage version the frame slides, the glass turns, and the Phantom steps through to take her hand. Raoul arrives a moment too late. He hears her voice through the wall, hammers at a panel that will not open, and shouts her name. Behind the mirror a corridor is already carrying her down, past the cellars, towards the underground lake.",
@@ -591,7 +591,7 @@ window.MUSICAL_SONGS["little-lotte-the-mirror"] = {
     },
     {
       "id": "from-novel-to-stage",
-      "title": "From Novel to Stage",
+      "title": "从小说到舞台",
       "titleEn": "From Novel to Stage",
       "kind": "story",
       "bodyEn": "In 1910 the journalist Gaston Leroux published a serialised novel about a ghost in the Paris Opéra. He had covered the opera house for years, and he filled the book with things he had actually seen: the underground water tank, the hidden passages, the rumour that Box Five was haunted, and the accident of 1896, when a counterweight fell from the great chandelier. The book sold, but nobody treated it as literature. Almost seventy years later Andrew Lloyd Webber turned it into a musical, and a small scene in a dressing room became the hinge of the evening. Christine's mirror is not decoration. It is the door between the story she tells herself and the man who is using it. The 1986 London production made that door literal, and every production since has had to solve it again.",

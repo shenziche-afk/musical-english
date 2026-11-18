@@ -1100,7 +1100,7 @@ window.MUSICAL_SONGS["the-world-was-wide-enough"] = {
   "background": [
     {
       "id": "weehawken-duel",
-      "title": "The Duel at Weehawken",
+      "title": "威霍肯决斗",
       "titleEn": "The Duel at Weehawken",
       "kind": "story",
       "bodyEn": "At dawn on July 11, 1804, two boats crossed the Hudson River from Manhattan to a wooded ledge at Weehawken, New Jersey. Aaron Burr, the sitting vice president, traveled with his second, William P. Van Ness. Alexander Hamilton brought his second, Nathaniel Pendleton, and a doctor named David Hosack. Dueling was illegal in both states, but New Jersey punished it less severely, and the ground was already infamous: three years earlier Hamilton's eldest son had fallen there. Hamilton had written that he would \"reserve and throw away\" his first fire. When the signal came he shot wide and hit a tree; Burr's bullet struck him in the abdomen. Hamilton told Hosack, \"This is a mortal wound, Doctor.\" The seconds disagree about details, but both accounts agree that two shots were heard within seconds.",
@@ -1167,7 +1167,7 @@ window.MUSICAL_SONGS["the-world-was-wide-enough"] = {
     },
     {
       "id": "hamiltons-death",
-      "title": "The Death of Hamilton",
+      "title": "汉密尔顿之死",
       "titleEn": "The Death of Hamilton",
       "kind": "story",
       "bodyEn": "Burr's bullet entered Hamilton's right side and tore through his abdomen. The seconds carried him to a boat and rowed him back across the Hudson to the house of William Bayard Jr. in Greenwich Village. Hamilton knew he was dying. He asked for a minister of the Episcopal Church; Bishop Benjamin Moore came, warned him that the gospel condemned dueling, and gave him communion. Moore later wrote that Hamilton viewed the duel with sorrow and contrition. His wife Eliza and their children had been at The Grange, eight miles north; they were sent for and reached the house in time to gather around his bed. He said goodbye to them. In the afternoon of July 12, 1804, he died, aged forty-seven. Two days later, thousands followed his funeral procession to Trinity Church, where he was buried.",
@@ -1230,7 +1230,7 @@ window.MUSICAL_SONGS["the-world-was-wide-enough"] = {
     },
     {
       "id": "burrs-aftermath",
-      "title": "The Price of a Bullet",
+      "title": "一颗子弹的代价",
       "titleEn": "The Price of a Bullet",
       "kind": "story",
       "bodyEn": "Burr did not become a hero. He was indicted for murder in New Jersey and New York, though he was never tried, and the charge shadowed him for the rest of his life. He finished his term as vice president quietly, then headed west. In 1807 he was arrested and charged with treason over an alleged plan to build an empire in the Southwest. The trial, presided over by Chief Justice John Marshall, ended in acquittal, but Burr's public career was over. He spent several years in Europe, returned to New York, practiced law, and died in 1836 at the age of eighty. Posterity was not kind. His own papers had gone down at sea with his daughter Theodosia in 1813, leaving no family archive to balance the record, and history remembered him as the man who shot Hamilton.",
@@ -1297,7 +1297,7 @@ window.MUSICAL_SONGS["the-world-was-wide-enough"] = {
     },
     {
       "id": "the-same-ground",
-      "title": "The Same Ground",
+      "title": "同一片土地",
       "titleEn": "The Same Ground",
       "kind": "story",
       "bodyEn": "The duel at Weehawken was not the first time the Hamilton family had stood on that ground. In November 1801, nineteen-year-old Philip Hamilton, Alexander's eldest son, fought George I. Eacker, a Republican lawyer. The quarrel began at a New York theater, where Eacker insulted Alexander Hamilton; Philip and a friend confronted him, and Eacker called them \"damned rascals.\" Philip challenged him, and the pair met on the same dueling ground at Weehawken. Shots were fired, and Philip fell, mortally wounded. He was carried back across the river and died of his injury. Alexander Hamilton never recovered from the loss. Philip was recorded in the Trinity churchyard burial register, but no grave location was given, and his exact resting place remains unknown. Three years later, Philip's father stood on the same ground with a pistol in his hand.",

@@ -729,7 +729,7 @@ window.MUSICAL_SONGS["blow-us-all-away"] = {
   "background": [
     {
       "id": "fourth-of-july-speech",
-      "title": "The Fourth of July Speech",
+      "title": "七月四日演说",
       "titleEn": "The Fourth of July Speech",
       "kind": "story",
       "bodyEn": "On July 4, 1801, a lawyer named George I. Eacker delivered the Independence Day oration in New York City. According to later accounts, the speech attacked Alexander Hamilton's politics—his role in the Quasi-War with France and his supposed sympathy for Britain. Philip Hamilton, nineteen, had recently graduated from Columbia College. Four months later, on November 20, he and a friend spotted Eacker at the Park Theatre. They went to his box and taunted him about the speech. Eacker asked them to step into the lobby and called them “damned rascals.” The quarrel moved to a tavern, where no peace was made. That night, challenges were sent. The musical compresses the four months into a single week and has Philip hunting Eacker down “just up Broadway,” but the insult and the rage behind it were real.",
@@ -792,7 +792,7 @@ window.MUSICAL_SONGS["blow-us-all-away"] = {
     },
     {
       "id": "the-duel",
-      "title": "The Duel",
+      "title": "那场决斗",
       "titleEn": "The Duel",
       "kind": "story",
       "bodyEn": "The duel took place on November 23, 1801, on the New Jersey side of the Hudson, where dueling was punished less severely than in New York. Both men brought seconds to manage the arrangements. Hamilton had advised his son to waste his first shot—either by waiting for Eacker to fire or by firing into the air, a French practice called the delope. For about a minute after the order, neither man moved. Then Eacker raised his pistol and fired, hitting Philip. Philip's own pistol also went off, though the accounts differ on whether he fired on purpose, by reflex, or toward the sky. He was carried back to Manhattan and died early the next morning, at nineteen. Hamilton was shattered. “Never did I see a man so completely overwhelmed with grief,” a friend wrote.",
@@ -859,7 +859,7 @@ window.MUSICAL_SONGS["blow-us-all-away"] = {
     },
     {
       "id": "like-father-like-son",
-      "title": "Like Father, Like Son",
+      "title": "有其父必有其子",
       "titleEn": "Like Father, Like Son",
       "kind": "craft",
       "bodyEn": "Philip's song is built out of his father's song. My Shot gave Hamilton the line “Only nineteen but my mind is older”; here Philip sings “I'm only nineteen but my mind is older,” and the audience hears the echo. My Shot opened with “I am not throwing away my shot”; Philip recalls his father predicting that he would “blow us all away.” His self-introduction—“My name is Philip, I am a poet”—mirrors his father spelling out his own name. Even the college changes: Philip graduated from Columbia, which had been King's College until 1784, but the lyric keeps the old name so the father's world stays audible. The show is saying that the son inherited his father's words, his ambition, and his danger. The advice scene turns that inheritance into a trap.",

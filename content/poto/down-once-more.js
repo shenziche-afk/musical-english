@@ -1160,7 +1160,7 @@ window.MUSICAL_SONGS["down-once-more"] = {
   "background": [
     {
       "id": "the-punjab-lasso",
-      "title": "The Punjab Lasso",
+      "title": "旁遮普套索",
       "titleEn": "The Punjab Lasso",
       "kind": "story",
       "bodyEn": "Raoul does not creep into the lair. He shouts for Christine until a gate opens, and the Phantom, delighted, invites him in like a host. The two men exchange courtesies that are really threats. Then the Phantom reaches into the black water and brings out a rope. It is a lasso, and before Raoul can move, it closes around his throat. He is dragged back, tied to the gate, and left choking while the Phantom explains that he will not hurt Christine. He will simply make her choose. She may buy Raoul's freedom with her love, or refuse and send him to his death. The trap is elegant: no knife, no blood, only a bargain. Raoul begs her to say no. The Phantom counts the seconds, and the whole lair waits for one word.",
@@ -1219,7 +1219,7 @@ window.MUSICAL_SONGS["down-once-more"] = {
     },
     {
       "id": "the-kiss",
-      "title": "The Kiss",
+      "title": "吻的那一刻",
       "titleEn": "The Kiss",
       "kind": "story",
       "bodyEn": "All evening the Phantom has been the most powerful man under the opera house. He has a lair, a rope, and a girl who cannot leave. Then Christine walks toward him, and the music stops arguing. She is not surrendering; she is looking at him properly for the first time. She calls him a pitiful creature of darkness and asks what kind of life he has known. Nobody has ever asked. She prays for courage, then says the sentence he cannot answer: you are not alone. Then she kisses him. The orchestra drops away, and the man who built a kingdom of fear has nothing to hold. He tells Raoul to take her and forget him. When she turns at the door, she leaves the ring in his hand. He presses it to his heart and lets them go.",
@@ -1278,7 +1278,7 @@ window.MUSICAL_SONGS["down-once-more"] = {
     },
     {
       "id": "the-mask-on-the-throne",
-      "title": "The Mask on the Throne",
+      "title": "王座上的面具",
       "titleEn": "The Mask on the Throne",
       "kind": "story",
       "bodyEn": "Above the lair, the mob is still singing. They carry torches, they repeat the same sentence about hunting an animal, and they are certain that the monster is cornered. They are wrong by a few minutes. Down below, the Phantom smashes every mirror that shows his face, walks into the last one, and disappears. Meg Giry is the first to climb down through the portcullis. She crosses the empty room, past the candles and the music box still turning out a dance tune, and stops at the throne. His mask is lying there. She picks it up and holds it, and the theatre has its ending: no body, no proof, only a white mask in a girl's hands. The legend starts here, with an object that cannot explain itself.",

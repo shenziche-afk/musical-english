@@ -1217,7 +1217,7 @@ window.MUSICAL_SONGS["satisfied"] = {
   "background": [
     {
       "id": "morristown-meeting",
-      "title": "The Meeting That Was Not a Ball",
+      "title": "并非舞会的会面",
       "titleEn": "The Meeting That Was Not a Ball",
       "kind": "story",
       "bodyEn": "In February 1780, Elizabeth Schuyler was twenty-two and staying with an aunt in Morristown, New Jersey, while the Continental Army wintered nearby. Her father had sent her there, and the town was crowded with officers. One of them was Alexander Hamilton, George Washington’s chief aide. The National Park Service records that Hamilton was “instantly smitten,” and that by March the two had decided to marry. No ballroom, no string quartet, and no formal introduction by her sister appear in that record. The musical compresses the courtship into a glittering winter ball where Angelica presents Eliza and Hamilton steals the scene. The setting is invented, but the speed is real: within weeks, an orphan with no fortune and a general’s daughter had an understanding, and by December 1780 they were married.",
@@ -1276,7 +1276,7 @@ window.MUSICAL_SONGS["satisfied"] = {
     },
     {
       "id": "angelica-married",
-      "title": "The Sister Who Was Already Married",
+      "title": "早已出嫁的姐姐",
       "titleEn": "The Sister Who Was Already Married",
       "kind": "story",
       "bodyEn": "Angelica Schuyler was born in Albany in 1756, the eldest of Philip and Catharine Schuyler’s many children. In June 1777 she married John Barker Church, an Englishman who had come to her father on wartime business. The couple is said to have eloped, and their first child was born in Boston the following spring. By the time she met Alexander Hamilton, Angelica was already a married woman with a family of her own. The musical rewrites this. In “Satisfied,” she meets Hamilton first, falls for him, and steps aside so that her sister Eliza can have him. The historian Cassandra Good points out that the show never mentions Angelica’s British husband, and that Angelica was married when she first met Hamilton. The choice is dramatically useful, but the real Angelica was not waiting to be chosen.",
@@ -1335,7 +1335,7 @@ window.MUSICAL_SONGS["satisfied"] = {
     },
     {
       "id": "dear-brother-letters",
-      "title": "Dear Brother: The Letters",
+      "title": "致兄长的书信",
       "titleEn": "Dear Brother: The Letters",
       "kind": "story",
       "bodyEn": "The musical’s Angelica sings that she has never been satisfied. The real Angelica kept up a warm, teasing correspondence with her brother-in-law for decades. She wrote to Eliza in 1794 joking that she loved Hamilton so much that, if Eliza were as generous as the ancient Romans, she would lend him to her for a while. Hamilton wrote to Angelica in 1787 that he seldom wrote to a lady “without fancying the relation of lover and mistress.” Historians do not agree on what the flirtation meant. Cassandra Good argues that such affection could be real without becoming an affair, and that Angelica’s marriage, and Hamilton’s 1780 marriage to Eliza, actually made the friendship safer from gossip. The musical turns this ambiguity into a love triangle, but it does not invent the intensity of the letters.",
@@ -1398,7 +1398,7 @@ window.MUSICAL_SONGS["satisfied"] = {
     },
     {
       "id": "wedding-in-albany",
-      "title": "A Wedding in Albany",
+      "title": "奥尔巴尼的婚礼",
       "titleEn": "A Wedding in Albany",
       "kind": "story",
       "bodyEn": "On December 14, 1780, Alexander Hamilton married Elizabeth Schuyler at the Schuyler family’s mansion in Albany, New York. The house sat on a bluff above the Hudson, surrounded by an eighty-acre working estate; today it is a New York State historic site. The bride’s father, Philip Schuyler, was a major general and one of the wealthiest men in the state. The groom was an orphan from the Caribbean with no land and no family name. The match gave Hamilton both a loving partner and a powerful political connection. The state’s own history also records a harder truth: the mansion’s comfort depended on the labor of more than fifty enslaved people over the family’s years there. The wedding the musical stages is a party; the historical wedding was also an alliance between two very different worlds.",

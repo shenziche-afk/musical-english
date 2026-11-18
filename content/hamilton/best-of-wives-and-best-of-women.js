@@ -211,7 +211,7 @@ window.MUSICAL_SONGS["best-of-wives-and-best-of-women"] = {
   "background": [
     {
       "id": "the-letter-dated-july-4",
-      "title": "The Letter Dated July 4",
+      "title": "七月四日的信",
       "titleEn": "The Letter Dated July 4",
       "kind": "story",
       "bodyEn": "A week before the duel, Hamilton sat down and wrote a letter that was not meant to be read unless he died. 'This letter, my very dear Eliza,' it begins, 'will not be delivered to you, unless I shall first have terminated my earthly career.' He explained that family love alone would have kept him from the meeting, but that avoiding it would have cost him his honor. He asked her not to grieve without consolation, and told her to 'Fly to the bosom of your God and be comforted.' The letter ends: 'Adieu best of wives and best of Women. Embrace all my darling Children for me.' The musical borrows that phrase for the title of its shortest song.",
@@ -274,7 +274,7 @@ window.MUSICAL_SONGS["best-of-wives-and-best-of-women"] = {
     },
     {
       "id": "the-night-before",
-      "title": "The Night Before",
+      "title": "决斗前夜",
       "titleEn": "The Night Before",
       "kind": "story",
       "bodyEn": "In the musical, this is the last domestic scene: Eliza wakes in the dark and asks her husband to come back to bed. History is less intimate. In the days before the duel, Hamilton prepared financial plans, lists of debt, and farewell letters, including the one to Eliza dated July 4. On the morning of July 11 he crossed the Hudson with his seconds. Eliza and the children were at The Grange, the family's country house eight miles north, according to the National Park Service. When news of the wounding reached the family, Angelica Schuyler Church wrote that 'my dear Sister bears with saintlike fortitude this affliction.' Hamilton died the next day at the Bayard house in Greenwich Village, with friends and family around him. His funeral procession to Trinity Church on July 14 drew thousands of mourners.",

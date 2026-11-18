@@ -485,7 +485,7 @@ window.MUSICAL_SONGS["the-reynolds-pamphlet"] = {
   "background": [
     {
       "id": "the-pamphlet",
-      "title": "The Pamphlet",
+      "title": "雷诺兹小册子",
       "titleEn": "The Pamphlet",
       "kind": "story",
       "bodyEn": "In 1797 a journalist named James Thomson Callender printed the Reynolds documents in a pamphlet attacking Hamilton's years at the Treasury. Hamilton, then a private lawyer in New York, decided to answer it himself. In August 1797 he published Observations on Certain Documents, a long pamphlet of confession and evidence. Its most famous line was blunt: “My real crime is an amorous connection with his wife.” Hamilton admitted the affair, printed the letters and affidavits, and argued that the payments to James Reynolds were blackmail, not speculation with public money. The public read the confession as scandal. Federalist allies were embarrassed, Republican enemies were delighted, and the pamphlet was reprinted and passed around for years. One author had taken the most private event of his life and made it a national headline.",
@@ -548,7 +548,7 @@ window.MUSICAL_SONGS["the-reynolds-pamphlet"] = {
     },
     {
       "id": "why-he-wrote-it",
-      "title": "Why He Wrote It",
+      "title": "他为何动笔",
       "titleEn": "Why He Wrote It",
       "kind": "craft",
       "bodyEn": "Why would a man publish his own adultery? The musical gives the answer in two lines: “I may have mortally wounded my prospects / But my papers are orderly.” In the honor culture of the 1790s, a public charge of financial corruption could end a career. Hamilton had left the Treasury in 1795, but he still led the Federalist Party, and he could not let the accusation that he speculated with government money stand unanswered. So he made a cold trade: sacrifice his private reputation to protect his public record. The pamphlet printed the letters and sworn statements so readers could check his accounts. It worked in the narrow legal sense—no prosecution followed—but it failed everywhere else. His enemies had a weapon they could hand to every voter, and Hamilton had handed it to them himself.",
@@ -611,7 +611,7 @@ window.MUSICAL_SONGS["the-reynolds-pamphlet"] = {
     },
     {
       "id": "angelica-from-london",
-      "title": "Angelica from London",
+      "title": "来自伦敦的安杰莉卡",
       "titleEn": "Angelica from London",
       "kind": "craft",
       "bodyEn": "In the show, Angelica Schuyler Church rushes in “all the way from London” as soon as she hears the news, and then refuses to comfort Hamilton. The real Angelica was indeed in Europe for years: she and her husband, John Barker Church, lived first in Paris and then in London after 1783. According to the Gilder Lehrman Institute, they did not return to live in New York until 1797—the same year as the pamphlet. The musical compresses that return into a dramatic entrance and gives Angelica a single, fierce position: she loves her sister more than anything, so she stands at Eliza's side. The choice is the show's invention, but it fits the surviving letters, which show a close bond between Angelica and Hamilton and are debated by historians as possibly romantic.",

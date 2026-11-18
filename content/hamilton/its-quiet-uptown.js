@@ -595,7 +595,7 @@ window.MUSICAL_SONGS["its-quiet-uptown"] = {
   "background": [
     {
       "id": "the-grange",
-      "title": "The Grange: An Uptown Home",
+      "title": "格兰奇庄园：上城的家",
       "titleEn": "The Grange: An Uptown Home",
       "kind": "story",
       "bodyEn": "In 1797 Alexander Hamilton bought land in upper Manhattan for a country house. He commissioned architect John McComb Jr. in 1801, and the family moved in when the house was finished in 1802, months after the death of his eldest son. Hamilton named it The Grange after his father's ancestral home in Scotland. The estate covered thirty-two acres, far from the crowded streets downtown. It was quiet uptown. Hamilton enjoyed the house for only two years. When he was wounded in the duel in July 1804, Eliza and the children were at The Grange, eight miles north of the city. After his death, friends arranged for the family to keep the house, and Eliza used it for decades.",
@@ -658,7 +658,7 @@ window.MUSICAL_SONGS["its-quiet-uptown"] = {
     },
     {
       "id": "a-family-in-mourning",
-      "title": "A Family in Mourning",
+      "title": "哀悼中的一家",
       "titleEn": "A Family in Mourning",
       "kind": "story",
       "bodyEn": "Philip's death in November 1801 shattered the Hamilton household. The young man had been shot in a duel fought to defend his father's honor, and he died at home the next day, surrounded by his family. Letters of condolence soon arrived. Benjamin Rush, a Philadelphia physician and family friend, wrote that he hoped a whole family's tears might mingle with Hamilton's: 'Permit a whole family to mingle their tears with yours upon the late distressing event.' Rush also remembered Philip as a young man whose daily visits had charmed his household. Hamilton's grief was deep. Months later the family moved uptown into The Grange, and the show turns that wordless grief into a single word: the unimaginable.",
@@ -721,7 +721,7 @@ window.MUSICAL_SONGS["its-quiet-uptown"] = {
     },
     {
       "id": "elizas-strength",
-      "title": "Eliza's Faith and Strength",
+      "title": "伊莱莎的信念与坚韧",
       "titleEn": "Eliza's Faith and Strength",
       "kind": "story",
       "bodyEn": "Elizabeth Schuyler Hamilton came from one of New York's most prominent families, but the National Park Service's portrait of her stresses work rather than luxury. She ran the Hamilton household, taught her children, and opened her home to orphans. Her education had included regular reading of the Bible and Shakespeare, and observers described her as practical, sincere, and strong. The musical imagines her going to church and praying after Philip's death. Faith mattered to the historical Eliza: the Park Service notes that she read the Bible regularly and that she was remembered for her resilience and compassion. When Hamilton died in 1804, her sister Angelica wrote that 'my dear Sister bears with saintlike fortitude this affliction.' Eliza outlived him by fifty years, preserved his papers, and in 1806 helped found the New York Orphan Asylum Society.",

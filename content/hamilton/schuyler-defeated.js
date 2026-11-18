@@ -334,7 +334,7 @@ window.MUSICAL_SONGS["schuyler-defeated"] = {
   "background": [
     {
       "id": "the-election",
-      "title": "The 1791 Senate Election",
+      "title": "1791年参议院选举",
       "titleEn": "The 1791 Senate Election",
       "kind": "story",
       "body": "1791 年，纽约州的联邦参议员不是选民直接选的，而是由州议会推选。1 月 19 日，州议会审议菲利普·斯凯勒——汉密尔顿的岳父——所持的席位。时任纽约州总检察长的亚伦·伯尔在参众两院都拿到明显多数。同一天，罗伯特·特鲁普从奥尔巴尼写信给汉密尔顿：「大约一小时前，参议员选举在议会里开始，伯尔以决定性多数胜出。」特鲁普还说，促成这个结果的各种运作和交易「不可思议」，并警告纽约州正走向对联邦政府「最激烈的反对」。对汉密尔顿来说，这是家事也是政事：他指望斯凯勒在参议院为他的财政方案投票。这是汉密尔顿与伯尔第一次真正的交手。",
@@ -394,7 +394,7 @@ window.MUSICAL_SONGS["schuyler-defeated"] = {
     },
     {
       "id": "philip-schuyler",
-      "title": "Philip Schuyler, the General",
+      "title": "将军菲利普·斯凯勒",
       "titleEn": "Philip Schuyler, the General",
       "kind": "story",
       "body": "菲利普·斯凯勒 1733 年生于奥尔巴尼，出身纽约最富有的家族之一。他参加过法印战争，当过大陆会议代表，1775 年被任命为大陆军四位少将之一。他负责北方战区、筹划入侵加拿大，却因病未能亲自指挥；后来提康德罗加要塞失守，更让他的名声受损。他主动要求军事法庭审理，被判无罪，1779 年辞职。在新宪法下，他成为纽约州最早的两位联邦参议员之一。1780 年 12 月，女儿伊莱莎在奥尔巴尼的家族宅邸嫁给亚历山大·汉密尔顿。音乐剧称他「战争英雄」，算是客气——但也没说错。",
@@ -431,7 +431,12 @@ window.MUSICAL_SONGS["schuyler-defeated"] = {
         },
         {
           "q": "When did Elizabeth Schuyler marry Alexander Hamilton?",
-          "options": ["December 1780.", "January 1791.", "July 1776.", "November 1804."],
+          "options": [
+            "December 1780.",
+            "January 1791.",
+            "July 1776.",
+            "November 1804."
+          ],
           "answer": 0,
           "explain": "文中说 1780 年 12 月，伊莱莎在奥尔巴尼的斯凯勒宅邸嫁给汉密尔顿。"
         }
@@ -449,7 +454,7 @@ window.MUSICAL_SONGS["schuyler-defeated"] = {
     },
     {
       "id": "party-switch",
-      "title": "Federalists, Republicans, and a Party Switch",
+      "title": "联邦党人、共和党人与转党",
       "titleEn": "Federalists, Republicans, and a Party Switch",
       "kind": "story",
       "body": "到 1791 年，新生的共和国正在分成两派。汉密尔顿的支持者主张强大的中央政府和国民银行，被称为联邦党人。杰斐逊与麦迪逊的追随者担心行政权过大、主张各州权利，自称共和党人；后来的历史学家在前面加上「民主」，以区别于现代的民主党。伯尔竞选参议员时得到反政府一方的支持，其中包括斯凯勒的老对手克林顿家族和利文斯顿家族。汉密尔顿把这看作背叛：「你为反对我的岳父改换党籍。」伯尔的回答——「我改换党籍只为抓住良机」——就是音乐剧对他的刻画：一个没有固定信念的政客。实际上 1791 年的党派界线还在形成，伯尔与其说是改宗者，不如说是个喜欢独来独往的人。",

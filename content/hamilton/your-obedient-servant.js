@@ -580,7 +580,7 @@ window.MUSICAL_SONGS["your-obedient-servant"] = {
   "background": [
     {
       "id": "the-despicable-opinion",
-      "title": "The Despicable Opinion",
+      "title": "卑劣的言论",
       "titleEn": "The Despicable Opinion",
       "kind": "story",
       "bodyEn": "In the early months of 1804, a Federalist named Charles Cooper wrote a letter that was published in the Albany Register in April. It reported a dinner conversation in which Hamilton called Burr 'a dangerous man, and not to be trusted,' and added that Hamilton had expressed 'a still more despicable opinion' of him. Burr, who had just lost the New York governor's race, read the paper and demanded an explanation. He did not want an apology for a political attack; he wanted Hamilton to avow or disavow the words. Hamilton refused to do either. The National Park Service explains that the two men then followed the formal code of honor: a letter requesting an explanation, more letters, and finally a challenge.",
@@ -643,7 +643,7 @@ window.MUSICAL_SONGS["your-obedient-servant"] = {
     },
     {
       "id": "the-correspondence",
-      "title": "The Correspondence",
+      "title": "往来书信",
       "titleEn": "The Correspondence",
       "kind": "story",
       "bodyEn": "The correspondence between Burr and Hamilton in June 1804 was polite to the point of menace. Burr's letter of June 18 asked for 'an acknowledgement or denial' of the expressions Cooper had reported. Hamilton answered two days later that he could not recall the conversation and could not, 'without manifest impropriety,' avow or disavow the words. He added that he was ready to 'abide by the consequences.' Burr wrote on June 22 that Hamilton had 'invited the course I am about to pursue,' and closed with the era's standard formula: 'I have the honor to be Your Obedient Servant.' Hamilton used the same closing. More letters followed before the seconds took over. In the musical these formal letters become a rap battle, but the politely lethal sentences stay close to the originals.",
@@ -706,7 +706,7 @@ window.MUSICAL_SONGS["your-obedient-servant"] = {
     },
     {
       "id": "weehawken-july-11",
-      "title": "Weehawken, July 11, 1804",
+      "title": "1804年7月11日的威霍肯",
       "titleEn": "Weehawken, July 11, 1804",
       "kind": "story",
       "bodyEn": "Early on July 11, 1804, Hamilton and Burr crossed the Hudson in separate boats to the dueling ground at Weehawken, New Jersey. With Hamilton were his second, Nathaniel Pendleton, and a doctor, David Hosack; with Burr was William Van Ness. Weehawken was chosen because New Jersey punished dueling less severely than New York. The exact exchange of shots has never been settled: witnesses disagreed about who fired first. What is consistent is that two shots came within seconds. Hamilton's ball went wide and struck a tree; Burr's bullet entered Hamilton's abdomen. He was carried back across the river to the house of William Bayard Jr., where he died the next afternoon. The town was in consternation.",

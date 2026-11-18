@@ -467,7 +467,7 @@ window.MUSICAL_SONGS["think-of-me"] = {
   "background": [
     {
       "id": "christine-daa",
-      "title": "Who Is Christine Daaé?",
+      "title": "克里斯汀·达埃是谁",
       "titleEn": "Who Is Christine Daaé?",
       "kind": "story",
       "bodyEn": "Christine Daaé comes from Sweden. Her mother died when she was small, and her father, a violinist, raised her on stories about the Angel of Music, a spirit who visits good children. When he died, Christine was brought to Paris by Madame Valérius, who had once employed the family. She sang at the opera house as a dancer and a student, unnoticed. In the novel she believes the Phantom is that angel, sent by her father. In the musical the same belief is what makes her follow the voice through the mirror. Her talent is real, but her confidence is not: she needs someone to tell her she can sing. That is why the Phantom's lessons work, and why Raoul's ordinary kindness is not enough at first. She is not a passive heroine; she is a singer learning what her own voice is worth.",
@@ -522,7 +522,7 @@ window.MUSICAL_SONGS["think-of-me"] = {
     },
     {
       "id": "understudy",
-      "title": "The Night the Understudy Sang",
+      "title": "替补登台之夜",
       "titleEn": "The Night the Understudy Sang",
       "kind": "story",
       "bodyEn": "In the story, Carlotta is the star of Hannibal and Christine is nobody. When Carlotta storms off stage, the managers need a soprano immediately. Madame Giry suggests the young dancer from Sweden. Christine sings Think of Me, and the house goes quiet. The scene is a backstage fantasy: the anonymous understudy who turns out to be better than the star. It also does something practical for the musical. The audience has just heard a deliberately old-fashioned opera; now it hears a melody that belongs to the show itself, sung by the actress playing Christine. The aria is written to show off a real soprano, with a long cadenza and a high note at the end. In one number, the story moves from the comic to the beautiful, and Christine stops being a background figure.",
@@ -577,7 +577,7 @@ window.MUSICAL_SONGS["think-of-me"] = {
     },
     {
       "id": "writing-the-aria",
-      "title": "Writing a Soprano Showcase",
+      "title": "为女高音写咏叹调",
       "titleEn": "Writing a Soprano Showcase",
       "kind": "craft",
       "bodyEn": "Think of Me is a pastiche of a nineteenth-century coloratura aria, but it is also a pop ballad with a classical disguise. The verse is narrow and speech-like; the chorus opens upward; the ending adds a cadenza and a high note that a trained soprano can show off. Lloyd Webber wrote it for Sarah Brightman, whose range and tone shaped the role. The lyrics by Charles Hart are simple on purpose: short sentences, repeated words, one image (evergreen, the sea). The simplicity lets the melody carry the emotion, and it lets a learner hear the grammar clearly. Notice how the song moves from please promise me to you will think of me: a request becomes a statement. That shift is the whole character arc of the number, and it happens in five words.",

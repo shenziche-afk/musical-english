@@ -154,7 +154,7 @@ window.MUSICAL_SONGS["overture"] = {
   "background": [
     {
       "id": "opera-within",
-      "title": "The Opera Within the Opera",
+      "title": "歌剧中的歌剧",
       "titleEn": "The Opera Within the Opera",
       "kind": "craft",
       "bodyEn": "The first sound of the evening is not the Phantom but a rehearsal. On stage, the company is performing Hannibal, a grand opera about Carthage and Rome. The music is deliberately old-fashioned: brass fanfares, a chorus shouting short commands, a tenor who behaves like a hero. Lloyd Webber wrote it as a pastiche, a loving imitation of the nineteenth-century operas that a house like the Palais Garnier would actually have staged. The joke is that this overblown spectacle is the normal world of the story. Into it walks a soprano who cannot sing, a ballet girl who will become the star, and a ghost who has been listening from Box Five. When the chandelier rises and the overture explodes, the audience is being told what kind of evening this will be: big, loud, and built on a collision between real opera and the thing haunting it.",
@@ -213,7 +213,7 @@ window.MUSICAL_SONGS["overture"] = {
     },
     {
       "id": "garnier-1875",
-      "title": "Palais Garnier, 1875",
+      "title": "1875年的加尼叶宫",
       "titleEn": "Palais Garnier, 1875",
       "kind": "story",
       "bodyEn": "The Palais Garnier was built for the Paris Opéra and opened in 1875. Charles Garnier designed it in the opulent style of the Second Empire: a grand staircase, a painted ceiling, a stage large enough for hundreds of performers, and a chandelier of several tonnes. Below the building lies a water tank, installed to help fight fires; in the novel it becomes the underground lake where the Phantom keeps his house. The opera house also had a tradition of aristocratic subscribers, private boxes, and backstage superstitions. Box Five, the Phantom's box in the story, is a real box in the real theatre. Leroux, a journalist, mixed these facts with rumour and produced a novel that reads like reportage. The musical keeps the building almost as a character: its cellars, its mirrors, its chandelier and its lake are all part of the plot.",

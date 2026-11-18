@@ -905,7 +905,7 @@ window.MUSICAL_SONGS["the-election-of-1800"] = {
   "background": [
     {
       "id": "the-deadlock",
-      "title": "The Deadlock of 1800",
+      "title": "1800年僵局",
       "titleEn": "The Deadlock of 1800",
       "kind": "story",
       "bodyEn": "In 1800 the electors gave Thomas Jefferson and his running mate Aaron Burr seventy-three votes each. John Adams received sixty-five, Charles Pinckney sixty-four, and John Jay one. Because the Constitution did not yet separate the votes for president and vice president, the tie threw the election into the House of Representatives. Each state delegation had a single vote, and a majority of states was needed. On the first ballot eight states supported Jefferson, six supported Burr, and two were divided. For six days and thirty-six ballots the House deadlocked. Finally, Federalists in Vermont and Maryland submitted blank ballots, and Jefferson won ten state delegations. The National Archives records the final result: ten state delegations for Jefferson, four for Burr, and two making no choice.",
@@ -972,7 +972,7 @@ window.MUSICAL_SONGS["the-election-of-1800"] = {
     },
     {
       "id": "hamiltons-choice",
-      "title": "Hamilton's Choice",
+      "title": "汉密尔顿的选择",
       "titleEn": "Hamilton's Choice",
       "kind": "story",
       "bodyEn": "As the House prepared to vote, Hamilton did not sit quietly uptown. He wrote letters urging fellow Federalists to prefer Jefferson over Burr. On December 23, 1800, he told congressman Harrison Gray Otis that if the two candidates arrived tied, 'the former ought to be preferred.' Jefferson was 'a man of fair character for probity,' while Burr 'loves nothing but himself' and would be 'content with nothing short of permanent power in his own hands.' In a choice of evils, Hamilton concluded, 'Jefferson is in every view less dangerous than Burr.' The musical compresses this letter-writing campaign into a catchphrase: 'Jefferson has beliefs. Burr has none.' The House chose Jefferson, and Burr became vice president.",
@@ -1035,7 +1035,7 @@ window.MUSICAL_SONGS["the-election-of-1800"] = {
     },
     {
       "id": "the-twelfth-amendment",
-      "title": "The Twelfth Amendment",
+      "title": "第十二条修正案",
       "titleEn": "The Twelfth Amendment",
       "kind": "story",
       "bodyEn": "The election of 1800 exposed a flaw in the original Constitution. Article II gave each elector two votes without saying which was for president and which for vice president. In 1796 that produced a president and vice president from rival parties; in 1800 it produced a tie between running mates. Congress proposed the Twelfth Amendment on December 9, 1803, and the states ratified it on June 15, 1804, in time for the next election. From then on, electors cast separate ballots for the two offices. The amendment did not remove every danger: a tie in the electoral college can still send a presidential election to the House. But it closed the particular trap that had nearly swallowed 1800. The peaceful transfer of power in 1801 became a model for later elections.",

@@ -1632,7 +1632,7 @@ window.MUSICAL_SONGS["notes-twisted-every-way"] = {
   "background": [
     {
       "id": "four-notes-and-a-chandelier",
-      "title": "Four Notes and a Chandelier",
+      "title": "四个音符与吊灯",
       "titleEn": "Four Notes and a Chandelier",
       "kind": "story",
       "bodyEn": "At the Paris Opera, the two managers, André and Firmin, open their mail and find notes that read like orders. One demands a new first bassoon. Another names chorus members who must be sacked. The tone is polite, the content is not, and every page ends with the same quiet threat: refuse, and something in this house will break. The managers call the letters ludicrous, then glance at the ceiling. Above them hangs the great chandelier that everyone in Paris has heard about. So they argue, and then they obey. The turn comes when Raoul arrives with a plan: give the ghost what he wants, stage his opera, and fill the building with armed men. The notes were written to frighten two businessmen. Instead they push a young nobleman into a trap of his own design, and the theatre stops being a workplace and becomes a battlefield.",
@@ -1691,7 +1691,7 @@ window.MUSICAL_SONGS["notes-twisted-every-way"] = {
     },
     {
       "id": "twisted-every-way",
-      "title": "Twisted Every Way",
+      "title": "处处扭曲",
       "titleEn": "Twisted Every Way",
       "kind": "story",
       "bodyEn": "The rehearsal room clears, and Christine is left with the choice nobody else will make for her. If she sings the lead in the Phantom's opera, Raoul's men will be waiting, and the man who taught her to sing will walk into a cage. If she refuses, the theatre loses its bait and the plan collapses. Her fear is not only for herself. She remembers a voice in the dark that called her its angel, and she knows what happens to people who disappoint it. Raoul tells her that every hope now rests on her, which is comfort and pressure in the same breath. The music turns her questions into one line: twisted every way. She agrees, not because she is brave, but because she can see no other road, and the audience understands that she has just chosen her own danger.",
@@ -1750,7 +1750,7 @@ window.MUSICAL_SONGS["notes-twisted-every-way"] = {
     },
     {
       "id": "the-angel-of-music",
-      "title": "The Angel of Music",
+      "title": "音乐天使",
       "titleEn": "The Angel of Music",
       "kind": "story",
       "bodyEn": "Christine Daaé grew up in Sweden, the daughter of a violinist who played at fairs and country weddings. Her mother was gone, and the girl followed her father from one small town to the next, listening to the fiddle after the dancing stopped. When he lay dying, he promised that he would send her the Angel of Music, the spirit who teaches great singers. He died anyway. Christine came to Paris with an old friend of the family, studied at the Opera, and kept that promise alive as a private religion. Then a voice began to speak to her through the wall of her dressing room, calling itself her angel. It taught her to sing. It asked for her obedience. By the time this track begins, the angel has a white mask, a temper, and a plan for her career.",

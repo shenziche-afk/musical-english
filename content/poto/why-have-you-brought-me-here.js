@@ -366,7 +366,7 @@ window.MUSICAL_SONGS["why-have-you-brought-me-here"] = {
   "background": [
     {
       "id": "the-roof-of-the-opera",
-      "title": "The Roof of the Opera",
+      "title": "歌剧院的屋顶",
       "titleEn": "The Roof of the Opera",
       "kind": "story",
       "bodyEn": "Above the city, the roof of the Opera House is cold and quiet. Christine has dragged Raoul up the last flight of stairs, past the dome and the gilded figure holding a lyre, and now she stands with her back to the parapet. Paris lies below them in a grid of lamps. She wants air, distance, anything that is not the underground. Raoul wants an explanation, and he wants it to be simple. Why here, of all places? He keeps his voice low, because the roof carries sound, and because he is afraid of what she will say. She answers with a warning instead of an answer: do not send me back.",
@@ -425,7 +425,7 @@ window.MUSICAL_SONGS["why-have-you-brought-me-here"] = {
     },
     {
       "id": "what-christine-saw",
-      "title": "What Christine Saw",
+      "title": "克里斯汀所见",
       "titleEn": "What Christine Saw",
       "kind": "story",
       "bodyEn": "Christine does not describe a monster. She describes a journey. A mirror opened, and behind it a corridor; a boat moving across black water; candles rising out of the lake as if the lake were a stage. She remembers a voice that taught her to sing, patient and exact, and she remembers taking that voice by surprise. She pulled the mask away. What she saw afterwards is the part she cannot say plainly: skin, bone, a face that the dark had been hiding. She says it was hardly a face at all. Then, in the same breath, she says the voice filled her spirit with a strange, sweet sound. Both things are true at once, and that is precisely what Raoul cannot accept.",
@@ -484,7 +484,7 @@ window.MUSICAL_SONGS["why-have-you-brought-me-here"] = {
     },
     {
       "id": "two-kinds-of-proof",
-      "title": "Two Kinds of Proof",
+      "title": "两种证明",
       "titleEn": "Two Kinds of Proof",
       "kind": "story",
       "bodyEn": "Raoul is not a coward. He is a man with a simple theory, and the theory is that the world behaves. Ghosts belong to nursemaids; a theatre belongs to managers, contracts and gas lamps. Christine has come back from somewhere his theory does not cover, and every sentence she speaks costs him something. So he offers her the kindest word he has: a dream. She refuses it. The music they make together is not an argument at all; it is two melodies built from the same phrase, one rising while the other holds. Listen to how the orchestra keeps one harmony under both of them. The form says what the words cannot: one event, two sides, and neither side will move.",

@@ -1672,7 +1672,7 @@ window.MUSICAL_SONGS["non-stop"] = {
   "background": [
     {
       "id": "publius",
-      "title": "The Papers That Saved the Constitution",
+      "title": "拯救宪法的文集",
       "titleEn": "The Papers That Saved the Constitution",
       "kind": "story",
       "bodyEn": "New York in 1787 was hostile ground for the new Constitution. Governor George Clinton's allies controlled the state, and ratification looked unlikely. Hamilton, a delegate whose own plan had just gone nowhere, decided to argue his case in newspapers. He recruited John Jay and James Madison, and the three men agreed to write twenty-five essays under one name: Publius. Jay wrote five before illness stopped him. Madison wrote twenty-nine. Hamilton wrote the remaining fifty-one. Most appeared in New York papers between October 1787 and May 1788; the last eight first appeared in the collected volumes. The eighty-five essays became the most influential explanation of the Constitution ever written. Hamilton barely paused to enjoy it. He was already looking for the next fight.",
@@ -1731,7 +1731,7 @@ window.MUSICAL_SONGS["non-stop"] = {
     },
     {
       "id": "six-hours",
-      "title": "Six Hours in Philadelphia",
+      "title": "费城的六小时",
       "titleEn": "Six Hours in Philadelphia",
       "kind": "story",
       "bodyEn": "On June 18, 1787, the delegates in Philadelphia sat through one of the longest speeches of the Constitutional Convention. The speaker was Alexander Hamilton, a thirty-year-old delegate from New York who had said little for weeks. For about six hours he presented an eleven-point plan of government. It placed great power in a supreme executive and proposed lifetime terms for the president and for senators. The convention listened politely and moved on. Hamilton's plan was never seriously considered. Yet the episode explains how he thought: he would rather propose a bold design and lose the vote than trim his ideas to please the room. Months later, when the finished Constitution went to the states, Hamilton accepted the compromise and defended it in print. The man who had talked for six hours now wrote for a country.",
@@ -1790,7 +1790,7 @@ window.MUSICAL_SONGS["non-stop"] = {
     },
     {
       "id": "manhattan-well",
-      "title": "The Manhattan Well",
+      "title": "曼哈顿的水井",
       "titleEn": "The Manhattan Well",
       "kind": "story",
       "bodyEn": "In December 1799, a young woman named Gulielma Sands left her boarding house in New York City and disappeared. Her body was pulled from a city well that belonged to a company controlled by Aaron Burr. Suspicion fell on Levi Weeks, the man Elma had told her cousin she was secretly going to marry. Weeks's wealthy brother hired three of the city's finest lawyers: Brockholst Livingston, Aaron Burr, and Alexander Hamilton. The trial opened at City Hall on March 31, 1800. The prosecution's case was circumstantial. The defense produced alibi witnesses, and the chief judge told the jury that the evidence was thin. After five minutes the jury acquitted Weeks. New Yorkers hated the verdict, and Weeks, shunned, moved west and became an architect. It was the first recorded murder trial in the United States, and the rare case in which Hamilton and Burr stood on the same side.",
@@ -1849,7 +1849,7 @@ window.MUSICAL_SONGS["non-stop"] = {
     },
     {
       "id": "treasury-or-state",
-      "title": "Treasury or State?",
+      "title": "财政还是国务",
       "titleEn": "Treasury or State?",
       "kind": "story",
       "bodyEn": "In 1789 the new federal government had a president but almost no machinery. The first Congress created departments of War, Treasury, and Foreign Affairs, and Washington filled them. For the Treasury he chose Alexander Hamilton, his former wartime aide. For State he chose Thomas Jefferson, who was still sailing home from Paris. The two men were brilliant, proud, and utterly opposed. Hamilton wanted a strong central government that could manage the national debt and encourage commerce. Jefferson distrusted banks and cities and believed that independent farmers should shape the republic. In the musical, Washington offers Hamilton a choice: Treasury or State? Hamilton answers Treasury at once. Historically there was no such menu; Washington simply nominated him to the Treasury on September 11, 1789. The choice is still true to the man. His department became the engine of his power, and his feud with Jefferson produced the first party system.",

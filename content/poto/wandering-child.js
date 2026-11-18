@@ -966,7 +966,7 @@ window.MUSICAL_SONGS["wandering-child"] = {
   "background": [
     {
       "id": "a-voice-at-the-grave",
-      "title": "A Voice at the Grave",
+      "title": "墓前的一个声音",
       "titleEn": "A Voice at the Grave",
       "kind": "story",
       "bodyEn": "Christine comes to the cemetery at night, carrying flowers for a father who has been dead for years. The stone mausoleum is cold, and the only sound is her own breathing. Then a violin begins to play, and the melody is the one her father used to play for her. She turns, and a voice answers: wandering child, so lost, so helpless. She is halfway to the gate before she understands that the voice is not a memory. Raoul arrives with a lantern. He seizes her arm and shouts her name, and the spell breaks for a second. The Phantom steps out of the shadows and mocks him: bravo, monsieur. Fire blooms between the two men. Christine screams, Raoul shields her, and the voice promises war on them both. The Angel is not her father.",
@@ -1025,7 +1025,7 @@ window.MUSICAL_SONGS["wandering-child"] = {
     },
     {
       "id": "the-opera-inside-the-opera",
-      "title": "The Opera Inside the Opera",
+      "title": "戏中戏的歌剧",
       "titleEn": "The Opera Inside the Opera",
       "kind": "story",
       "bodyEn": "By the second act the theatre has stopped pretending. The managers stage Don Juan Triumphant, an opera written by a man nobody has met, and the company rehearses it while the managers pretend that nothing is wrong. On paper it is a comedy: a servant named Passarino dresses as his master, a young bride waits in a borrowed room, and Don Juan boasts that conquest is assured if he does not laugh. The chorus opens with a warning that is not funny at all — here the sacrificial lamb bleats once. The audience hears a stylish pastiche of eighteenth-century opera. What the audience cannot see is that the libretto is a set of instructions. Every line about a trap, a cloak, a borrowed voice describes what is happening in the wings. Piangi sings the Don and never finishes the performance. The stage has become the scene of the crime.",

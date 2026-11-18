@@ -551,7 +551,7 @@ window.MUSICAL_SONGS["we-know"] = {
   "background": [
     {
       "id": "reynolds-affair",
-      "title": "The Reynolds Affair",
+      "title": "雷诺兹事件",
       "titleEn": "The Reynolds Affair",
       "kind": "story",
       "bodyEn": "Philadelphia, summer 1791. A twenty-three-year-old woman named Maria Reynolds called at the house of Alexander Hamilton, the thirty-four-year-old secretary of the treasury. She said her husband, James, had abandoned her and their daughter, and asked for money to reach friends in New York. Hamilton helped her; within days the two began an affair. When James Reynolds returned, he did not challenge Hamilton to a duel. He demanded money. Hamilton paid him roughly a thousand dollars in installments, and the payments continued until the affair ended in 1792. He also kept the letters the couple sent him, documents that would later become evidence. For five years the story stayed buried. Then political enemies got hold of the paper trail, and the private debt became a public scandal.",
@@ -614,7 +614,7 @@ window.MUSICAL_SONGS["we-know"] = {
     },
     {
       "id": "three-congressmen",
-      "title": "The Three Congressmen",
+      "title": "三位国会议员",
       "titleEn": "The Three Congressmen",
       "kind": "story",
       "bodyEn": "By December 1792 the secret was no longer safe. James Reynolds and a partner named Jacob Clingman had been jailed for a scheme to cheat the government. While out on bail, Clingman told Congressman Frederick Muhlenberg that Reynolds had been speculating in government funds with Hamilton. Muhlenberg took two colleagues, James Monroe and Abraham Venable, to see Reynolds in jail and Maria at her home; then the three went to Hamilton's office. When they confronted him, Hamilton did something they did not expect. He admitted the affair, showed them the Reynolds letters, and argued that the payments were blackmail, not speculation. The three men believed him. They promised to keep the story quiet and said nothing publicly. But Monroe kept copies of the papers and soon sent them to Thomas Jefferson in Philadelphia. Five years later a journalist printed them, and the buried secret exploded.",
@@ -677,7 +677,7 @@ window.MUSICAL_SONGS["we-know"] = {
     },
     {
       "id": "burr-in-the-room",
-      "title": "Burr in the Room",
+      "title": "屋里的伯尔",
       "titleEn": "Burr in the Room",
       "kind": "craft",
       "bodyEn": "In the musical, Hamilton is confronted by Thomas Jefferson, James Madison and Aaron Burr. History staged the scene differently. The real visitors were three congressmen, Muhlenberg, Monroe and Venable, and Burr was not among them. The show bends the record on purpose. Jefferson and Madison give the scene its political weight, because their party would use the scandal against Hamilton for years. Burr gives it a personal edge, because the audience already knows from The Room Where It Happens what it means to stand in the room where a secret is made. Burr's real connection to this story is stranger still. In 1793 he served as the divorce lawyer for Maria Reynolds herself. The musical takes that legal coincidence and turns it into an intimate threat: we both know what we know.",

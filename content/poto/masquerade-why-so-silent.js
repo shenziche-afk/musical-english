@@ -732,7 +732,7 @@ window.MUSICAL_SONGS["masquerade-why-so-silent"] = {
   "background": [
     {
       "id": "the-night-the-music-stopped",
-      "title": "The Night the Music Stopped",
+      "title": "音乐停止之夜",
       "titleEn": "The Night the Music Stopped",
       "kind": "story",
       "bodyEn": "By the second act the opera house has decided to be happy. Six months have passed, the managers have thrown a masquerade on the grand staircase, and every guest wears a paper face. The chorus counts its blessings out loud: no more notes, no more ghosts, and a new chandelier hangs above them, paid for in full. Then the music stops. A figure in red comes down the stairs, a skull shining where a face should be, and the crowd that was shouting a moment ago cannot speak. He is polite about it. He asks whether they missed him. He holds up a score he has written and tells them to perform it. Nobody moves. The whole scene turns on that silence, because the party was a way of pretending the past had ended, and one man has just proved that it has not.",
@@ -791,7 +791,7 @@ window.MUSICAL_SONGS["masquerade-why-so-silent"] = {
     },
     {
       "id": "a-secret-on-the-landing",
-      "title": "A Secret on the Landing",
+      "title": "楼梯平台的秘密",
       "titleEn": "A Secret on the Landing",
       "kind": "story",
       "bodyEn": "On a side landing, away from the dancing, two people argue in whispers. Raoul has brought champagne and a question: why must the engagement stay a secret? Christine answers with reasons that are not quite reasons. Wait until the time is right. Please pretend. She is not being coy. For months a voice has been visiting her, a voice that knows her better than any fiancé can, and she has no way to explain that to a man who sees only a party. Raoul takes her hand and tells her she is free. She almost believes him. Then the brass cuts through the waltz, every head turns toward the staircase, and the argument is simply over. Neither of them understands yet that the voice has been listening all along, and that the next sentence it speaks will be meant for the whole room.",

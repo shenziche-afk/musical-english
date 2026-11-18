@@ -616,7 +616,7 @@ window.MUSICAL_SONGS["washington-on-your-side"] = {
   "background": [
     {
       "id": "financial-revolution",
-      "title": "The Financial Revolution",
+      "title": "金融革命",
       "titleEn": "The Financial Revolution",
       "kind": "story",
       "bodyEn": "When Washington took office in 1789, the nation's finances were a wreck. Hamilton answered with a series of reports that amounted to a revolution. The federal government would pay its war debt at full value, assume the states' debts, and fund the whole mass through a permanent national debt. A tax on whiskey would provide revenue, and a Bank of the United States would hold government money and issue a stable currency. Madison, who had once been Hamilton's ally, fought the assumption of state debts in Congress. The deadlock ended in a bargain: southern votes for assumption in exchange for locating the capital on the Potomac. Critics complained that the plan rewarded speculators and turned a republic of farmers into a machine for bankers. Hamilton called it the price of credit and union.",
@@ -675,7 +675,7 @@ window.MUSICAL_SONGS["washington-on-your-side"] = {
     },
     {
       "id": "jay-treaty-firestorm",
-      "title": "The Jay Treaty Firestorm",
+      "title": "杰伊条约风暴",
       "titleEn": "The Jay Treaty Firestorm",
       "kind": "story",
       "bodyEn": "Britain still occupied frontier posts it had promised to leave after 1783, seized American ships, and impressed American sailors into the Royal Navy. In 1794 Washington sent Chief Justice John Jay to London. The treaty Jay brought home on November 19, 1794, avoided war but gave up a great deal: Britain promised to evacuate the posts, yet there was no compensation for seized ships and no end to impressment. When the terms became public, mobs burned Jay in effigy and Republicans accused Washington of selling out to monarchy. The Senate ratified the treaty in June 1795 by exactly the two-thirds vote required. The House then fought over funding it. Washington's prestige carried the day, but the fight convinced Jefferson's followers that the Federalists were a pro-British party.",
@@ -738,7 +738,7 @@ window.MUSICAL_SONGS["washington-on-your-side"] = {
     },
     {
       "id": "republican-party-born",
-      "title": "The Republican Party Is Born",
+      "title": "共和党的诞生",
       "titleEn": "The Republican Party Is Born",
       "kind": "story",
       "bodyEn": "The party system the Constitution never mentioned grew out of personal friendship and newspaper ink. Jefferson and Madison, alarmed by Hamilton's financial program and his influence over Washington, began organizing against him. Madison called the new group the Republican Party in an essay published in the National Gazette in September 1792. The National Gazette, edited by Philip Freneau, traded insults with the Gazette of the United States, the Federalist paper. Washington, who hated parties, wrote to both Hamilton and Jefferson in August 1792, begging them to stop. They promised to try and kept fighting. Jefferson resigned as secretary of state at the end of 1793 and went home to Monticello to build the opposition from outside the cabinet. By 1796 the two parties were fighting the first openly partisan presidential election.",

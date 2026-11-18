@@ -1255,7 +1255,7 @@ window.MUSICAL_SONGS["my-shot"] = {
   "background": [
     {
       "id": "nineteen",
-      "title": "Nineteen in New York",
+      "title": "纽约的十九岁",
       "titleEn": "Nineteen in New York",
       "kind": "story",
       "bodyEn": "In 1773, a thin, intense teenager from the Caribbean walked into King’s College in New York. Alexander Hamilton was about sixteen, poor, and completely unknown. He read everything, argued with everyone, and wrote pamphlets that sounded older than he was. When the war with Britain came, he did not wait to be invited. He joined a militia, then an artillery company, and taught himself to command. This song catches him at nineteen: hungry, friendless, and certain that history was about to begin. “I am not throwing away my shot,” he sings, and the word does double duty—the chance, and the bullet.",
@@ -1310,7 +1310,7 @@ window.MUSICAL_SONGS["my-shot"] = {
     },
     {
       "id": "lexington",
-      "title": "The Shot Heard Round the World",
+      "title": "响彻世界的枪声",
       "titleEn": "The Shot Heard Round the World",
       "kind": "story",
       "bodyEn": "On April 19, 1775, British soldiers marched toward Concord, Massachusetts, to seize colonial weapons. At Lexington, someone fired. No one knows who. Ralph Waldo Emerson later called it “the shot heard round the world,” and the phrase stuck. By the time Hamilton wrote his own song about a shot, the war had already begun. For his generation, the question was no longer whether to fight, but what to fight for. Hamilton’s answer was not only independence. It was a country with a government strong enough to survive.",
@@ -1365,7 +1365,7 @@ window.MUSICAL_SONGS["my-shot"] = {
     },
     {
       "id": "other-shot",
-      "title": "The Other Shot",
+      "title": "另一声枪响",
       "titleEn": "The Other Shot",
       "kind": "story",
       "bodyEn": "Every time Hamilton sings “I am not throwing away my shot,” the musical is quietly pointing at another shot: the one that will kill him. In 1804, Aaron Burr challenged him to a duel in New Jersey. Hamilton fired into the air—or so his friends claimed—and Burr fired at him. Hamilton died the next day. The show plants this ending in its third song, long before the audience understands it. A word that means “opportunity” in Act One becomes “bullet” by Act Two. That is the trick of the whole musical: it makes you sing along to your own foreshadowing.",
@@ -1420,7 +1420,7 @@ window.MUSICAL_SONGS["my-shot"] = {
     },
     {
       "id": "brothers",
-      "title": "The Three Brothers",
+      "title": "三兄弟的故事",
       "titleEn": "The Three Brothers",
       "kind": "story",
       "bodyEn": "The men who answer Hamilton’s “Shot!” were real. John Laurens, a wealthy South Carolinian, argued for freeing enslaved people and arming them to fight. The Marquis de Lafayette, a French nobleman, crossed the Atlantic at nineteen to join a revolution that was not his. Hercules Mulligan, a tailor, listened to British officers while measuring them and later passed information to Washington. In the musical they become Hamilton’s first real friends. For a boy who had never had a group of friends, the line “I promise that I’ll make y’all proud” is not a joke. It is the whole reason he needs the revolution.",

@@ -3256,3 +3256,30 @@ main {
     font-size: 13px;
   }
 }
+
+/* 背景卡：中英标题并列 */
+.bg-entry-btn .bg-entry-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.bg-entry-btn .bg-en-sub {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--muted-2);
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bg-card .bg-zh {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}

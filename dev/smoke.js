@@ -354,11 +354,11 @@ check(
 tabClick("story");
 check("背景渲染", el("view-story").innerHTML.includes("时间线"));
 check("英文背景", el("view-story").innerHTML.includes("Who He Was"));
-check("历史故事标签", el("view-story").innerHTML.includes("Historical Story"));
+check("历史故事标签", el("view-story").innerHTML.includes("历史故事"));
 check("划线查词", (el("view-story").innerHTML.match(/class="w"/g) || []).length > 0);
 check("参考来源", el("view-story").innerHTML.includes("bg-sources"));
 check("无人物速查", !el("view-story").innerHTML.includes("人物速查"));
-check("无中文译文", !el("view-story").innerHTML.includes("他到底是谁"));
+check("中文标题副行", el("view-story").innerHTML.includes("他到底是谁"));
 check("阅读题", el("view-story").innerHTML.includes("读后自测"));
 act("bg-answer", { "data-card": "bio", "data-q": "0", "data-o": "0" });
 check("阅读题有解析", el("view-story").innerHTML.includes("bq-exp"));

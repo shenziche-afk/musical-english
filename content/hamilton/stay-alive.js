@@ -863,7 +863,7 @@ window.MUSICAL_SONGS["stay-alive"] = {
   "background": [
     {
       "id": "monmouth",
-      "title": "The Battle of Monmouth",
+      "title": "蒙茅斯之战",
       "titleEn": "The Battle of Monmouth",
       "kind": "story",
       "bodyEn": "On June 28, 1778, the Continental Army caught the British army near Monmouth Court House, New Jersey. Washington ordered General Charles Lee, his second-in-command, to attack the British rear. Lee opposed the plan from the start. When the fighting went wrong, he ordered a retreat without telling Washington. Washington arrived, saw his men fleeing, and exploded in anger. He reformed the line, and the Americans fought the British to a standstill through a long, hot afternoon in the largest artillery duel of the war. The battle was indecisive, but the Americans held the field. Lee was later court-martialed for the retreat. Casualties were heavy on both sides: the Americans reported 109 dead, 161 wounded and 140 missing.",
@@ -926,7 +926,7 @@ window.MUSICAL_SONGS["stay-alive"] = {
     },
     {
       "id": "military-family",
-      "title": "Washington's Military Family",
+      "title": "华盛顿的军中家庭",
       "titleEn": "Washington's Military Family",
       "kind": "story",
       "bodyEn": "Hamilton was not only a soldier. For four years he was one of George Washington's aides-de-camp. The job meant writing letters, copying orders, tracking expenses, and staying awake while the commander worked. Young officers in Washington's military family ate, slept and worked beside him. Hamilton was fast, proud and brilliant with a pen, and Washington trusted him. In the musical, Hamilton says, 'I have taken over writing all his correspondence,' and that is close to the truth: much of Washington's wartime correspondence passed through his aides' hands. The work was important, but it kept Hamilton away from the battlefield. He wanted a command of his own, and that hunger drives this part of the story.",
@@ -989,7 +989,7 @@ window.MUSICAL_SONGS["stay-alive"] = {
     },
     {
       "id": "valley-forge",
-      "title": "The Winter That Made the Army",
+      "title": "铸就军队的冬天",
       "titleEn": "The Winter That Made the Army",
       "kind": "story",
       "bodyEn": "The song begins with Washington despondent, and the winter before Monmouth explains why. From December 1777 to June 1778 the Continental Army camped at Valley Forge, Pennsylvania, while the British occupied Philadelphia. The men were short of food, clothing and shoes, and disease killed nearly 2,000 soldiers. But Valley Forge was also where the army learned to fight. Baron von Steuben drilled the troops, and the army built a city of some 1,500 log huts. In May 1778 word arrived that France had signed the American alliance. The army marched out on June 19, 1778, and met the British at Monmouth nine days later. The song's lines about merchant supplies and empty stomachs come from this hard, humiliating winter.",

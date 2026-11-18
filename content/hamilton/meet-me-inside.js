@@ -550,7 +550,7 @@ window.MUSICAL_SONGS["meet-me-inside"] = {
   "background": [
     {
       "id": "conway-cabal",
-      "title": "The Conway Cabal",
+      "title": "康威阴谋集团",
       "titleEn": "The Conway Cabal",
       "kind": "story",
       "bodyEn": "In the winter of 1777–78, some officers and congressmen began to doubt George Washington. The British had taken Philadelphia, and the army was cold and hungry at Valley Forge. A group of critics, later nicknamed the Conway Cabal, whispered that General Horatio Gates—hero of Saratoga—should take command. General Thomas Conway, an Irish-born French officer, was among the loudest voices. The movement never became a real conspiracy, and it collapsed as Washington's supporters rallied to him. But the episode left scars, and men such as Charles Lee kept attacking Washington's reputation. In the musical, Hamilton names Lee and Conway as the men who take Washington's name and 'rake it through the mud.'",
@@ -609,7 +609,7 @@ window.MUSICAL_SONGS["meet-me-inside"] = {
     },
     {
       "id": "kept-waiting",
-      "title": "Kept Waiting: The Real Quarrel",
+      "title": "久候与真正的争执",
       "titleEn": "Kept Waiting: The Real Quarrel",
       "kind": "story",
       "bodyEn": "In the musical, Washington and Hamilton clash right after the Lee duel in 1778. The real quarrel came later, in February 1781. Washington had sent for Hamilton, but Hamilton kept the commander waiting. Washington, who was known for having a temper, let his frustration show. Hamilton said he had not meant to offend him and resigned his post as aide-de-camp in protest. Soon afterward he asked Washington for a field command. Washington hesitated but finally gave him one: at Yorktown, Hamilton led a nighttime attack on a British redoubt. The musical squeezes these years together, but the emotions are true. Hamilton wanted to be more than a secretary, and Washington needed him to stay alive.",
@@ -672,7 +672,7 @@ window.MUSICAL_SONGS["meet-me-inside"] = {
     },
     {
       "id": "like-a-son",
-      "title": "Like a Son",
+      "title": "视如己出",
       "titleEn": "Like a Son",
       "kind": "story",
       "bodyEn": "The word 'son' cuts through this scene. Washington calls Hamilton 'son' twice, and Hamilton snaps back, 'Don't call me son.' The anger works because the two men were close. Hamilton's own father had abandoned him as a child, and Washington—who trusted Hamilton's pen and judgment—became something like the father he lacked. Hamilton later wrote that he owed the General much kindness and called him 'an Aegis', a shield, 'very essential to me.' The quarrel did not break them. Washington gave Hamilton his battlefield chance at Yorktown, and later made him the first Secretary of the Treasury. When the musical makes Hamilton flinch at the word 'son', it turns a political quarrel into a family wound.",

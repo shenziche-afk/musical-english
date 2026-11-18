@@ -1413,7 +1413,7 @@ window.MUSICAL_SONGS["right-hand-man"] = {
   "background": [
     {
       "id": "long-island",
-      "title": "The Battle of Long Island",
+      "title": "长岛之战",
       "titleEn": "The Battle of Long Island",
       "kind": "story",
       "bodyEn": "In the summer of 1776, a huge British army anchored in New York harbor. On August 22, Sir William Howe landed almost 30,000 British and Hessian soldiers on the beaches of Long Island. General George Washington had split his smaller force between Manhattan and Brooklyn, unsure where the blow would fall. Before dawn on August 27, British columns marched through an undefended pass and struck the American rear. The line collapsed. On Brooklyn Heights, Washington's army faced destruction. Then the weather intervened: a storm drove the British warships away, and on the night of August 29 the Americans crossed the East River in silence. Eyewitnesses said Washington was the last Continental to leave. The army survived, but New York belonged to Britain for the rest of the war.",
@@ -1472,7 +1472,7 @@ window.MUSICAL_SONGS["right-hand-man"] = {
     },
     {
       "id": "aides-de-camp",
-      "title": "Washington's Military Family",
+      "title": "华盛顿的军中家庭",
       "titleEn": "Washington's Military Family",
       "kind": "story",
       "bodyEn": "By 1777, George Washington had learned that a commander cannot fight a war from the saddle alone. At headquarters, a small circle of young officers called aides-de-camp did the paperwork that kept the army moving: writing letters, copying orders, carrying messages along dark roads, and translating French. Washington called this circle his military family. Alexander Hamilton joined it in 1777 with the rank of lieutenant colonel. He was brilliant, tireless, and a fast writer, and he seemed to understand Washington's mind before the general spoke. The work was endless and invisible. Hamilton still wanted glory on a battlefield, not a desk, and he carried that tension with him. Yet the trust he built at headquarters gave him something no other young officer had: a commander who listened. That trust carried him to Yorktown and, later, into the cabinet.",
@@ -1535,7 +1535,7 @@ window.MUSICAL_SONGS["right-hand-man"] = {
     },
     {
       "id": "artillery",
-      "title": "The Artillery Captain",
+      "title": "炮兵上尉",
       "titleEn": "The Artillery Captain",
       "kind": "story",
       "bodyEn": "In 1776, New York was preparing for war, and young Alexander Hamilton wanted a cannon. He had joined a volunteer militia called the Hearts of Oak, and in 1776 he accepted a commission as captain of the New York Provincial Company of Artillery. The commission required thirty men, so he went out with a friend that very afternoon and signed twenty-five; he equipped them largely at his own expense. He drilled the company until its uniforms and marching were the best in the city. When British warships passed, his guns fired on them, and one cannon burst, killing two of his men. During the disastrous summer campaign, Hamilton's artillery covered the retreat across Manhattan and lost a cannon when its carriage broke down. Washington noticed the young captain's discipline. In 1777, the general invited him to join his staff. The company Hamilton raised still exists today as a unit of the U.S. Army.",
@@ -1598,7 +1598,7 @@ window.MUSICAL_SONGS["right-hand-man"] = {
     },
     {
       "id": "trenton",
-      "title": "Christmas Night at Trenton",
+      "title": "特伦顿的圣诞夜",
       "titleEn": "Christmas Night at Trenton",
       "kind": "story",
       "bodyEn": "By December 1776, the American cause was nearly finished. Washington's army had been driven out of New York, chased across New Jersey, and pushed over the Delaware River into Pennsylvania. Soldiers' enlistments were ending, and many men simply walked home. Washington decided on one desperate gamble. On Christmas night, he led his army back across the icy Delaware in the freezing dark. The crossing was slow and brutal, but by dawn the army was on the far bank. On December 26, the Americans attacked the Hessian garrison at Trenton, New Jersey. The fight was short. The victory was small in numbers but enormous in meaning: it was Washington's first open-field success, and it gave a freezing, shrinking army a reason to stay. Among the men crossing that river was Captain Alexander Hamilton, whose artillery company had already been blooded in New York.",
@@ -1657,7 +1657,7 @@ window.MUSICAL_SONGS["right-hand-man"] = {
     },
     {
       "id": "yorktown",
-      "title": "The Last Redoubt at Yorktown",
+      "title": "约克镇的最后堡垒",
       "titleEn": "The Last Redoubt at Yorktown",
       "kind": "story",
       "bodyEn": "By 1781, the war had moved south. Lord Cornwallis marched his army into Virginia and fortified Yorktown, a small port on a peninsula, to keep his ships and supplies together. Washington saw the trap. With French troops under Rochambeau and a French fleet under de Grasse blocking the sea, he marched his army south in secret. By late September, about 17,600 American and French soldiers surrounded roughly 8,300 British troops. For three weeks the allies dug trenches and pounded the town. Two outlying forts, redoubt 9 and redoubt 10, still barred the final assault. On the night of October 14, French troops took redoubt 9 and American troops took redoubt 10 in under thirty minutes. Alexander Hamilton led one of the American attacks, a moment of battlefield glory he had waited years for. On October 19, Cornwallis surrendered. The fighting was effectively over.",

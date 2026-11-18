@@ -551,7 +551,7 @@ window.MUSICAL_SONGS["burn"] = {
   "background": [
     {
       "id": "the-letters",
-      "title": "The Letters",
+      "title": "那些信件",
       "titleEn": "The Letters",
       "kind": "story",
       "bodyEn": "The previous song ends with a husband confessing in print. Burn answers from inside the marriage. In the musical, Eliza takes the letters Hamilton wrote her and burns them one by one. History tells a stranger story. The National Park Service notes that Eliza destroyed the letters she had written to Alexander, not the other way around; his letters to her survived, which is why we can still hear his voice and almost never hers. She did it “for reasons we will never know,” the park service writes. The song reverses the act. Instead of silently erasing her own words, Eliza destroys his, and tells future historians to wonder how she felt. It is an invention, but a truthful one: the record really does leave her reaction blank.",
@@ -614,7 +614,7 @@ window.MUSICAL_SONGS["burn"] = {
     },
     {
       "id": "icarus",
-      "title": "Icarus",
+      "title": "伊卡洛斯",
       "titleEn": "Icarus",
       "kind": "craft",
       "bodyEn": "Angelica calls Hamilton an Icarus who has flown too close to the sun. The image comes from Greek myth. Daedalus, a brilliant inventor, builds wings of feathers and wax so that he and his son can escape imprisonment. He warns Icarus not to fly too high; the boy, thrilled by flight, ignores him, the sun melts the wax, and he falls into the sea. Britannica summarizes the story in a sentence: Icarus perished by flying too near the Sun with waxen wings. The musical borrows the myth to name a particular kind of ambition—not evil, but unable to stop. Hamilton's writing lifted him out of poverty and then carried him into the Reynolds pamphlet. Angelica's warning is also a judgment on the man her sister married, and on the sister who stayed.",
@@ -677,7 +677,7 @@ window.MUSICAL_SONGS["burn"] = {
     },
     {
       "id": "eliza-fifty-years",
-      "title": "Eliza's Fifty Years",
+      "title": "伊莱莎的五十年",
       "titleEn": "Eliza's Fifty Years",
       "kind": "story",
       "bodyEn": "After the pamphlet and after the duel, Eliza Hamilton lived another half century. The National Park Service records that she was widowed for fifty years. She worked to preserve her husband's legacy, tracking down and organizing his papers and interviewing the people who had known him. In 1806 she co-founded the New York Orphan Asylum Society, the city's first private orphanage, and later led it for twenty-seven years. She raised money for the Washington Monument in her nineties, moved to Washington, D.C., and died on November 9, 1854, at ninety-seven, buried beside Alexander at Trinity Church. The musical's Eliza ends the show by putting herself back into the story as the person who tells it. The real Eliza did the same work one archive at a time.",

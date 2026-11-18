@@ -396,7 +396,7 @@ window.MUSICAL_SONGS["the-phantom-of-the-opera"] = {
   "background": [
     {
       "id": "behind-the-mirror",
-      "title": "Behind the Mirror",
+      "title": "镜子背后",
       "titleEn": "Behind the Mirror",
       "kind": "story",
       "bodyEn": "After the gala, Christine stands alone in her dressing room. The room is full of flowers, but she is not thinking about the applause. A voice comes through the wall, low and warm, and it knows her name. She asks who is speaking. The answer is a promise: tonight the voice will take her where no one else can follow.\n\nThe mirror in front of her slides open. Behind it a stone corridor falls away into the dark. The Phantom waits there, masked, and offers his hand. She takes it, half afraid, half curious. They walk down until the floor becomes water, and a small boat waits with a lantern in its bow.\n\nOut on the lake, candles rise from the surface and the walls turn to gold. He tells her she is no longer alone. Her fear does not leave her. It simply has nowhere left to go.",
@@ -455,7 +455,7 @@ window.MUSICAL_SONGS["the-phantom-of-the-opera"] = {
     },
     {
       "id": "the-candle-cue",
-      "title": "The Candle Cue",
+      "title": "烛光的暗号",
       "titleEn": "The Candle Cue",
       "kind": "story",
       "bodyEn": "In the autumn of 1986 the curtain rose at Her Majesty's Theatre on a musical that many people expected to fail. Early in the first act, Christine steps through a mirror, the stage turns, and a staircase of candles climbs out of the water. Harold Prince, the director, would not let the moment break. The title song runs straight into the next number without a pause for applause, and the two voices overlap until it is hard to say who is singing.\n\nEvery flame has to appear at the same moment, or the illusion collapses. In performance it holds. The audience, which had been laughing at the managers a minute earlier, goes silent.\n\nThat silence is the point. The show has just told the audience that the man in the mask can reach anyone, and the stage has proved it without a single word.",

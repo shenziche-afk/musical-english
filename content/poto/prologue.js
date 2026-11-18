@@ -339,7 +339,7 @@ window.MUSICAL_SONGS["prologue"] = {
   "background": [
     {
       "id": "auction-1905",
-      "title": "The 1905 Auction",
+      "title": "1905年拍卖会",
       "titleEn": "The 1905 Auction",
       "kind": "story",
       "bodyEn": "In 1905 the Palais Garnier is old and half forgotten. Its contents are sold lot by lot: costumes, scores, a papier-mâché music box with a monkey on the lid. An old man in the audience, Raoul, buys the box for thirty francs. He remembers that Christine once described every detail of it to him. Then lot 666 is wheeled in: a chandelier in pieces, the very one that hung above the disaster everyone calls the Phantom affair. The auctioneer promises that the theatre's workshops have restored it and wired it for electric light, so the audience may see what it once looked like. When the chandelier is lit, the dust and the years fall away. The stage becomes 1881 again, and the story begins where the rumour did.",
@@ -398,7 +398,7 @@ window.MUSICAL_SONGS["prologue"] = {
     },
     {
       "id": "chandelier-1896",
-      "title": "The Chandelier That Really Fell",
+      "title": "真正坠落的吊灯",
       "titleEn": "The Chandelier That Really Fell",
       "kind": "story",
       "bodyEn": "The Palais Garnier opened in 1875, a lavish opera house built by Charles Garnier for the Paris Opéra. It had a huge chandelier, a stage that could hold hundreds of performers, and beneath it a water tank meant to help firefighters. In May 1896, during a performance, a counterweight from the chandelier came loose and fell into the audience, killing one person. The accident was small compared with the legend it fed. Gaston Leroux, a journalist who covered the opera, borrowed the falling chandelier, the underground water, and the rumour of a ghost in Box Five, and built his 1910 novel around them. The musical keeps the crash as its turning point: the moment the chandelier drops is the moment the audience understands that the story is not going to end well.",

@@ -374,7 +374,7 @@ window.MUSICAL_SONGS["i-remember-stranger-than-you-dreamt-it"] = {
   "background": [
     {
       "id": "the-unmasking",
-      "title": "The Unmasking",
+      "title": "揭下面具",
       "titleEn": "The Unmasking",
       "kind": "story",
       "bodyEn": "Christine wakes on the bed in the lair. The candles have burned low. The Phantom sits at the organ with his back to her, writing, humming, entirely absorbed. She gets up without a sound. Her hand is already moving before she decides to move it.\n\nThe mask comes away easily. What is underneath is not a monster from a story. It is a face, damaged and furious and naked. He wheels round, covers himself, and drives her back across the room with words: Pandora, demon, Delilah, viper. Every name he chooses belongs to a myth about a woman who could not leave a thing alone.\n\nThen the anger runs out. He describes himself instead: a gargoyle, a carcass, a man who dreams of beauty in secret. And because he still needs her, he promises that fear can turn into love.",
@@ -437,7 +437,7 @@ window.MUSICAL_SONGS["i-remember-stranger-than-you-dreamt-it"] = {
     },
     {
       "id": "two-names",
-      "title": "Two Names",
+      "title": "两个名字",
       "titleEn": "Two Names",
       "kind": "story",
       "bodyEn": "When the Phantom is angry, he does not call Christine stupid. He calls her Pandora and Delilah, and expects her to know what those names cost.\n\nPandora was given a jar and told never to open it. She opened it, and every sickness and sorrow in the world came out. Delilah was loved by Samson, the strongest man alive, and she asked him the secret of his strength until he told her. Then she cut his hair while he slept and handed him to his enemies.\n\nBoth women are remembered for one act of curiosity or betrayal. In the lair the accusation is unfair and also accurate, because Christine did look. The Phantom reaches for the largest stories he can find, since his own face is too small a subject to bear.",

@@ -840,7 +840,7 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
   "background": [
     {
       "id": "elizas-fifty-years",
-      "title": "Eliza's Fifty Years",
+      "title": "伊丽莎的五十年",
       "titleEn": "Eliza's Fifty Years",
       "kind": "story",
       "bodyEn": "When Alexander Hamilton died in 1804, Eliza Schuyler Hamilton was left with seven children and little money. Creditors pressed the family, and friends secretly bought The Grange, the couple's country house, then sold it back to her at half price so she could keep her home. She sold it in 1833 and later lived with her children; in 1848 she moved to Washington, D.C., to live with her daughter. During those fifty years she did not simply grieve. She defended her husband's reputation and began collecting his papers. She co-founded the Orphan Asylum Society in 1806 and led it for decades. In her nineties she helped Dolley Madison raise money for the Washington Monument. She died on November 9, 1854, and was buried beside Alexander at Trinity Church, a widow for half a century.",
@@ -903,7 +903,7 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
     },
     {
       "id": "orphan-asylum-society",
-      "title": "The Orphan Asylum Society",
+      "title": "孤儿收容协会",
       "titleEn": "The Orphan Asylum Society",
       "kind": "story",
       "bodyEn": "In 1806, two years after the duel, Eliza Hamilton and other New York women founded the Orphan Asylum Society, the city's first private orphanage. The society took in poor and orphaned children, educated them, and placed them in apprenticeships or jobs. Eliza's role grew: she served as second directress until 1821, then as first directress for twenty-seven years, raising money, leasing property, and taking responsibility for the children in the asylum's care. By the time she left New York, hundreds of children had passed through it. One of them, Henry McKavit, was personally sponsored by Eliza, who paid for his schooling and obtained a commission for him at West Point. The institution outlived her; it later became Graham Windham, a New York agency that still serves children and families. In the finale, Eliza calls this work her proudest achievement.",
@@ -970,7 +970,7 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
     },
     {
       "id": "the-hamilton-papers",
-      "title": "The Hamilton Papers",
+      "title": "汉密尔顿文集",
       "titleEn": "The Hamilton Papers",
       "kind": "story",
       "bodyEn": "Eliza Hamilton understood that her husband's enemies controlled the government that would write the first histories. So she set out to preserve his side of the story. She tracked down, collected, and organized his letters and papers, and she interviewed politicians and others who had worked with him. When details in his letters were unclear, she sent questionnaires to dozens of former colleagues, asking them to confirm dates and events. Finding no suitable editor, she turned the collection over to her son, John Church Hamilton, whose edition of his father's papers was finally completed in 1861. Her archive became the foundation for later biographies. Ron Chernow has said that without her work his biography of Hamilton—and the musical built on it—would have been hard to imagine. Today the Library of Congress holds the Alexander Hamilton Papers, about 12,000 items from his life and career.",
@@ -1033,7 +1033,7 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
     },
     {
       "id": "who-tells-the-story",
-      "title": "Who Tells the Story",
+      "title": "谁来讲述故事",
       "titleEn": "Who Tells the Story",
       "kind": "craft",
       "bodyEn": "The musical is built around a question, and its final song states it plainly: who lives, who dies, who tells your story? The show begins with Aaron Burr introducing \"Alexander Hamilton,\" and for much of the evening he stands at the edge of the action, explaining and judging. In \"The World Was Wide Enough\" he admits that history will cast him as the villain. Then the narration passes to Eliza. She steps out of Burr's shadow and puts herself back in the narrative, listing what she did with her extra fifty years. The music slows into a hymn-like refrain, and the question keeps returning. The Smithsonian notes that the real Eliza's work made later biography possible, so the ending is layered: the woman the show remembers is the woman who preserved the archive that allowed the show to be written.",

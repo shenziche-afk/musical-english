@@ -644,7 +644,7 @@ window.MUSICAL_SONGS["one-last-time"] = {
   "background": [
     {
       "id": "farewell-address",
-      "title": "The Farewell Address",
+      "title": "告别演说",
       "titleEn": "The Farewell Address",
       "kind": "story",
       "bodyEn": "On September 19, 1796, Philadelphia's American Daily Advertiser printed a letter from George Washington to the American people. Washington announced that he would not seek a third term. He had considered retiring four years earlier and had asked James Madison for a draft; this time he turned to Hamilton, who wrote much of the final text. The address warned against the spirit of party, against sectional divisions, and against permanent foreign alliances, while urging union, religion and morality. It was never delivered as a speech. Instead it was read in newspapers and assemblies, which made it feel even more like a final testament. A leader voluntarily surrendering power astonished Europe, where monarchs ruled for life. The two-term limit became an unwritten custom and, in 1951, the Twenty-second Amendment.",
@@ -707,7 +707,7 @@ window.MUSICAL_SONGS["one-last-time"] = {
     },
     {
       "id": "vine-and-fig-tree",
-      "title": "Vine and Fig Tree",
+      "title": "葡萄与无花果树",
       "titleEn": "Vine and Fig Tree",
       "kind": "story",
       "bodyEn": "The most intimate image in the song comes from the Hebrew Bible. In Micah 4:4, the prophet promises a time when every person will sit under their own vine and fig tree, and no one will make them afraid. For an 18th-century farmer like Washington, the picture was concrete: peace, property, shade and time with family. Washington used the phrase in letters again and again, nearly fifty times by one count. It appears most often when he dreams of leaving public life for Mount Vernon. In the musical, Washington sings it as a personal wish rather than a political slogan, and the wish gives the farewell its tenderness. The line also carries the song's promise: the nation will be safe enough for ordinary people to sit under their own trees.",
@@ -770,7 +770,7 @@ window.MUSICAL_SONGS["one-last-time"] = {
     },
     {
       "id": "prose-into-duet",
-      "title": "Turning Prose into a Duet",
+      "title": "散文改成二重唱",
       "titleEn": "Turning Prose into a Duet",
       "kind": "craft",
       "bodyEn": "Miranda turns a long 1796 newspaper letter into a two-man scene. First he invents a private conversation: Hamilton arrives expecting a fight over Jefferson and learns that Washington wants a farewell address. Then the song widens into a duet, with Washington explaining why he must go and Hamilton insisting the country still needs him. The most unusual choice comes at the end, when the show sets aside rhyme and lets the characters read Washington's actual words. Those quoted lines, drawn from the real Farewell Address, are followed by a callback to \"History Has Its Eyes on You\". In the original production Christopher Jackson sang the role; the staging gave Washington a quiet exit rather than a heroic finale.",

@@ -40,7 +40,7 @@ window.MUSICAL_SONGS["entr-acte"] = {
   "background": [
     {
       "id": "the-music-between-the-acts",
-      "title": "The Music Between the Acts",
+      "title": "幕间音乐",
       "titleEn": "The Music Between the Acts",
       "kind": "story",
       "bodyEn": "The lights come up halfway, and nobody leaves. In a French opera house of the nineteenth century, the interval was part of the show. The audience walked the Grand Staircase, argued about the soprano, and let the orchestra cover the noise of scenery being changed behind the curtain. An entr'acte existed for that practical reason: it filled the gap. Composers learned to make a virtue of it, quoting the tunes the audience had just heard so that the evening would not lose its shape while everyone stretched their legs. This one does the same job here. It has no words, so it asks the listener to do something unusual: sit still and let the orchestra remind you what has happened. When the next scene opens, the theatre has moved from a rooftop to a masked ball.",

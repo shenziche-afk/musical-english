@@ -600,9 +600,13 @@
               ME.esc(b.id) +
               '"><span>' +
               (b.kind === "craft" ? "创作手记" : "历史故事") +
-              "</span><b>" +
+              '</span><span class="bg-entry-main"><b>' +
               ME.esc(b.title) +
-              "</b></button>"
+              "</b>" +
+              (b.titleEn && b.titleEn !== b.title
+                ? '<i class="bg-en-sub">' + ME.esc(b.titleEn) + "</i>"
+                : "") +
+              "</span></button>"
             );
           })
           .join("") +
@@ -1422,7 +1426,7 @@
     var bgs = song.background || [];
     var cards = bgs
       .map(function (b) {
-        var kindText = b.kind === "craft" ? "Craft Notes" : "Historical Story";
+        var kindText = b.kind === "craft" ? "创作手记" : "历史故事";
         var sources =
           b.sources && b.sources.length
             ? '<div class="bg-sources"><span>参考</span>' +
@@ -1444,6 +1448,9 @@
           '</p><h3 class="serif">' +
           ME.esc(b.titleEn || b.title) +
           "</h3>" +
+          (b.title && b.title !== b.titleEn && /[\u4e00-\u9fff]/.test(b.title)
+            ? '<p class="bg-zh">' + ME.esc(b.title) + "</p>"
+            : "") +
           '<p class="bg-en">' +
           linkGlossary(b.bodyEn || b.body, b.glossary) +
           "</p>" +

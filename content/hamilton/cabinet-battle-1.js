@@ -694,7 +694,7 @@ window.MUSICAL_SONGS["cabinet-battle-1"] = {
   "background": [
     {
       "id": "report-on-public-credit",
-      "title": "The Report on Public Credit",
+      "title": "公共信用报告",
       "titleEn": "The Report on Public Credit",
       "kind": "story",
       "bodyEn": "In January 1790, Washington’s new treasury secretary delivered a plan that would decide whether the American experiment survived. Alexander Hamilton asked Congress to fund the national debt at full value, paying bondholders what they had been promised rather than the discounted price at which many had sold. He also proposed that the federal government assume the war debts of the individual states and pay them with new federal taxes, including duties on imported goods and an excise on whiskey. Hamilton’s motives were political as well as financial. If wealthy creditors looked to the national government for their money, they would support it. Southern states had already paid most of their debts and saw the plan as a transfer of wealth. Even so, Congress passed the funding measure in 1790. The fight turned Hamilton into a party leader and Jefferson into his rival.",
@@ -757,7 +757,7 @@ window.MUSICAL_SONGS["cabinet-battle-1"] = {
     },
     {
       "id": "compromise-of-1790",
-      "title": "The Dinner That Saved the Plan",
+      "title": "挽救计划的晚宴",
       "titleEn": "The Dinner That Saved the Plan",
       "kind": "story",
       "bodyEn": "By June 1790 Hamilton’s assumption plan was stuck in Congress. Virginia’s representatives, led by James Madison, had already helped their state pay off most of its debt and had no wish to rescue states that had not. The capital was a second deadlock: Northerners wanted it in New York or Philadelphia, Southerners on the Potomac. Thomas Jefferson, who had recently returned from France, invited Hamilton and Madison to dinner and let them bargain. The deal was blunt. Southern votes would pass assumption; in return the capital would move south, first to Philadelphia for ten years and then to a federal district on the Potomac. Congress approved the package that summer. Jefferson later described the dinner in his private notes, and historians have argued about how much really happened at his table. The city of Washington, D.C., is one result.",
@@ -816,7 +816,7 @@ window.MUSICAL_SONGS["cabinet-battle-1"] = {
     },
     {
       "id": "first-bank-of-the-united-states",
-      "title": "The First Bank of the United States",
+      "title": "美国第一银行",
       "titleEn": "The First Bank of the United States",
       "kind": "story",
       "bodyEn": "In December 1790 Hamilton sent Congress a second report: charter a national bank. Such a bank, he argued, could hold government money, issue paper notes, make loans and collect taxes, giving the young nation a stable currency and credit. Jefferson and Madison objected on principle as well as interest. The Constitution, they said, did not expressly give Congress the power to create a corporation; only the states could. Hamilton answered that the document’s necessary and proper clause allowed Congress to use any means that served its enumerated powers. Washington asked his cabinet for written opinions, then signed the bill on February 25, 1791. The Bank of the United States opened in Philadelphia that December with a twenty-year charter and 10 million dollars in capital, the largest corporation in the country. It became a political symbol: for Federalists, national order; for Republicans, a dangerous money power.",
@@ -883,7 +883,7 @@ window.MUSICAL_SONGS["cabinet-battle-1"] = {
     },
     {
       "id": "cabinet-battle-craft",
-      "title": "Turning a Cabinet into a Battle",
+      "title": "内阁如何变成战场",
       "titleEn": "Turning a Cabinet into a Battle",
       "kind": "craft",
       "bodyEn": "Miranda stages the cabinet meeting as a rap battle, with Washington as referee and the audience as jury. The lyrics give both sides eighteenth-century arguments in modern form: Jefferson calls the plan an outrageous demand, Hamilton answers that a nation must build credit or stay dependent. The song compresses history. The assumption fight belonged to 1790, the bank fight to 1791; on stage they become one number, because Hamilton’s whole financial program is the real subject. The insults are period-flavored. Jefferson mocks the plan’s length; Hamilton sneers at Jefferson’s time in France and at Madison’s sanity. The best joke is structural: Jefferson begins by quoting the Declaration of Independence, then admits he wrote it. A cabinet debate becomes a duel of authorship, and the audience has to decide whose voice should win.",

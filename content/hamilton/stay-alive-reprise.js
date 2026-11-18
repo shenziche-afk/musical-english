@@ -510,7 +510,7 @@ window.MUSICAL_SONGS["stay-alive-reprise"] = {
   "background": [
     {
       "id": "a-promising-son",
-      "title": "A Promising Son",
+      "title": "前程远大的儿子",
       "titleEn": "A Promising Son",
       "kind": "story",
       "bodyEn": "Philip Hamilton was born in 1782, the first of Alexander and Elizabeth Hamilton's eight children. By most accounts he was bright, charming, and a little reckless. As a teenager he fell dangerously ill; his parents nursed him through it, and he recovered. In 1800 he graduated from Columbia College, his father's old school, with honors, and then began to study law. Alexander took enormous pride in the young man and expected him to become a great lawyer and statesman; he even wrote a strict study schedule for his son. Philip was nineteen, with a famous name and a quick temper, when a political insult to his father set the events of November 1801 in motion. The family's hopes rested on him.",
@@ -573,7 +573,7 @@ window.MUSICAL_SONGS["stay-alive-reprise"] = {
     },
     {
       "id": "the-fatal-duel",
-      "title": "The Fatal Duel",
+      "title": "致命决斗",
       "titleEn": "The Fatal Duel",
       "kind": "story",
       "bodyEn": "On July 4, 1801, a young lawyer named George Eacker gave a holiday speech that questioned Alexander Hamilton's conduct and his supposed sympathy for Britain. Philip Hamilton, then nineteen, was furious when he heard about it. On the evening of November 20 he and a friend confronted Eacker at the Park Theatre in New York. Insults flew, and challenges followed. On November 23 Philip met Eacker across the Hudson in New Jersey. The two young men fired; Philip was hit and carried home, where he died the next day. The pistols used that morning belonged to Philip's uncle, John Barker Church, and were the same pair his father and Aaron Burr would use three years later.",

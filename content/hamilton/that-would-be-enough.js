@@ -580,7 +580,7 @@ window.MUSICAL_SONGS["that-would-be-enough"] = {
   "background": [
     {
       "id": "morristown",
-      "title": "Morristown, February 1780",
+      "title": "1780年2月的莫里斯敦",
       "titleEn": "Morristown, February 1780",
       "kind": "story",
       "bodyEn": "In 1779, Philip Schuyler sent his daughter Eliza to stay with her aunt in Morristown, New Jersey, where the Continental Army was in winter camp. She was twenty-two. In February 1780 she met Alexander Hamilton, and by March the two had decided to marry. Hamilton was an orphan from the Caribbean with no fortune. Eliza came from one of the wealthiest families in New York. They married on December 14, 1780, in the parlor of the Schuyler mansion in Albany. In the musical, their love is quiet and domestic, and Eliza's 'look around, look around' is a promise that ordinary happiness can be enough. Her family's world of politics and war is just outside the window. The war was still going on, but for a moment the family was the center of the story.",
@@ -643,7 +643,7 @@ window.MUSICAL_SONGS["that-would-be-enough"] = {
     },
     {
       "id": "letters-burned",
-      "title": "The Letters She Burned",
+      "title": "她烧掉的信",
       "titleEn": "The Letters She Burned",
       "kind": "story",
       "bodyEn": "Eliza Hamilton destroyed the letters she had written to her husband. We do not know why. Because of that bonfire, historians know her mainly through Alexander's letters to her, and through what she did after he died. In the musical, Eliza burns his letters after the Reynolds Pamphlet; in real life, it was her own letters that vanished. What survived was her work. After 1804 she collected and organized her husband's papers, interviewed men who had served with him, and helped ensure that his biography was published. She also co-founded New York's first private orphanage, an act the musical gives her as her proudest achievement in the final song. Her long widowhood became a second career of remembering.",
@@ -706,7 +706,7 @@ window.MUSICAL_SONGS["that-would-be-enough"] = {
     },
     {
       "id": "reprise",
-      "title": "That Would Be Enough, Again",
+      "title": "那就够了的再现",
       "titleEn": "That Would Be Enough, Again",
       "kind": "craft",
       "bodyEn": "Miranda writes this song as a lullaby, then hides its future inside it. Eliza sings 'that would be enough' as a promise: love, a child, a home, no legacy needed. In Act Two, the same phrase returns in 'It's Quiet Uptown,' after their son Philip dies. Now the words are not a promise but a plea, sung by a broken husband who wants only to stay by his wife's side. 'Look around, look around' comes back too, but the city is different and so is the meaning. This is a common trick in the musical: a phrase is planted early with one meaning, and later the story makes it mean something else. The reprise does not repeat; it deepens.",

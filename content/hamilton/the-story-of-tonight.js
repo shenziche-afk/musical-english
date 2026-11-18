@@ -304,7 +304,7 @@ window.MUSICAL_SONGS["the-story-of-tonight"] = {
   "background": [
     {
       "id": "night",
-      "title": "The Night Before the War",
+      "title": "战争前夜",
       "titleEn": "The Night Before the War",
       "kind": "story",
       "bodyEn": "On a summer night in 1776, four young men sat in a tavern in New York and drank to a revolution they might not survive. The musical invents the scene, but the feeling was real. The Continental Army was short of everything—money, shoes, ammunition—and Britain was the most powerful empire on earth. The song’s promise is simple: even if they die, their children will tell the story. That is how the revolution survives: not only on the battlefield, but in the stories people choose to repeat.",
@@ -359,7 +359,7 @@ window.MUSICAL_SONGS["the-story-of-tonight"] = {
     },
     {
       "id": "who-tells",
-      "title": "Who Tells Your Story",
+      "title": "谁讲述你的故事",
       "titleEn": "Who Tells Your Story",
       "kind": "story",
       "bodyEn": "The phrase “the story of tonight” returns in the final song of the musical, when the company asks who will tell Hamilton’s story. The answer is Eliza, his wife, who spends the rest of her life preserving his papers. In this early song, the four men imagine their children telling the story. At the end, it is not their children but a widow—and, eventually, a musical. The show keeps asking the same question: who gets to write the story, and who gets left out?",

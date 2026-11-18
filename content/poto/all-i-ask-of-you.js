@@ -413,7 +413,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you"] = {
   "background": [
     {
       "id": "the-night-the-arguing-stopped",
-      "title": "The Night the Arguing Stopped",
+      "title": "争吵停止之夜",
       "titleEn": "The Night the Arguing Stopped",
       "kind": "story",
       "bodyEn": "The argument has run out of words. Christine is still shaking, and Raoul has nothing left to prove, so he does the only useful thing: he stops arguing and starts promising. He tells her that the dark can be discussed later, that her fear is allowed to end tonight, that his voice is warm enough to stand between her and the building beneath their feet. The melody agrees with him. It climbs one step at a time, never jumping, and the orchestra holds a single soft chord underneath. Nothing in the music sounds heroic. That is the point. This is not a rescue; it is a man offering ordinary comfort to someone who has seen something extraordinary, and the restraint is what makes the scene work.",
@@ -472,7 +472,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you"] = {
     },
     {
       "id": "what-she-is-really-asking",
-      "title": "What She Is Really Asking",
+      "title": "她真正想问的",
       "titleEn": "What She Is Really Asking",
       "kind": "story",
       "bodyEn": "Christine's requests sound small, and that is deliberate. She does not ask to be hidden or avenged. She asks to be told, out loud and often, that she is loved, needed and not being managed. Anyone who has been frightened by a voice in the dark wants the same thing: a plain sentence from a person who is standing in the light. Notice the verbs she chooses. Say, promise, share — all of them require Raoul to speak first. She is not passive in this scene; she is setting terms. The orchestra rises under her, but the words stay domestic: summertime, morning, a lifetime. She is asking for a normal life, and asking for it in front of a building that has none.",
@@ -531,7 +531,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you"] = {
     },
     {
       "id": "someone-is-listening",
-      "title": "Someone Is Listening",
+      "title": "有人在听",
       "titleEn": "Someone Is Listening",
       "kind": "story",
       "bodyEn": "High above the stage, a figure in a white mask has followed them onto the roof. He does not interrupt. He listens to the whole song, which is worse than interrupting, because every promise is being counted. When Raoul and Christine go inside, the same melody returns in a minor key, and this time the singer is the man they have just agreed to forget. His version is not a love song; it is an invoice. He gave her music, he says, and made her voice take wing, and this is how she repays him. Then the music stops being tender. Above the audience a chandelier hangs from a chain, and the evening is about to change shape.",

@@ -814,7 +814,7 @@ window.MUSICAL_SONGS["whatd-i-miss"] = {
   "background": [
     {
       "id": "ambassador-home",
-      "title": "The Ambassador Comes Home",
+      "title": "归国的大使",
       "titleEn": "The Ambassador Comes Home",
       "kind": "story",
       "bodyEn": "Thomas Jefferson spent five years in Paris as America's minister to France, arriving in 1784 and leaving in September 1789. He found a city sliding into revolution. He advised the Marquis de Lafayette on a draft declaration of rights, watched the storming of the Bastille, and wrote letters that made him famous at home. But he missed Monticello, his family, and American politics. When he finally sailed, he expected a quiet retirement. Instead, George Washington offered him the post of secretary of state in the new federal government. Jefferson accepted, took office in March 1790, and moved to New York, then the capital. He had missed the constitutional debates of 1787 and 1788. Almost immediately he found the new government being shaped by Alexander Hamilton, whose plans for debt, taxes, and a national bank seemed to him a danger to the republic.",
@@ -873,7 +873,7 @@ window.MUSICAL_SONGS["whatd-i-miss"] = {
     },
     {
       "id": "debt-price-liberty",
-      "title": "The Debt Is the Price of Liberty",
+      "title": "债务是自由的代价",
       "titleEn": "The Debt Is the Price of Liberty",
       "kind": "story",
       "bodyEn": "By 1790 the United States had won independence and was nearly bankrupt. Hamilton, the first secretary of the treasury, sent Congress a plan in January 1790. The federal government would pay its war debt at full value, assume the states' remaining debts, and raise money through tariffs and an excise tax on whiskey. In December he added a proposal for a national bank that would hold government money and issue paper notes. To Hamilton this was nation-building: one shared debt would tie the states together and restore American credit abroad. To many southerners it looked like a transfer of money to northern speculators. Madison led the opposition in the House, and the assumption bill stalled. In June 1790 Jefferson hosted a dinner at which Madison and Hamilton traded votes: assumption passed, and the capital was placed on the Potomac. Jefferson later said that he had been duped.",
@@ -932,7 +932,7 @@ window.MUSICAL_SONGS["whatd-i-miss"] = {
     },
     {
       "id": "first-election",
-      "title": "The First Election",
+      "title": "第一次选举",
       "titleEn": "The First Election",
       "kind": "story",
       "bodyEn": "The Constitution was ratified in 1788, and the country had to invent a presidential election from scratch. There were no national campaigns and no direct popular vote for president. Each state chose electors, who met in their own states and each cast two votes. The candidate with the most votes became president, and the runner-up became vice president. George Washington received all sixty-nine electoral votes. John Adams finished second with thirty-four and became vice president. Washington had not campaigned. He stayed at Mount Vernon, wrote letters about his reluctance, and finally traveled to New York City, where he took the oath of office on April 30, 1789. The government he inherited was tiny and the capital temporary, so every decision set a precedent. Hamilton's Treasury and Jefferson's State Department would grow inside that experiment.",

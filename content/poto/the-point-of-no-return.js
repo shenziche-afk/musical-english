@@ -467,7 +467,7 @@ window.MUSICAL_SONGS["the-point-of-no-return"] = {
   "background": [
     {
       "id": "the-opera-inside-the-opera",
-      "title": "The Opera Inside the Opera",
+      "title": "剧中剧的歌剧",
       "titleEn": "The Opera Inside the Opera",
       "kind": "story",
       "bodyEn": "The curtain rises on Don Juan Triumphant, the opera nobody in the company wanted to perform. The house is full, the orchestra is loud, and every seat has been sold on the strength of a scandal. On stage, a soprano sings the part of a woman being courted, and a tenor sings the part of the man courting her. The audience leans forward, because the tenor is not the man named in the programme. He moves too well, he knows the music too well, and the soprano's hands are shaking. She keeps singing anyway. Halfway through, she reaches up and pulls the mask away, and the hall understands at once what it has been watching. The performance does not end so much as collapse, and the great chandelier comes down with it.",
@@ -526,7 +526,7 @@ window.MUSICAL_SONGS["the-point-of-no-return"] = {
     },
     {
       "id": "the-hand-at-the-level-of-the-eyes",
-      "title": "The Hand at the Level of the Eyes",
+      "title": "齐眼高度的手",
       "titleEn": "The Hand at the Level of the Eyes",
       "kind": "story",
       "bodyEn": "After the chandelier falls, the lobby fills with people who want someone to blame. Carlotta screams for her missing tenor, the managers calculate what the damage will cost, and Raoul pushes through the crowd with one question: where has the Phantom taken Christine? Madame Giry says she knows, and Raoul does not trust her, which is reasonable, since she has been protecting the secret for years. She gives him a rule instead of an answer. Keep your hand at the level of your eyes. He asks why. Because of the Punjab lasso, she says, and then names two men it has already killed. The rule is not a superstition; it is a way to stay alive in a corridor where a rope can drop out of the dark. He follows her down.",

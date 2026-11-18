@@ -280,7 +280,7 @@ window.MUSICAL_SONGS["the-adams-administration"] = {
   "background": [
     {
       "id": "xyz-affair",
-      "title": "The XYZ Affair",
+      "title": "XYZ事件",
       "titleEn": "The XYZ Affair",
       "kind": "story",
       "bodyEn": "In 1797 President Adams sent three envoys to Paris: Charles Cotesworth Pinckney, John Marshall and Elbridge Gerry. They hoped to repair relations with France, which had been seizing American ships. The Directory's foreign minister, Talleyrand, refused to negotiate openly. Instead, three agents later labeled X, Y and Z demanded a large bribe and a loan before any talks could begin. The Americans refused, and Adams released the dispatches in 1798. The country erupted. \"Millions for defense, not a cent for tribute\" became a slogan. Federalists demanded war. Adams chose to expand the navy and fight only at sea; the undeclared Quasi-War lasted from 1798 to 1800. In 1800 his envoys signed the Convention of 1800, ending the conflict. Adams thought the peace was his greatest achievement.",
@@ -343,7 +343,7 @@ window.MUSICAL_SONGS["the-adams-administration"] = {
     },
     {
       "id": "alien-and-sedition",
-      "title": "The Alien and Sedition Acts",
+      "title": "客籍法与煽动法",
       "titleEn": "The Alien and Sedition Acts",
       "kind": "story",
       "bodyEn": "In 1798, with war fever rising, the Federalist-controlled Congress passed four laws known as the Alien and Sedition Acts. They lengthened the residency requirement for citizenship from five years to fourteen, gave the president power to deport dangerous aliens, and made it a crime to publish \"false, scandalous, and malicious\" criticism of the government. The Sedition Act was used almost entirely against Republican newspaper editors. Matthew Lyon, a Republican congressman, was fined and jailed. Jefferson and Madison responded with the Kentucky and Virginia Resolutions, arguing that the states could judge the constitutionality of federal laws. The backlash damaged the Federalists and helped elect Jefferson in 1800. The acts were repealed or allowed to expire soon after. For many Americans, the episode became an early test of free speech and a free press.",
@@ -406,7 +406,7 @@ window.MUSICAL_SONGS["the-adams-administration"] = {
     },
     {
       "id": "hamilton-war-on-adams",
-      "title": "Hamilton's War with Adams",
+      "title": "汉密尔顿与亚当斯之争",
       "titleEn": "Hamilton's War with Adams",
       "kind": "story",
       "bodyEn": "Hamilton had left the Treasury in 1795, but he still commanded a network of allies inside Adams's cabinet. During the Quasi-War he was appointed inspector general and second-in-command of the army under Washington. Adams resented Hamilton's influence and in May 1800 dismissed two cabinet members who took Hamilton's advice. That summer Hamilton wrote a long public letter attacking Adams's character and judgment. He intended it for a few readers, but it was printed and passed to the Republicans. Adams lost the election, and the Federalists never recovered. Adams never forgave him. Years later, in a letter to Benjamin Rush, he mocked Hamilton as \"the bastard brat of a Scotch pedlar.\" The musical compresses this long feud into a few furious lines.",

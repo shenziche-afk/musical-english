@@ -430,7 +430,7 @@ window.MUSICAL_SONGS["hurricane"] = {
   "background": [
     {
       "id": "storm-1772",
-      "title": "The Storm of 1772",
+      "title": "1772年风暴",
       "titleEn": "The Storm of 1772",
       "kind": "story",
       "bodyEn": "On the night of August 31, 1772, a hurricane struck the Caribbean island of St. Croix. A seventeen-year-old clerk named Alexander Hamilton watched houses collapse and the sea climb into the streets. Weeks later he wrote a letter describing “one of the most dreadful Hurricanes that memory or any records whatever can trace,” and it was printed in the island's newspaper, The Royal Danish American Gazette, on October 3. The letter was vivid, religious, and full of horror. It also ended with a plea for help for the survivors. To the island's merchants, the young clerk suddenly looked like a writer worth investing in. The storm destroyed the town; the letter gave him a way out of it.",
@@ -493,7 +493,7 @@ window.MUSICAL_SONGS["hurricane"] = {
     },
     {
       "id": "fund-north",
-      "title": "The Fund That Sent Him North",
+      "title": "送他北上的基金",
       "titleEn": "The Fund That Sent Him North",
       "kind": "story",
       "bodyEn": "The letter did what Hamilton could not do alone: it made strangers care. According to the National Park Service, local benefactors recognized his intelligence and writing and created a fund to provide him with a formal education in North America. In 1772 he sailed for the mainland. He arrived in New York, then prepared for college at Elizabethtown Academy in New Jersey. He soon entered King's College, now Columbia University, where he argued politics in the newspapers and raced through the curriculum. He never finished: when the Revolution began, he left school for the army. The boy who had been rescued by a storm became a soldier, then a lawyer, then the first secretary of the treasury. The fund was small, but it bought the education that made the rest possible.",
@@ -556,7 +556,7 @@ window.MUSICAL_SONGS["hurricane"] = {
     },
     {
       "id": "writing-as-escape",
-      "title": "Writing as Escape",
+      "title": "以写作逃离",
       "titleEn": "Writing as Escape",
       "kind": "craft",
       "bodyEn": "Structurally, Hurricane is a song about writing. The first verse tells a story in the past tense: the storm, the letter, the strangers, the ship. Then the list grows. “I wrote my way out of hell,” he sings, and one achievement follows another—revolution, love letters, the Constitution, the financial system. Each item is something Hamilton really wrote, and the repetition of “I wrote” turns a biography into a chant. The hurricane returns at the end, but now it means the Reynolds crisis, and the calm eye is the decision to publish. “Overwhelm them with honesty” is the whole strategy of the next song. The show even borrowed the idea from history writing: the Library of Congress notes that Ron Chernow's phrase about Hamilton writing his way out of poverty helped inspire Miranda's musical.",

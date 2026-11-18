@@ -292,7 +292,7 @@ window.MUSICAL_SONGS["i-know-him"] = {
   "background": [
     {
       "id": "election-of-1796",
-      "title": "The Election of 1796",
+      "title": "1796年大选",
       "titleEn": "The Election of 1796",
       "kind": "story",
       "bodyEn": "Washington's decision to retire turned the election of 1796 into the first real contest between political parties. The Federalists rallied behind Vice President John Adams; the Republicans backed Thomas Jefferson. Under the original Constitution, electors each cast two votes, and the runner-up became vice president. The campaign was nasty but the result was close. Adams received 71 electoral votes, Jefferson 68, Thomas Pinckney 59 and Aaron Burr 30. Adams became the first sitting vice president elected president, while his rival Jefferson became his vice president. Hamilton, who distrusted Adams, had quietly tried to maneuver electors toward Pinckney and only made both men suspicious. The awkward partnership of Adams and Jefferson lasted four years and ended in the bitterly partisan campaign of 1800.",
@@ -355,7 +355,7 @@ window.MUSICAL_SONGS["i-know-him"] = {
     },
     {
       "id": "little-guy-and-king",
-      "title": "The Little Guy and the King",
+      "title": "小人物与国王",
       "titleEn": "The Little Guy and the King",
       "kind": "story",
       "bodyEn": "In 1785 John Adams became the first American minister to the Court of St. James's, the court of George III. The two countries had recently been enemies, and the audience was charged with symbolism. Adams, a leading advocate of independence, was presented to the king on 1 June 1785. He described the scene to John Jay the next day: \"You may well suppose that I was the Focus of all Eyes.\" The king was gracious. He told Adams that he received with pleasure the assurance of friendly dispositions from the United States and was glad that Adams had been chosen as minister. Adams remained in London until 1788. Eleven years later, when Adams was elected president, the king still remembered the short, stout lawyer who had stood before him.",
@@ -418,7 +418,7 @@ window.MUSICAL_SONGS["i-know-him"] = {
     },
     {
       "id": "hard-act-to-follow",
-      "title": "A Hard Act to Follow",
+      "title": "难以超越的前任",
       "titleEn": "A Hard Act to Follow",
       "kind": "story",
       "bodyEn": "Adams inherited more than an office; he inherited Washington's shadow. He also kept Washington's cabinet, whose members often listened to Hamilton rather than to the new president. Through 1797 and 1798, French attacks on American shipping pushed the country toward war. Adams sent envoys to Paris, where French agents demanded bribes; the insult became the XYZ Affair. Many Federalists wanted a declaration of war, but Adams chose to build a navy, defend the coast and keep negotiating. He called the resulting peace his greatest achievement. His own party never forgave him for it. Prickly, honest and stubborn, Adams found that no successor could match the first president's prestige, and the musical lets George III enjoy the spectacle of a republic eating its own leaders.",

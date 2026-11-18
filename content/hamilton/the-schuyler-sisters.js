@@ -937,7 +937,7 @@ window.MUSICAL_SONGS["the-schuyler-sisters"] = {
   "background": [
     {
       "id": "schuyler-family",
-      "title": "The House on the Hill",
+      "title": "山丘上的宅邸",
       "titleEn": "The House on the Hill",
       "kind": "story",
       "bodyEn": "On a bluff above the Hudson River in Albany, a brick mansion looked down on an eighty-acre estate. This was the home of Philip Schuyler, a major general in the Continental Army, and his wife Catharine Van Rensselaer. Their daughters—Angelica, Elizabeth, and Peggy—grew up among visiting officers, political arguments, and patriotic talk. When the war came, the house became a headquarters as much as a home: in 1777 the captured British general Burgoyne was held there, and in 1781 Loyalist raiders tried to kidnap General Schuyler. In December 1780, Elizabeth married Alexander Hamilton in the house. The musical sets the sisters loose in New York City, but the real family's stage was Albany. Yet the sisters were not decorations: Eliza lived until 1854, outliving her husband by fifty years and helping to preserve his story.",
@@ -1004,7 +1004,7 @@ window.MUSICAL_SONGS["the-schuyler-sisters"] = {
     },
     {
       "id": "new-york-1776",
-      "title": "The City at the Center",
+      "title": "居于中心的城市",
       "titleEn": "The City at the Center",
       "kind": "story",
       "bodyEn": "In April 1776, George Washington arrived in New York City with the Continental Army, expecting a British attack. Crowds filled the streets, pamphlets circulated, and the city argued about independence. On July 9, the Declaration of Independence was read aloud to Washington's troops at the site of today's City Hall. That evening a cheering crowd rushed to Bowling Green and pulled down the lead statue of King George III; the metal was later melted into 42,088 musket balls. The celebration did not last. British ships had appeared in the harbor in late June, and within months the British captured Brooklyn and Manhattan. They held the city for the rest of the war. In the musical, the Schuyler sisters sing that the revolution is happening in New York. For one summer, that was true—and then the city became enemy territory.",
@@ -1067,7 +1067,7 @@ window.MUSICAL_SONGS["the-schuyler-sisters"] = {
     },
     {
       "id": "common-sense-sequel",
-      "title": "Common Sense and the Sequel",
+      "title": "常识与它的续篇",
       "titleEn": "Common Sense and the Sequel",
       "kind": "story",
       "bodyEn": "In January 1776, a pamphlet appeared in Philadelphia with no author's name on it. Common Sense, written by Thomas Paine, argued plainly that the colonies should separate from Britain. It sold about 120,000 copies in less than three months, and within a year perhaps one in five colonists owned a copy. Six months later, on July 4, the Continental Congress adopted the Declaration of Independence, which declared that “all men are created equal.” The musical gives Angelica Schuyler this famous line and then sends her after Jefferson: she will force him to “include women in the sequel.” That was no small joke. In March 1776, Abigail Adams had already asked her husband John to “remember the ladies” in the new government. The sequel was being written, and women were demanding a place in it.",
@@ -1134,7 +1134,7 @@ window.MUSICAL_SONGS["the-schuyler-sisters"] = {
     },
     {
       "id": "price-of-loaded",
-      "title": "The Price of “Loaded”",
+      "title": "阔绰的代价",
       "titleEn": "The Price of “Loaded”",
       "kind": "story",
       "bodyEn": "Philip Schuyler's mansion was beautiful, but it was also a working estate, and its farm, gardens, and household depended on enslaved and paid labor. New York State's own history of the site records that the household included more than fifty enslaved laborers, servants, and artisans between 1763 and 1804. The wealth that made the Schuylers powerful—land, trade, a great house, and a future son-in-law named Hamilton—rested partly on that labor. In the musical, Aaron Burr jokes that Philip Schuyler is “loaded,” and the audience laughs at the sisters' freedom. Historians point out the uncomfortable gap: colonial New York had enslaved people, yet none appear in Hamilton. A musical about 1776 can celebrate the language of liberty; it should also remember who was excluded from it.",

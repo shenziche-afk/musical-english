@@ -277,7 +277,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you-reprise"] = {
   "background": [
     {
       "id": "the-plan",
-      "title": "The Plan",
+      "title": "那个计划",
       "titleEn": "The Plan",
       "kind": "story",
       "bodyEn": "Christine cannot stay on the roof. Somebody will notice an empty place in the company, and Madame Giry notices everything. So she does what frightened people do when they are also practical: she makes a plan. Raoul is to order the horses and wait at the door, and she will come down when the performance allows. It takes eight short lines, and every one of them is about the future. Listen to how ordinary the words are — horses, door, beside me. There is no music of rescue here, only logistics. That is what makes the next entrance so cruel. The two of them are not singing a love duet any more; they are reading out a schedule, and a schedule is exactly the kind of thing that can be overheard.",
@@ -336,7 +336,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you-reprise"] = {
     },
     {
       "id": "the-man-who-gave-her-music",
-      "title": "The Man Who Gave Her Music",
+      "title": "给她音乐的人",
       "titleEn": "The Man Who Gave Her Music",
       "kind": "story",
       "bodyEn": "He does not shout at first. He reminds her. Every gift he ever gave is listed like evidence in a case: the music, the lessons, the wings her voice grew. Then he names the crime — denied, betrayed — and hands the sentence to someone else. Raoul was bound to love her, he says, because he heard her sing. In one line the Phantom turns a love story into a mechanism: any man would have fallen, so her choice means nothing. That is what jealousy sounds like when it is intelligent. He is not wrong about the facts. He taught her, he did make her voice, and she is leaving.",
@@ -395,7 +395,7 @@ window.MUSICAL_SONGS["all-i-ask-of-you-reprise"] = {
     },
     {
       "id": "one-word-to-end-an-act",
-      "title": "One Word to End an Act",
+      "title": "一个词结束一幕",
       "titleEn": "One Word to End an Act",
       "kind": "story",
       "bodyEn": "An act has to end on a door closing, and this one ends on a single word. The Phantom has just promised that Christine will curse the day she refused him, and the orchestra has climbed to the loudest point it will reach all evening. Then he laughs, and the laugh is not triumph; it is the sound of a man who has decided to be a monster because being a man did not work. Go, he says, and the word does two jobs at once: it releases her and it throws her out. Above the audience a chandelier waits on its chain, and the act closes on a theatre that is still, technically, in working order.",

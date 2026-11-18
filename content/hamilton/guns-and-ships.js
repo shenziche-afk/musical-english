@@ -632,7 +632,7 @@ window.MUSICAL_SONGS["guns-and-ships"] = {
   "background": [
     {
       "id": "lafayette",
-      "title": "America's Favourite Frenchman",
+      "title": "美国最爱的法国人",
       "titleEn": "America's Favourite Frenchman",
       "kind": "story",
       "bodyEn": "Lafayette was still a teenager when he left France in 1777 to fight for a country that was not his own. He offered to serve at his own expense and was commissioned a major general. Washington liked him immediately and treated him like a son. In January 1779 Lafayette sailed back to France, where he worked to persuade the court of Louis XVI to send soldiers and ships. He returned to America in April 1780 and later commanded Continental forces in Virginia, where he helped trap Cornwallis at Yorktown. The show's line about 'America's favourite fighting Frenchman' is a joke, but the affection was real. When Lafayette toured America in 1824, he was greeted with what one report called 'frenzied enthusiasm without precedent or parallel in American history.'",
@@ -695,7 +695,7 @@ window.MUSICAL_SONGS["guns-and-ships"] = {
     },
     {
       "id": "french-alliance",
-      "title": "The French Alliance",
+      "title": "法国同盟",
       "titleEn": "The French Alliance",
       "kind": "story",
       "bodyEn": "In 1778, France signed a treaty of alliance with the United States. That treaty changed the war: suddenly the Americans had a powerful navy and a rich ally. In July 1780 a French army under General Rochambeau landed at Newport, Rhode Island. For a year the French and American armies waited. Then, in the summer of 1781, they marched south together—about 680 miles from Newport toward Yorktown, Virginia. French ships and French soldiers made the trap at Yorktown possible. The alliance also brought money, muskets and uniforms. The National Park Service's Washington-Rochambeau trail follows that march today, state by state, and remembers the Franco-American friendship that helped win the war.",
@@ -758,7 +758,7 @@ window.MUSICAL_SONGS["guns-and-ships"] = {
     },
     {
       "id": "redoubt-ten",
-      "title": "Redoubt Number Ten",
+      "title": "十号堡垒",
       "titleEn": "Redoubt Number Ten",
       "kind": "story",
       "bodyEn": "By October 1781 the allied army had trapped Cornwallis at Yorktown, but two British redoubts still blocked the second siege line. On the night of October 14, Washington ordered them taken by bayonet. A French force attacked Redoubt 9. The Americans attacked Redoubt 10, with Hamilton leading the storming party drawn from Lafayette's light infantry. The fighting was short and brutal. The redoubts fell, the siege line was completed, and British guns could no longer hold out. Five days later Cornwallis surrendered. For Hamilton, it was the glory he had wanted for years—and the moment the musical points to when Washington finally gives him the field command he had begged for.",

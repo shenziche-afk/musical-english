@@ -174,7 +174,7 @@ window.MUSICAL_SONGS["magical-lasso"] = {
   "background": [
     {
       "id": "the-man-who-told-tales",
-      "title": "The Man Who Told Tales",
+      "title": "讲故事的人",
       "titleEn": "The Man Who Told Tales",
       "kind": "story",
       "bodyEn": "Backstage at the Opera House the lamps burn low, and the dancers gather in a nervous circle. Joseph Buquet, the chief stagehand, has a story for them. He describes the ghost piece by piece: skin like yellow parchment, a black hole where a nose should be, a rope he calls a magical lasso. The girls shriek, half laughing, half believing. Then Madame Giry steps out of the shadow. She does not raise her voice. She says that people who talk too much learn the price of silence, and she tells Buquet to hold his tongue. The warning should end the game, but it does the opposite: the story now sounds like a fact. Weeks later, during a ballet, a body drops from the rafters above the stage, and the same dancers look up.",
@@ -233,7 +233,7 @@ window.MUSICAL_SONGS["magical-lasso"] = {
     },
     {
       "id": "a-rope-with-a-reputation",
-      "title": "A Rope With a Reputation",
+      "title": "声名在外的绳索",
       "titleEn": "A Rope With a Reputation",
       "kind": "story",
       "bodyEn": "The Palais Garnier was built on marshy ground, and its architects solved the problem with a hidden reservoir: a dark sheet of water under the stage. Stagehands who worked the lowest level told stories about that water, and the stories grew teeth. A ghost, they said, kept a box of his own and paid the managers in envelopes. When a counterweight fell from the chandelier in 1896 and killed a concierge, the rumours found their proof. Nobody needed a monster any more; the building itself was frightening enough. Gaston Leroux walked those corridors as a reporter and wrote the rumours down. In his novel the lake becomes a kingdom, the lasso becomes a weapon, and the ghost becomes a man with a white mask.",
