@@ -299,13 +299,13 @@ window.MUSICAL_SONGS["wait-for-it"] = {
         {
           "id": "l31",
           "text": "And we break",
-          "zh": "我们犯过不少错",
+          "zh": "我们也会垮掉",
           "note": "and we break = 我们也会崩溃。"
         },
         {
           "id": "l32",
           "text": "And we make our mistakes",
-          "zh": "我们犯过不少错",
+          "zh": "我们也会犯错",
           "note": "and we make our mistakes = 我们也会犯错。"
         },
         {

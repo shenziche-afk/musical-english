@@ -398,7 +398,7 @@ window.MUSICAL_SONGS["yorktown"] = {
         {
           "id": "l38",
           "text": "Through the night, we have one shot to live another day",
-          "zh": "整个夜里，我们只有一次机会活到明天",
+          "zh": "熬过今夜，我们只有一次机会活到明天",
           "speaker": "HAMILTON",
           "note": "we have one shot to live another day：one shot = 唯一的机会，也再次呼应《My Shot》。"
         },

@@ -775,31 +775,31 @@ window.MUSICAL_SONGS["my-shot"] = {
         {
           "id": "l95",
           "text": "Whoa, whoa, whoa",
-          "zh": "",
+          "zh": "哇，哇，哇",
           "note": "whoa whoa whoa：合唱填充。"
         },
         {
           "id": "l96",
           "text": "Hey!",
-          "zh": "",
+          "zh": "嘿！",
           "note": "hey!"
         },
         {
           "id": "l97",
           "text": "Whoa!",
-          "zh": "",
+          "zh": "哇！",
           "note": "whoa!"
         },
         {
           "id": "l98",
           "text": "Wooh!!",
-          "zh": "",
+          "zh": "呜呼！！",
           "note": "wooh!!"
         },
         {
           "id": "l99",
           "text": "Whoa!",
-          "zh": "",
+          "zh": "哇！",
           "note": "whoa!"
         },
         {

@@ -42,7 +42,7 @@ window.MUSICAL_SONGS["burn"] = {
         {
           "id": "l4",
           "text": "You said you were mine",
-          "zh": "",
+          "zh": "你说过你是我的",
           "note": "You said you were mine = 你说过你是我的。you said 把责任推回给他，为下一句的失望铺路。"
         },
         {

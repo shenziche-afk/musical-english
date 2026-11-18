@@ -24,7 +24,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
         {
           "id": "l1",
           "text": "Un deux trois quatre",
-          "zh": "",
+          "zh": "一、二、三、四（法语）",
           "note": "法语数字 1–4：un /œ̃/、deux /dø/、trois /trwa/、quatre /katr/。菲利普在背法语。"
         },
         {
@@ -861,7 +861,7 @@ window.MUSICAL_SONGS["take-a-break"] = {
         {
           "id": "l97",
           "text": "Alexander",
-          "zh": "",
+          "zh": "亚历山大",
           "note": "安洁莉卡短短一声「亚历山大」，语气里千言万语，停顿本身就是台词。"
         },
         {

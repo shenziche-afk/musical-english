@@ -415,7 +415,7 @@ window.MUSICAL_SONGS["hurricane"] = {
         {
           "id": "l43",
           "text": "wait for it wait for it",
-          "zh": "",
+          "zh": "等着，等着",
           "note": "和声再次落下 wait for it，把两句『我会写出出路』夹在中间，紧张感拉满。"
         },
         {

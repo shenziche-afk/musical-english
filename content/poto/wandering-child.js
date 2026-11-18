@@ -347,7 +347,7 @@ window.MUSICAL_SONGS["wandering-child"] = {
         {
           "id": "l31",
           "text": "C: Raoul!",
-          "zh": "",
+          "zh": "克里斯汀：拉乌尔！",
           "speaker": "CHRISTINE",
           "note": "一声 Raoul! 是全曲唯一的清醒点，她终于叫出恋人的名字，魅影的咒语被打断；后面紧跟的沉默比任何唱句都响。"
         },

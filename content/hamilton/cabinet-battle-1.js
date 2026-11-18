@@ -24,7 +24,7 @@ window.MUSICAL_SONGS["cabinet-battle-1"] = {
         {
           "id": "l1",
           "text": "Ladies and gentlemen,",
-          "zh": "",
+          "zh": "女士们，先生们，",
           "note": "开场称呼：华盛顿像节目主持人一样对台下（观众）说话，直接打破第四面墙。"
         },
         {

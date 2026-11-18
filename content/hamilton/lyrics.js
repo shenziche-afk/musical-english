@@ -1032,23 +1032,23 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "Whoa, whoa, whoa",
-          ""
+          "哇，哇，哇"
         ],
         [
           "Hey!",
-          ""
+          "嘿！"
         ],
         [
           "Whoa!",
-          ""
+          "哇！"
         ],
         [
           "Wooh!!",
-          ""
+          "呜呼！！"
         ],
         [
           "Whoa!",
-          ""
+          "哇！"
         ],
         [
           "Shou(ld) let 'em hear ya!",
@@ -4430,11 +4430,11 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "And we break",
-          "我们犯过不少错"
+          "我们也会垮掉"
         ],
         [
           "And we make our mistakes",
-          "我们犯过不少错"
+          "我们也会犯错"
         ],
         [
           "And if there’s a reason I’m still alive",
@@ -6031,7 +6031,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "Through the night, we have one shot to live another day",
-          ""
+          "熬过今夜，我们只有一次机会活到明天"
         ],
         [
           "We cannot let a stray gunshot give us away",
@@ -7679,7 +7679,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "Chik-a-pow!",
-          ""
+          "砰！"
         ],
         [
           "I guess I better think of something to say",
@@ -7734,7 +7734,7 @@ window.MUSICAL_LYRICS = {
       "lines": [
         [
           "Ladies and gentlemen,",
-          ""
+          "女士们，先生们，"
         ],
         [
           "you coulda been anywhere in the world tonight, but you’re here with us in New York City.",
@@ -8065,7 +8065,7 @@ window.MUSICAL_LYRICS = {
       "lines": [
         [
           "Un deux trois quatre",
-          ""
+          "一、二、三、四（法语）"
         ],
         [
           "Un deux trois quatre",
@@ -8449,7 +8449,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "Alexander",
-          ""
+          "亚历山大"
         ],
         [
           "Hi",
@@ -10583,7 +10583,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "I wanna sit under my own vine and fig tree",
-          ""
+          "我想坐在自己的葡萄树和无花果树下"
         ],
         [
           "A moment alone in the shade",
@@ -11279,7 +11279,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "wait for it wait for it",
-          ""
+          "等着，等着"
         ],
         [
           "The Reynolds Pamphlet",
@@ -11513,7 +11513,7 @@ window.MUSICAL_LYRICS = {
         ],
         [
           "You said you were mine",
-          ""
+          "你说过你是我的"
         ],
         [
           "I thought you were mine",
