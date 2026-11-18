@@ -103,7 +103,19 @@ HF_ENDPOINT=https://hf-mirror.com .venv-whisper/bin/mlx_whisper \
 ```
 
 - 能量体检脚本：`dev/check_times.py`（输出 `dev/times_report.json`），只能抓「时长 <0.4s」「起点落在长静音里」这类极端异常，不能当自动修正依据。
-- 计划：词级时间戳 → 与歌词逐行序列对齐 → 只在高置信匹配时改边界；旧 `times.js` 备份可回滚。
+- 对齐工具：`dev/asr_times.py`，四步全部本地、默认只出报告：
+
+```bash
+.venv-whisper/bin/python dev/asr_times.py transcribe --show poto --n 17   # 词级时间戳 → dev/asr/
+.venv-whisper/bin/python dev/asr_times.py align     --show poto --n 17   # 候选 + 报告（不写数据）
+.venv-whisper/bin/python dev/asr_times.py apply     --show poto --n 17 --dry-run
+.venv-whisper/bin/python dev/asr_times.py apply     --show poto --n 17   # 写 times.js，自动 .bak
+python3 dev/asr_times.py self-test                                       # 合成词流，不碰模型
+```
+
+- 对齐算法：token 级编辑距离（容忍拼写/漏词）+ 单调化 + 位移上限 8s；低于 0.55 置信度保留原值；`--synthetic --shift 1.2` 可模拟「整体偏移」验证检测能力。
+- 当前状态：环境已装、模型未下、真实音频未跑；自检通过（22 行合成数据，整体平移 1.2s 能被全部识别）。
+- 计划：先跑 POTO #17 和 Hamilton #46 对比，再决定是否全量。
 
 ## 6. 坑（都踩过）
 

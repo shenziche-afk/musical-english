@@ -14,3 +14,6 @@ dev/.studio_token
 
 # 本地 ASR 环境（mlx-whisper）
 .venv-whisper/
+
+# ASR 中间产物
+dev/asr/
