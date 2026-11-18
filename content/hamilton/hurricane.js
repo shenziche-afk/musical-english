@@ -171,9 +171,9 @@ window.MUSICAL_SONGS["hurricane"] = {
         },
         {
           "id": "l16",
-          "text": "Raised enough for me to book passage on a",
-          "zh": "筹够了一张",
-          "note": "raise (money) = 募集；book passage = 订船票；on a ship = 在船上。to book passage 是结果状语。",
+          "text": "Raised enough for me to book passage",
+          "zh": "攒够了钱，订到",
+          "note": "book passage = 订船票；on a ship 被断到下一行。",
           "words": [
             {
               "w": "book passage",
@@ -186,9 +186,9 @@ window.MUSICAL_SONGS["hurricane"] = {
         },
         {
           "id": "l17",
-          "text": "Ship that was New York bound…",
-          "zh": "驶向纽约的船票",
-          "note": "be bound for = 开往……。New York bound 是『开往纽约的』，-bound 作后缀表示方向。",
+          "text": "on a ship that was New York bound…",
+          "zh": "一张开往纽约的船票",
+          "note": "New York bound = 开往纽约的；-bound 后缀表方向。",
           "words": [
             {
               "w": "bound",

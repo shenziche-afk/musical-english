@@ -39,15 +39,15 @@ window.MUSICAL_SONGS["farmer-refuted"] = {
         },
         {
           "id": "l2",
-          "text": "And I present “Free Thoughts on the",
-          "zh": "我来发表“关于大陆会议的议程的看法”",
-          "note": "present 在这里是「呈上、发表」；Free Thoughts 是西伯里 1774 年小册子标题的开头，这句跨行悬着，像念书名的停顿。"
+          "text": "And I present",
+          "zh": "我来介绍",
+          "note": "present 在这里是「呈上、介绍」；书名被断到下一行。"
         },
         {
           "id": "l3",
-          "text": "Proceedings of the Continental Congress!”",
-          "zh": "的议程的看法”",
-          "note": "标题接完整：Free Thoughts on the Proceedings of the Continental Congress（《对大陆会议议程的随想》），以笔名「A. W. Farmer」（威彻斯特农夫）发表；Continental Congress 即大陆会议。"
+          "text": "“Free Thoughts on the Proceedings of the Continental Congress!”",
+          "zh": "《大陆会议议事录自由谈》",
+          "note": "Free Thoughts on the Proceedings of the Continental Congress 是 Seabury 攻击大陆会议的小册子书名。"
         },
         {
           "id": "l4",

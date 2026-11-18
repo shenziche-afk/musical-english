@@ -1038,15 +1038,15 @@ window.MUSICAL_SONGS["non-stop"] = {
         },
         {
           "id": "l121",
-          "text": "Watching the",
-          "zh": "来静观",
-          "note": "Watching the 断行，与 122 连读。"
+          "text": "Watching",
+          "zh": "静观",
+          "note": "Watching 单独成行，宾语留到下一行，制造悬念。"
         },
         {
           "id": "l122",
-          "text": "Afterbirth of a nation",
-          "zh": "这新生的国家",
-          "note": "afterbirth 是胎盘，产后排出物；把建国比作「分娩之后的血污」，意象阴冷，暗指这个国家的诞生伴着牺牲与脏东西。",
+          "text": "the afterbirth of a nation",
+          "zh": "这个国家诞生后的血污",
+          "note": "afterbirth 是胎盘；把建国比作分娩后的血污，意象阴冷。",
           "words": [
             {
               "w": "afterbirth",

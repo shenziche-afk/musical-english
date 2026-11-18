@@ -596,15 +596,15 @@ window.MUSICAL_SONGS["satisfied"] = {
         },
         {
           "id": "l76",
-          "text": "He's a",
-          "zh": "他有点儿",
-          "note": "他有点儿……话没说完，下面接「轻浮」。"
+          "text": "He’s a bit of a flirt",
+          "zh": "他有点爱调情",
+          "note": "a bit of a flirt = 有点爱调情的人；这句在「but」处断，前后都是完整意思。"
         },
         {
           "id": "l77",
-          "text": "Bit of a flirt but I'm a give it a chance",
-          "zh": "轻浮，不过我想给他次机会",
-          "note": "bit of a flirt = 有点爱调情的人；I’m a = I’m going to 的口语缩略。"
+          "text": "but I’m a give it a chance",
+          "zh": "不过我想给他次机会",
+          "note": "but I’m a give it a chance = 不过我想给他一次机会；I’m a 是 I’m going to 的口语。"
         },
         {
           "id": "l78",

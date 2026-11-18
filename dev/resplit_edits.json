@@ -1,0 +1,93 @@
+[
+ {
+  "show": "hamilton",
+  "n": 1,
+  "line": 10,
+  "track": "audio/hamilton/01-alexander-hamilton.m4a",
+  "split_before": "of",
+  "en": "By fourteen, they placed him in charge",
+  "zh": "十四岁时，众人就让他掌管",
+  "next_en": "of a trading charter",
+  "next_zh": "一份贸易特许状",
+  "note": "by fourteen 是「到十四岁时」；in charge of 的宾语被断到下一行。",
+  "next_note": "of a trading charter 接上一行：掌管一份贸易特许状。charter 是殖民政府发的贸易许可。"
+ },
+ {
+  "show": "hamilton",
+  "n": 9,
+  "line": 9,
+  "track": "audio/hamilton/09-a-winters-ball.m4a",
+  "split_before": "with",
+  "en": "reliable",
+  "zh": "靠得住",
+  "next_en": "with the ladies!",
+  "next_zh": "在姑娘们中间很吃得开！",
+  "note": "reliable 单独成行是为押韵；完整意思是 reliable with the ladies。",
+  "next_note": "with the ladies 接上一行；Ladies! 同时是副歌的钩子。"
+ },
+ {
+  "show": "hamilton",
+  "n": 11,
+  "line": 76,
+  "track": "audio/hamilton/11-satisfied.m4a",
+  "en": "He’s a bit of a flirt",
+  "zh": "他有点爱调情",
+  "next_en": "but I’m a give it a chance",
+  "next_zh": "不过我想给他次机会",
+  "note": "a bit of a flirt = 有点爱调情的人；这句在「but」处断，前后都是完整意思。",
+  "next_note": "but I’m a give it a chance = 不过我想给他一次机会；I’m a 是 I’m going to 的口语。",
+  "pull_until": "but"
+ },
+ {
+  "show": "hamilton",
+  "n": 13,
+  "line": 20,
+  "track": "audio/hamilton/13-wait-for-it.m4a",
+  "split_before": "the",
+  "en": "But there are things that",
+  "zh": "可是有些东西",
+  "next_en": "the homilies and hymns won’t teach ya",
+  "next_zh": "是讲道和圣歌教不了你的",
+  "note": "that 引出定语从句，先行词在下一行：things that the homilies… won’t teach ya。",
+  "next_note": "homily 布道；hymn 赞美诗；teach ya = teach you。"
+ },
+ {
+  "show": "hamilton",
+  "n": 23,
+  "line": 121,
+  "track": "audio/hamilton/23-non-stop.m4a",
+  "split_before": "the",
+  "en": "Watching",
+  "zh": "静观",
+  "next_en": "the afterbirth of a nation",
+  "next_zh": "这个国家诞生后的血污",
+  "note": "Watching 单独成行，宾语留到下一行，制造悬念。",
+  "next_note": "afterbirth 是胎盘；把建国比作分娩后的血污，意象阴冷。"
+ },
+ {
+  "show": "hamilton",
+  "n": 36,
+  "line": 16,
+  "track": "audio/hamilton/36-hurricane.m4a",
+  "split_before": "on",
+  "en": "Raised enough for me to book passage",
+  "zh": "攒够了钱，订到",
+  "next_en": "on a ship that was New York bound…",
+  "next_zh": "一张开往纽约的船票",
+  "note": "book passage = 订船票；on a ship 被断到下一行。",
+  "next_note": "New York bound = 开往纽约的；-bound 后缀表方向。"
+ },
+ {
+  "show": "hamilton",
+  "n": 46,
+  "line": 8,
+  "track": "audio/hamilton/46-who-lives-who-dies-who-tells-your-story.m4a",
+  "split_before": "is",
+  "en": "I’ll give him this: his financial system",
+  "zh": "这一点我承认：他的财政体系",
+  "next_en": "is a work of genius. I couldn’t undo it if I tried",
+  "next_zh": "是天才之作，我就算想拆也拆不掉",
+  "note": "I’ll give him this 是让步句的开头：这一点我承认他。",
+  "next_note": "a work of genius = 天才之作；couldn’t undo it if I tried 是虚拟条件。"
+ }
+]

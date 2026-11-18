@@ -214,15 +214,15 @@ window.MUSICAL_SONGS["wait-for-it"] = {
         },
         {
           "id": "l20",
-          "text": "But there are things that the",
-          "zh": "可是也有些东西",
-          "note": "but there are things that the = 但有些东西，是那些……（话没说完，下句补足）。"
+          "text": "But there are things that",
+          "zh": "可是有些东西",
+          "note": "that 引出定语从句，先行词在下一行：things that the homilies… won’t teach ya。"
         },
         {
           "id": "l21",
-          "text": "Homilies and hymns won't teach ya",
-          "zh": "是讲道和圣歌中未提及的",
-          "note": "homily = 布道、说教；hymn = 赞美诗；teach ya = teach you 的口语。",
+          "text": "the homilies and hymns won’t teach ya",
+          "zh": "是讲道和圣歌教不了你的",
+          "note": "homily 布道；hymn 赞美诗；teach ya = teach you。",
           "words": [
             {
               "w": "homily",

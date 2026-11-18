@@ -135,15 +135,15 @@ window.MUSICAL_SONGS["a-winter-s-ball"] = {
       "lines": [
         {
           "id": "l9",
-          "text": "reliable with the",
-          "zh": "在……面前很靠得住",
-          "note": "reliable = 可靠的。这句要连下一行读，才拼出完整意思：reliable with the ladies。"
+          "text": "reliable",
+          "zh": "靠得住",
+          "note": "reliable 单独成行是为押韵；完整意思是 reliable with the ladies。"
         },
         {
           "id": "l10",
-          "text": "Ladies!",
-          "zh": "姑娘们！",
-          "note": "Ladies! 是这一段的洗脑副歌，也是全曲最响的钩子。连着上一行读：我们都对女人很有一套。"
+          "text": "with the ladies!",
+          "zh": "在姑娘们中间很吃得开！",
+          "note": "with the ladies 接上一行；Ladies! 同时是副歌的钩子。"
         },
         {
           "id": "l11",
@@ -319,10 +319,22 @@ window.MUSICAL_SONGS["a-winter-s-ball"] = {
       "body": "1779 年 12 月，华盛顿的军队开进新泽西的莫里斯敦，开始砍树搭一座「木头城」：约一万人建起大约一千二百座小木屋。接下来的冬天是当时人们记忆里最冷的一个：二十多场暴风雪、河面封冻、几乎断粮。大陆会议濒临破产，士兵常常几天吃不上肉和面包，农民也不肯收纸币。华盛顿在福特宅邸办公，五位副官替他处理信件，其中最年轻的就是本曲里伯尔念叨的汉密尔顿。军队硬是熬过了这个冬天——而这正是「冬天舞会」这个玩笑的底色：人快饿死了，军官们还是要跳舞。",
       "bodyEn": "By December 1779, George Washington’s army had marched into Morristown, New Jersey, and begun cutting trees for a log city. About ten thousand men built roughly twelve hundred huts in the hills at Jockey Hollow. The winter that followed was the worst anyone could remember: more than twenty snowstorms, frozen rivers, and almost no food. Congress was nearly bankrupt, so soldiers went days without meat or bread, and farmers refused paper money. Washington worked from the Ford Mansion, where five aides handled his letters. The youngest was Lieutenant Colonel Alexander Hamilton, the officer Burr describes in this song. Somehow the army survived the season. That survival is the joke behind the musical’s winter ball: the men were starving, and the officers still found reasons to dance. The contrast is the point.",
       "glossary": [
-        { "w": "bankrupt", "zh": "破产的" },
-        { "w": "aides", "zh": "副官，助手" },
-        { "w": "survival", "zh": "幸存，熬过" },
-        { "w": "contrast", "zh": "对比" }
+        {
+          "w": "bankrupt",
+          "zh": "破产的"
+        },
+        {
+          "w": "aides",
+          "zh": "副官，助手"
+        },
+        {
+          "w": "survival",
+          "zh": "幸存，熬过"
+        },
+        {
+          "w": "contrast",
+          "zh": "对比"
+        }
       ],
       "quiz": [
         {
@@ -367,10 +379,22 @@ window.MUSICAL_SONGS["a-winter-s-ball"] = {
       "body": "菲利普·斯凯勒 1733 年生于奥尔巴尼，出身纽约最富有的荷兰家族之一。他打过法国与印第安人战争，后来进入大陆会议；独立战争爆发时，被任命为大陆军四位少将之一，统领北方战区。提康德罗加要塞失守后，他被指责无能，便主动要求军事法庭审判，被判无罪，随后辞去军职。回到奥尔巴尼，他有一座俯瞰哈德逊河的乔治式宅邸和八十英亩庄园，与妻子凯瑟琳·范伦斯勒养育了八个孩子，其中包括安吉莉卡、伊丽莎和佩吉。家族住在这里的几十年里，宅邸先后有五十多名被奴役的劳工、仆役和工匠。正是这样的家世，让本曲那句「斯凯勒姐妹是所有人羡慕的对象」有了分量。",
       "bodyEn": "Philip Schuyler was born in Albany in 1733 into one of New York’s wealthiest Dutch families. He fought in the French and Indian War, then served in the Continental Congress. When the Revolution began, Congress made him one of the army’s four major generals and gave him the northern department. Accused of incompetence after the fall of Fort Ticonderoga, he demanded a court-martial, was acquitted, and then resigned. His reward at home was a Georgian mansion on a bluff above the Hudson, surrounded by an eighty-acre estate. There he and his wife, Catharine Van Rensselaer, raised eight children, including Angelica, Eliza and Peggy. More than fifty enslaved laborers, servants and artisans lived and worked on the estate over the family’s long residence. The Schuylers were exactly what the song calls “the envy of all”: land, power, and daughters whose marriages could make a young man’s fortune.",
       "glossary": [
-        { "w": "estate", "zh": "庄园，地产" },
-        { "w": "court-martial", "zh": "军事法庭（审判）" },
-        { "w": "acquitted", "zh": "被判无罪的" },
-        { "w": "enslaved", "zh": "被奴役的" }
+        {
+          "w": "estate",
+          "zh": "庄园，地产"
+        },
+        {
+          "w": "court-martial",
+          "zh": "军事法庭（审判）"
+        },
+        {
+          "w": "acquitted",
+          "zh": "被判无罪的"
+        },
+        {
+          "w": "enslaved",
+          "zh": "被奴役的"
+        }
       ],
       "quiz": [
         {
@@ -386,7 +410,12 @@ window.MUSICAL_SONGS["a-winter-s-ball"] = {
         },
         {
           "q": "How many children did Philip and Catharine Schuyler raise in the mansion?",
-          "options": ["Three", "Five", "Eight", "Twelve"],
+          "options": [
+            "Three",
+            "Five",
+            "Eight",
+            "Twelve"
+          ],
           "answer": 2,
           "explain": "文中说夫妇俩在这座宅邸养育了八个孩子，包括安吉莉卡、伊丽莎和佩吉。"
         }
@@ -410,10 +439,22 @@ window.MUSICAL_SONGS["a-winter-s-ball"] = {
       "body": "音乐剧用一句歌词从挨饿的军营切到灯火通明的舞会，但莫里斯敦那个冬天确实有社交生活。玛莎·华盛顿 1779 年 12 月 31 日坐着雪橇从费城赶到福特宅邸，在那里住了五个月；她的日程里有舞会、晚宴，还有为来访使节和国会议员举行的阅兵。就在那个冬天，菲利普·斯凯勒把二十二岁的女儿伊丽莎送到莫里斯敦的姑妈家。1780 年 2 月，她遇见了亚历山大·汉密尔顿；3 月，两人已经决定结婚。剧里把这几周浓缩成一个迷人的夜晚，让伯尔和汉密尔顿打趣「娶斯凯勒家的姑娘」。历史学家能确定的是地点和季节，而不是某一场舞会：文献留下的是伊丽莎住在姑妈家、汉密尔顿在那里认识她的记载。舞会是真的；「完美的那一场」是音乐剧的写法。",
       "bodyEn": "The musical cuts from the starving camp to a glittering ball in one line, but Morristown’s winter did have a social side. Martha Washington arrived on December 31, 1779, after a sleigh ride from Philadelphia, and spent five months at the Ford Mansion. Her stay included dances, dinners and military reviews for visiting ambassadors and congressmen. That winter Philip Schuyler sent his daughter Eliza, then twenty-two, to stay with an aunt in Morristown. In February 1780 she met Alexander Hamilton, and by March they had decided to marry. The show compresses those weeks into one enchanted evening. Historians can be certain about the town and the season, not about a particular ball: the record places Eliza in her aunt’s household, where Hamilton met her. The dances were real; the single perfect ball is the musical’s framing.",
       "glossary": [
-        { "w": "sleigh", "zh": "雪橇" },
-        { "w": "military reviews", "zh": "阅兵" },
-        { "w": "enchanted", "zh": "迷人的，着了魔的" },
-        { "w": "framing", "zh": "叙事框架，处理方式" }
+        {
+          "w": "sleigh",
+          "zh": "雪橇"
+        },
+        {
+          "w": "military reviews",
+          "zh": "阅兵"
+        },
+        {
+          "w": "enchanted",
+          "zh": "迷人的，着了魔的"
+        },
+        {
+          "w": "framing",
+          "zh": "叙事框架，处理方式"
+        }
       ],
       "quiz": [
         {

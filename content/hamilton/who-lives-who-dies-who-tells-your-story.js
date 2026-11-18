@@ -104,9 +104,9 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
         },
         {
           "id": "l8",
-          "text": "I’ll give him this: his financial system is a",
-          "zh": "我必须如此评价他",
-          "note": "I'll give him this = 这一点我承认他；是让步句的开头，先承认对手的强项。",
+          "text": "I’ll give him this: his financial system",
+          "zh": "这一点我承认：他的财政体系",
+          "note": "I’ll give him this 是让步句的开头：这一点我承认他。",
           "phrases": [
             {
               "p": "give sb this",
@@ -120,9 +120,9 @@ window.MUSICAL_SONGS["who-lives-who-dies-who-tells-your-story"] = {
         },
         {
           "id": "l9",
-          "text": "Work of genius. I couldn’t undo it if I tried",
-          "zh": "他的系统是天才之作",
-          "note": "a work of genius = 天才之作；couldn't undo it if I tried 是虚拟条件句：就算我试，也拆不掉它。",
+          "text": "is a work of genius. I couldn’t undo it if I tried",
+          "zh": "是天才之作，我就算想拆也拆不掉",
+          "note": "a work of genius = 天才之作；couldn’t undo it if I tried 是虚拟条件。",
           "grammar": [
             {
               "t": "couldn't + 动词原形 + if + 过去式",

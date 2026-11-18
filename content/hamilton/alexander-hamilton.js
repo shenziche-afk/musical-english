@@ -23,9 +23,9 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
       "lines": [
         {
           "id": "l1",
-          "text": "How does a bastard, orphan, son of a whore and a",
-          "zh": "为何一个私生子、孤儿、妓女和",
-          "note": "先找谓语：主语堆了四个身份标签，谓语 grow up 要等到第 4 行。读英语长句，先抓「谁」和「做什么」，中间夹的都是修饰。",
+          "text": "How does a bastard, orphan, son of a whore",
+          "zh": "一个私生子、孤儿、妓女之子",
+          "note": "son of a whore 是「妓女之子」；这句一连串身份标签，是全剧开场最狠的自述。",
           "grammar": [
             {
               "t": "How does + 主语 + 动词原形?",
@@ -84,9 +84,9 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
         },
         {
           "id": "l2",
-          "text": "Scotsman, dropped in the middle of a",
-          "zh": "苏格兰佬的儿子",
-          "note": "dropped 的逻辑主语还是汉密尔顿：他被「丢」在那里。用过去分词而不是 who was dropped，句子更短、更冷，像在说一件行李。",
+          "text": "and a Scotsman, dropped in the middle of a forgotten spot",
+          "zh": "一个苏格兰佬，被丢在一个被遗忘的角落",
+          "note": "dropped in the middle of a forgotten spot：dropped 是「被丢弃」，被动语态把命运归给别人。",
           "grammar": [
             {
               "t": "过去分词短语",
@@ -135,9 +135,9 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
         },
         {
           "id": "l3",
-          "text": "Forgotten spot in the Caribbean by providence",
-          "zh": "降生于加勒比海的一片荒芜",
-          "note": "三个短语并列，都在补充「被丢下时是什么状态」。省略了 being / he was，歌词和诗歌里很常见。",
+          "text": "in the Caribbean by providence",
+          "zh": "在加勒比海，全凭天意",
+          "note": "in the Caribbean by providence = 在加勒比海，托天意；by providence 是「靠天意」。",
           "grammar": [
             {
               "t": "by + 抽象名词",
@@ -409,9 +409,9 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
         },
         {
           "id": "l10",
-          "text": "By fourteen, they placed him in charge of a",
-          "zh": "在十四岁，众人请他掌管",
-          "note": "by fourteen 是「到十四岁时」，不是「十四岁那年」。by 表示「不迟于某个时间点」。",
+          "text": "By fourteen, they placed him in charge",
+          "zh": "十四岁时，众人就让他掌管",
+          "note": "by fourteen 是「到十四岁时」；in charge of 的宾语被断到下一行。",
           "grammar": [
             {
               "t": "by + 时间/年龄",
@@ -451,9 +451,9 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
         },
         {
           "id": "l11",
-          "text": "Trading charter",
-          "zh": "贸易财务",
-          "note": "上一句的宾语补足：in charge of a trading charter，掌管一份贸易特许状。charter 这里指殖民政府发的贸易许可。"
+          "text": "of a trading charter",
+          "zh": "一份贸易特许状",
+          "note": "of a trading charter 接上一行：掌管一份贸易特许状。charter 是殖民政府发的贸易许可。"
         }
       ]
     },

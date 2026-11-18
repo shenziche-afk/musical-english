@@ -7,16 +7,16 @@ window.MUSICAL_LYRICS = {
       "singer": "Leslie Odom Jr., Daveed Diggs, Okieriete Onaodowan, Lin-Manuel Miranda, Phillipa Soo, Christopher Jackson, Original Broadway Cast of Hamilton",
       "lines": [
         [
-          "How does a bastard, orphan, son of a whore and a",
-          "为何一个私生子、孤儿、妓女和"
+          "How does a bastard, orphan, son of a whore",
+          "一个私生子、孤儿、妓女之子"
         ],
         [
-          "Scotsman, dropped in the middle of a",
-          "苏格兰佬的儿子"
+          "and a Scotsman, dropped in the middle of a forgotten spot",
+          "一个苏格兰佬，被丢在一个被遗忘的角落"
         ],
         [
-          "Forgotten spot in the Caribbean by providence",
-          "降生于加勒比海的一片荒芜"
+          "in the Caribbean by providence",
+          "在加勒比海，全凭天意"
         ],
         [
           "Impoverished, in squalor",
@@ -43,12 +43,12 @@ window.MUSICAL_LYRICS = {
           "依靠自学以塑"
         ],
         [
-          "By fourteen, they placed him in charge of a",
-          "在十四岁，众人请他掌管"
+          "By fourteen, they placed him in charge",
+          "十四岁时，众人就让他掌管"
         ],
         [
-          "Trading charter",
-          "贸易财务"
+          "of a trading charter",
+          "一份贸易特许状"
         ],
         [
           "And every day while slaves were being slaughtered and carted",
@@ -1860,12 +1860,12 @@ window.MUSICAL_LYRICS = {
           "听我说，听我说，我的名字叫Samuel Seabury"
         ],
         [
-          "And I present “Free Thoughts on the",
-          "我来发表“关于大陆会议的议程的看法”"
+          "And I present",
+          "我来介绍"
         ],
         [
-          "Proceedings of the Continental Congress!”",
-          "的议程的看法”"
+          "“Free Thoughts on the Proceedings of the Continental Congress!”",
+          "《大陆会议议事录自由谈》"
         ],
         [
           "Heed not the rabble who scream revolution",
@@ -2953,12 +2953,12 @@ window.MUSICAL_LYRICS = {
           "但我们有什么共同点呢？我们"
         ],
         [
-          "reliable with the",
-          "都被姑娘们"
+          "reliable",
+          "靠得住"
         ],
         [
-          "Ladies!",
-          "喜欢！"
+          "with the ladies!",
+          "在姑娘们中间很吃得开！"
         ],
         [
           "There are so many to deflower.",
@@ -3719,12 +3719,12 @@ window.MUSICAL_LYRICS = {
           "故作姿态 摆明立场"
         ],
         [
-          "He's a",
-          "他有点儿"
+          "He’s a bit of a flirt",
+          "他有点爱调情"
         ],
         [
-          "Bit of a flirt but I'm a give it a chance",
-          "轻浮，不过我想给他次机会"
+          "but I’m a give it a chance",
+          "不过我想给他次机会"
         ],
         [
           "I asked about his family did you see his answer",
@@ -4385,12 +4385,12 @@ window.MUSICAL_LYRICS = {
           "家祖讲传基督的福音"
         ],
         [
-          "But there are things that the",
-          "可是也有些东西"
+          "But there are things that",
+          "可是有些东西"
         ],
         [
-          "Homilies and hymns won't teach ya",
-          "是讲道和圣歌中未提及的"
+          "the homilies and hymns won’t teach ya",
+          "是讲道和圣歌教不了你的"
         ],
         [
           "My mother was a genius",
@@ -7023,12 +7023,12 @@ window.MUSICAL_LYRICS = {
           "我需要时间"
         ],
         [
-          "Watching the",
-          "来静观"
+          "Watching",
+          "静观"
         ],
         [
-          "Afterbirth of a nation",
-          "这新生的国家"
+          "the afterbirth of a nation",
+          "这个国家诞生后的血污"
         ],
         [
           "Watching the tension grow.",
@@ -11170,12 +11170,12 @@ window.MUSICAL_LYRICS = {
           "也为我的故事所动容"
         ],
         [
-          "Raised enough for me to book passage on a",
-          "筹够了一张"
+          "Raised enough for me to book passage",
+          "攒够了钱，订到"
         ],
         [
-          "Ship that was New York bound…",
-          "驶向纽约的船票"
+          "on a ship that was New York bound…",
+          "一张开往纽约的船票"
         ],
         [
           "I wrote my way out of hell",
@@ -13728,12 +13728,12 @@ window.MUSICAL_LYRICS = {
           "杰弗逊总统："
         ],
         [
-          "I’ll give him this: his financial system is a",
-          "我必须如此评价他"
+          "I’ll give him this: his financial system",
+          "这一点我承认：他的财政体系"
         ],
         [
-          "Work of genius. I couldn’t undo it if I tried",
-          "他的系统是天才之作"
+          "is a work of genius. I couldn’t undo it if I tried",
+          "是天才之作，我就算想拆也拆不掉"
         ],
         [
           "And I tried",
