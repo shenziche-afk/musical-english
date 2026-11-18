@@ -185,6 +185,7 @@ musical-english/
 │  ├─ build_shows.py     扫描 content/<id>/show.json 生成 shows.js
 │  ├─ new_show.py        新建剧目脚手架（python3 dev/new_show.py <id> "标题" "副标题"）
 │  ├─ build_poto.py      从本地专辑目录生成 poto 的歌词 / 时间轴 / 曲目
+│  ├─ asr_times.py       音频识别 → 逐行时间码（默认只出报告，需 .venv-whisper）
 │  ├─ clean_credits.js   清歌词末尾的制作名单（node dev/clean_credits.js <id>）
 │  └─ smoke.js           Node 冒烟测试
 ├─ NOTICE.md             版权与下架声明（页面底部、设置页共用同一段文案）
