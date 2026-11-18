@@ -11,3 +11,6 @@ content/poto/_work/
 # 工作台本地数据（备份与令牌）
 dev/_backup/
 dev/.studio_token
+
+# 本地 ASR 环境（mlx-whisper）
+.venv-whisper/

@@ -89,6 +89,22 @@ gh run list --workflow=pages.yml
   和 `validate_packs`，任何一步不过就自动写回原文件。打开时记 `sha1`，对不上拒绝保存（防 pull 覆盖）。
 - **README 面向访客**：开头三问（这是什么/怎么用/数据在哪）+ 内容表格 + 两张截图。
 
+## 5.5 音频时间码校准（已装未跑）
+
+- 环境：项目内 `.venv-whisper/`（`/usr/bin/python3` 3.9 + `mlx-whisper`，mlx 0.29.3），**不要**用 DSH 自带 python——它加载 mlx 的 .so 会被 Team ID 校验拦掉。
+- 模型还没下、转写还没跑。首次运行会从 hf-mirror 拉 `mlx-community/whisper-large-v3-turbo`（约 1.6 GB）：
+
+```bash
+cd /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac
+HF_ENDPOINT=https://hf-mirror.com .venv-whisper/bin/mlx_whisper \
+  audio/hamilton/01-alexander-hamilton.m4a \
+  --model mlx-community/whisper-large-v3-turbo \
+  --output-format json --output-dir /tmp/asr
+```
+
+- 能量体检脚本：`dev/check_times.py`（输出 `dev/times_report.json`），只能抓「时长 <0.4s」「起点落在长静音里」这类极端异常，不能当自动修正依据。
+- 计划：词级时间戳 → 与歌词逐行序列对齐 → 只在高置信匹配时改边界；旧 `times.js` 备份可回滚。
+
 ## 6. 坑（都踩过）
 
 1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。
