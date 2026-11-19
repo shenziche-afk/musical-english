@@ -1,6 +1,6 @@
 /* 剧读 · 冒烟测试
  * 用最小 DOM 桩在 Node 里跑一遍 app.js：四个视图、曲库播放、复习流程、歌词导入、
- * 单句循环 / 跟读留白 / 快捷键（用 FakeAudio 的 timeupdate 模拟句尾）。
+ * 单句循环 / 快捷键（用 FakeAudio 的 timeupdate 模拟句尾）。
  * 运行：node musical-english/dev/smoke.js
  */
 const fs = require("fs");
@@ -477,7 +477,7 @@ au.currentTime = line0[1] + 0.2;
 tick();
 check("句尾回头重放", !au.paused && Math.abs(au.currentTime - line0[0]) < 0.001, String(au.currentTime));
 check("循环次数写入状态条", el("segChip").innerHTML.includes("×1"), el("segChip").innerHTML);
-check("dock 有循环/跟读键", el("dock").innerHTML.includes('data-action="toggle-loop"') && el("dock").innerHTML.includes('data-action="toggle-shadow"'));
+check("dock 有循环键", el("dock").innerHTML.includes('data-action="toggle-loop"'));
 
 act("stop-seg");
 check("停止循环后暂停", au.paused === true);
@@ -490,24 +490,6 @@ au.currentTime = line1[1] + 0.2;
 tick();
 check("普通模式播完即停", au.paused === true);
 check("普通模式不残留状态条", el("segChip").innerHTML === "");
-
-/* 跟读留白 */
-tabClick("settings");
-check("设置页有跟读留白", el("view-settings").innerHTML.includes("跟读留白"));
-docListeners.change.forEach((f) => f({ target: { id: "shadowGap", value: "1500" } }));
-check("跟读留白已保存", JSON.parse(store["musical-en.v1"]).settings.shadowGap === 1500);
-tabClick("study");
-
-act("toggle-shadow");
-check("跟读模式开始播放", !au.paused);
-check("跟读状态条", el("segChip").innerHTML.includes("跟读"), el("segChip").innerHTML);
-au.currentTime = line1[1] + 0.2;
-tick();
-check("跟读句尾暂停留白", au.paused === true);
-check("留白倒计时可见", /留白/.test(el("segChip").innerHTML), el("segChip").innerHTML);
-
-act("stop-seg");
-check("退出跟读", au.paused === true && el("segChip").innerHTML === "");
 
 /* 快捷键 */
 docListeners.keydown.forEach((f) =>

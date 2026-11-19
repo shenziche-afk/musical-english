@@ -30,17 +30,17 @@
 播放位置断点续播；整首连播时当前句高亮并自动跟随；
 曲库支持筛选（全部/未学完/已学完/有精读）与排序（幕次/掌握度/时长/标题）。
 
-精听（2026-11-15 加，11-19 改）：每句有 ▶ 单句播放、「环」单句循环，播放器底部有 环 / 跟 两个键——
-跟读是「听一句 → 静音留白（默认 2.5 s，可点状态条 1–6 s 调）→ 重放一遍 → 自动下一句」。
+精听（2026-11-15 加，11-19 改）：每句有 ▶ 单句播放、「环」单句循环，播放器底部只剩「环」一个键——
+跟读与录音功能已整体移除（2026-11-19），dock 里只保留「环」单句循环。
 录音回放功能已整体移除（11-19），dock 里不再有「录 / 听」键。
-快捷键 `R` 循环、`S` 跟读、`Esc` 停。
+快捷键 `R` 循环、`Esc` 停。
 
 ## 3. 数据与代码结构
 
 ```
 index.html            选剧目 → 写 :root 主题变量 → document.write 核心三件套 + 首个 pack
 js/app.js             全部交互（ES5 IIFE，约 2900 行）：曲库/精读/歌词/短语/复习/播放器；
-                      单句循环 + 跟读在「单句循环 / 跟读」小节（armSegment / finishSegment / startGap）；
+                      单句循环在「单句循环」小节（armSegment / finishSegment）；
                       按需加载 pack：content/<showId>/<packId>.js
 js/core.js            localStorage 状态、SM-2、每日快照、文本归一化
 studio/               本地工作台前端（index/studio.js/studio.css，不进 dist）
@@ -63,7 +63,7 @@ export PATH="/Users/shenjiahao/.dsh/dsh-runtimes/dsh-primary-runtime/dependencie
 cd /Users/shenjiahao/Documents/deepseek-harness/default-workspace/musical-english-mac
 
 node dev/validate_packs.js      # 全剧目内容校验（行数/文本/音频/题目/来源）
-node dev/smoke.js               # UI 回归（~130 条，只跑 hamilton；含循环/跟读/快捷键）
+node dev/smoke.js               # UI 回归（~120 条，只跑 hamilton；含循环/快捷键）
 python3 dev/studio.py           # 本地工作台（改断句/译文/背景），打印带 ?t= 的地址
 python3 dev/jsonedit.py --self-test
 node dev/integrate_packs.js poto

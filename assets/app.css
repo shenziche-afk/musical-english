@@ -3372,35 +3372,6 @@ select,
   -webkit-appearance: none;
 }
 
-/* 跟读倒计时条 */
-.shadow-bar {
-  height: 3px;
-  margin-top: 6px;
-  border-radius: 2px;
-  background: var(--line-3);
-  overflow: hidden;
-}
-
-.shadow-bar i {
-  display: block;
-  height: 100%;
-  width: 0%;
-  background: var(--gold);
-  transition: width 0.1s linear;
-}
-
-.seg-body {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-
-
 /* 下拉箭头：跟随主题色 */
 select.study-select,
 select.lib-sort,

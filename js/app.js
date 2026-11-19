@@ -163,16 +163,11 @@
     type: "全部",
     lyricsN: 1,
     playingIdx: -1,
-    /* 当前这一句：{ n, i, start, end, mode }，mode = line（播完停）| loop（单句循环）| shadow（跟读） */
+    /* 当前这一句：{ n, i, start, end, mode }，mode = line（播完停）| loop（单句循环） */
     segment: null,
     /* 上次播过的句子，dock 上的 🔁 / 🎤 用它做默认目标 */
     lastSeg: null,
     loopCount: 0,
-    /* 跟读留白剩余毫秒 */
-    shadowLeft: 0,
-    shadowGapTotal: 0,
-    /* 跟读阶段：play（听）| gap（该你了）| replay（重放一遍） */
-    shadowPhase: "play",
     /* 隐藏中文时，单独点开过的行：{ l12: true } */
     zh: {},
     /* 上次保存播放位置的时间，避免 timeupdate 写太勤 */
@@ -846,20 +841,13 @@
     );
   }
 
-  /* ---------------- 单句循环 / 跟读 ---------------- */
+  /* ---------------- 单句循环 ---------------- */
 
   var segTimer = null;
-  var gapTimer = null;
 
   function clearSegmentTimer() {
     if (segTimer) clearTimeout(segTimer);
     segTimer = null;
-  }
-
-  function stopGap() {
-    if (gapTimer) clearInterval(gapTimer);
-    gapTimer = null;
-    ui.shadowLeft = 0;
   }
 
   /* 排一个精确的收尾定时器（按播放速度换算）；timeupdate 里还有一道兜底。
@@ -884,7 +872,7 @@
     if (segTimer && segTimer.unref) segTimer.unref();
   }
 
-  /* 一句播完：循环就回头，跟读就留白，普通模式就停 */
+  /* 一句播完：循环就回头，普通模式就停 */
   function finishSegment() {
     var el = audio.el;
     var seg = ui.segment;
@@ -898,63 +886,14 @@
       updateSegChip();
       return;
     }
-    if (seg.mode === "shadow") {
-      el.pause();
-      if (ui.shadowPhase === "replay") {
-        advanceShadow(seg);
-        return;
-      }
-      startGap(seg);
-      return;
-    }
     el.pause();
     ui.segment = null;
     renderDock();
     markPlayingLine();
   }
 
-  /* 跟读留白：这段静音是留给你自己重复的，倒计时结束再重放这一句 */
-  function startGap(seg) {
-    stopGap();
-    var gap = Number(state.settings.shadowGap) || 2500;
-    gap = Math.max(800, Math.min(8000, gap));
-    ui.shadowLeft = gap;
-    ui.shadowGapTotal = gap;
-    ui.shadowPhase = "gap";
-    updateSegChip();
-    gapTimer = setInterval(function () {
-      ui.shadowLeft -= 100;
-      if (ui.shadowLeft > 0) {
-        updateSegChip();
-        return;
-      }
-      stopGap();
-      if (!ui.segment || ui.segment.mode !== "shadow" || !audio.el) return;
-      ui.shadowPhase = "replay";
-      audio.el.currentTime = ui.segment.start;
-      safePlay(audio.el);
-      armSegment();
-      updateSegChip();
-    }, 100);
-    if (gapTimer && gapTimer.unref) gapTimer.unref();
-  }
-
-  /* 重放完这一句，自动接下一句；整首最后一句就停下 */
-  function advanceShadow(seg) {
-    var n = seg.n;
-    var next = seg.i + 1;
-    var arr = TIMES[String(n)] || [];
-    if (next < arr.length && arr[next]) {
-      playSegment(n, next, "shadow");
-    } else {
-      stopSegment(true);
-      toast("这一首跟读完了");
-    }
-  }
-
   function stopSegment(silent) {
     clearSegmentTimer();
-    stopGap();
     if (audio.el && !audio.el.paused) audio.el.pause();
     ui.segment = null;
     renderDock();
@@ -980,31 +919,11 @@
     playSegment(t.n, t.i, "loop");
   }
 
-  function toggleShadow() {
-    var t = segTarget();
-    if (!t) {
-      toast("先点某一句左边的 ▶");
-      return;
-    }
-    if (ui.segment && ui.segment.mode === "shadow" && ui.segment.n === t.n && ui.segment.i === t.i) {
-      stopSegment();
-      return;
-    }
-    playSegment(t.n, t.i, "shadow");
-    toast("跟读：先听一句 → 留 " + (Number(state.settings.shadowGap) || 2500) / 1000 + " 秒给你说 → 重放一遍 → 自动下一句");
-  }
-
   function segChipParts() {
     var seg = ui.segment;
     if (!seg) return null;
     if (seg.mode === "loop") {
       return { label: "单句循环", val: ui.loopCount ? "×" + ui.loopCount : "第 " + (seg.i + 1) + " 句" };
-    }
-    if (seg.mode === "shadow") {
-      if (ui.shadowPhase === "gap") {
-        return { label: "该你了", val: (ui.shadowLeft / 1000).toFixed(1) + "s · 点这里可调" };
-      }
-      return { label: "跟读", val: "第 " + (seg.i + 1) + " 句" + (ui.shadowPhase === "replay" ? " · 再听一遍" : "") };
     }
     return null;
   }
@@ -1027,23 +946,13 @@
     if (box) {
       var p = segChipParts();
       box.innerHTML = p
-        ? '<button class="seg-body" data-action="gap-cycle" title="点一下调整跟读留白">' +
-          '<span class="seg-label">' +
+        ? '<span class="seg-label">' +
           ME.esc(p.label) +
           '</span><span class="seg-val">' +
           ME.esc(p.val) +
-          "</span></button>" +
+          "</span>" +
           '<button class="seg-x" data-action="stop-seg" aria-label="停止">×</button>'
         : "";
-    }
-    var bar = document.getElementById("shadowBar");
-    var fill = document.getElementById("shadowFill");
-    var segNow = ui.segment;
-    var inGap = !!(segNow && segNow.mode === "shadow" && ui.shadowPhase === "gap");
-    if (bar) bar.hidden = !inGap;
-    if (bar && inGap && fill) {
-      var pct = ui.shadowGapTotal ? Math.max(0, Math.min(100, (ui.shadowLeft / ui.shadowGapTotal) * 100)) : 0;
-      fill.style.width = pct + "%";
     }
     var seg = ui.segment;
     var lbtn = document.querySelector('.mode-btn[data-action="toggle-loop"]');
@@ -1051,12 +960,6 @@
       var loopOn = !!(seg && seg.mode === "loop");
       lbtn.classList.toggle("is-on", loopOn);
       lbtn.setAttribute("aria-pressed", loopOn ? "true" : "false");
-    }
-    var sbtn = document.querySelector('.mode-btn[data-action="toggle-shadow"]');
-    if (sbtn) {
-      var shadowOn = !!(seg && seg.mode === "shadow");
-      sbtn.classList.toggle("is-on", shadowOn);
-      sbtn.setAttribute("aria-pressed", shadowOn ? "true" : "false");
     }
     syncLineLoop();
   }
@@ -1090,7 +993,7 @@
     }
   }
 
-  /* 播放一句：mode = "line"（播完停）| "loop"（单句循环）| "shadow"（跟读） */
+  /* 播放一句：mode = "line"（播完停）| "loop"（单句循环） */
   function playSegment(n, i, mode) {
     var t = lineTime(n, i);
     var track = trackByN(n);
@@ -1098,11 +1001,9 @@
     var start = t[0];
     var end = t[1];
     clearSegmentTimer();
-    stopGap();
     ui.segment = { n: n, i: i, start: start, end: end, mode: mode || "line" };
     ui.lastSeg = { n: n, i: i };
     ui.loopCount = 0;
-    ui.shadowPhase = "play";
 
     function seekAndPlay() {
       audio.el.currentTime = start;
@@ -1164,9 +1065,8 @@
       return x.n === n;
     })[0];
     if (!t || !audio.el) return;
-    /* 整首播放：退出单句循环 / 跟读 */
+    /* 整首播放：退出单句循环 */
     clearSegmentTimer();
-    stopGap();
     ui.segment = null;
     updateSegChip();
     markPlayingLine();
@@ -2103,26 +2003,6 @@
       '">' +
       "</div>" +
       '<div class="panel">' +
-      "<h3>跟读留白</h3>" +
-      "<p>跟读的节奏是：听一句 → 静音留白（这段时间你跟着说）→ 自动重放这一句 → 自动接下一句。留白长短直接影响顺不顺，建议 2–3 秒；播放条上的「该你了 2.4s」也可以直接点着调。</p>" +
-      '<select id="shadowGap" class="study-select" aria-label="跟读留白">' +
-      [1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000]
-        .map(function (ms) {
-          return (
-            '<option value="' +
-            ms +
-            '"' +
-            (Number(state.settings.shadowGap) === ms ? " selected" : "") +
-            ">" +
-            ms / 1000 +
-            " 秒</option>"
-          );
-        })
-        .join("") +
-      "</select>" +
-      '<p class="hint">句子越长可以留得越久；速度调慢时留白不变。</p>' +
-      "</div>" +
-      '<div class="panel">' +
       "<h3>学习数据</h3>" +
       "<p>进度存在这台电脑的浏览器里。换设备或清浏览器数据前，先导出一份。</p>" +
       '<div class="row"><button class="primary" data-action="export">导出进度 JSON</button>' +
@@ -2286,11 +2166,9 @@
       ME.esc(audio.track ? audio.track.title : audio.name || (song && song.title) || "") +
       '</span><span id="audioTime">0:00 / 0:00</span></div>' +
       '<input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放进度">' +
-      '<div class="shadow-bar" id="shadowBar" hidden><i id="shadowFill"></i></div>' +
       "</div>" +
       '<div class="dock-modes">' +
       '<button class="mode-btn" data-action="toggle-loop" title="单句循环（R）" aria-label="单句循环" aria-pressed="false">环</button>' +
-      '<button class="mode-btn" data-action="toggle-shadow" title="跟读模式（S）" aria-label="跟读" aria-pressed="false">跟</button>' +
       '<span class="seg-chip" id="segChip"></span>' +
       "</div>" +
       '<select id="rateSel" aria-label="播放速度">' +
@@ -2322,7 +2200,6 @@
     }
     var prev = document.querySelector(".lyric-line.is-playing");
     if (prev) prev.classList.remove("is-playing");
-    /* 跟读留白时音频是暂停的，时间轴算不出当前句，直接用 segment 兜底，别让高亮跳走 */
     if (active < 0 && ui.segment && ui.segment.n === n) active = ui.segment.i;
     if (active >= 0) {
       var el = document.querySelector('.lyric-line[data-idx="' + active + '"]');
@@ -2389,7 +2266,7 @@
       renderDock();
     }
     if (audio.el.paused) {
-      /* 循环 / 跟读中按下播放键：从这一句的开头接着来，而不是播整首 */
+      /* 循环中按下播放键：从这一句的开头接着来，而不是播整首 */
       if (ui.segment && audio.el.currentTime >= ui.segment.end - 0.1) {
         audio.el.currentTime = ui.segment.start;
       }
@@ -2678,17 +2555,7 @@
     if (!target) return;
     var action = target.getAttribute("data-action");
 
-    if (action === "gap-cycle") {
-      var gopts = [1000, 1500, 2000, 2500, 3000, 4000, 5000];
-      var cur = Number(state.settings.shadowGap) || 2500;
-      var gi = gopts.indexOf(cur);
-      var gnext = gopts[(gi + 1) % gopts.length];
-      state.settings.shadowGap = gnext;
-      ME.saveState(state);
-      toast("跟读留白 " + gnext / 1000 + " 秒");
-      if (ui.segment && ui.segment.mode === "shadow" && ui.shadowPhase === "gap") startGap(ui.segment);
-      updateSegChip();
-    } else if (action === "lib-filter") {
+    if (action === "lib-filter") {
       ui.libFilter = target.getAttribute("data-filter") || "all";
       renderLibrary();
     } else if (action === "peek-zh") {
@@ -2715,9 +2582,7 @@
       ui.lyricsN = Number(target.getAttribute("data-n"));
       switchView("lyrics");
     } else if (action === "play-line") {
-      /* 跟读模式里点下一句，继续保持跟读 */
-      var pMode = ui.segment && ui.segment.mode === "shadow" ? "shadow" : "line";
-      playSegment(Number(target.getAttribute("data-n")), Number(target.getAttribute("data-i")), pMode);
+      playSegment(Number(target.getAttribute("data-n")), Number(target.getAttribute("data-i")), "line");
     } else if (action === "loop-line") {
       var lN = Number(target.getAttribute("data-n"));
       var lI = Number(target.getAttribute("data-i"));
@@ -2725,8 +2590,6 @@
       else playSegment(lN, lI, "loop");
     } else if (action === "toggle-loop") {
       toggleLoop();
-    } else if (action === "toggle-shadow") {
-      toggleShadow();
     } else if (action === "stop-seg") {
       stopSegment();
     } else if (action === "play-track") {
@@ -2872,7 +2735,6 @@
     } else if (e.target.id === "seek" && audio.el && audio.el.duration) {
       /* 手动拖进度条就退出单句控制，交还给整首播放 */
       clearSegmentTimer();
-      stopGap();
       ui.segment = null;
       audio.el.currentTime = (Number(e.target.value) / 1000) * audio.el.duration;
       updateSegChip();
@@ -2906,14 +2768,6 @@
       state.settings.newPerDay = Math.max(0, Math.min(60, Number(e.target.value) || 0));
       ME.saveState(state);
       toast("每日新卡上限：" + state.settings.newPerDay);
-    } else if (e.target.id === "shadowGap") {
-      state.settings.shadowGap = Number(e.target.value) || 2500;
-      ME.saveState(state);
-      toast("跟读留白：" + state.settings.shadowGap / 1000 + " 秒");
-      if (ui.segment && ui.segment.mode === "shadow") {
-        stopGap();
-        startGap(ui.segment);
-      }
     }
   });
 
@@ -2973,7 +2827,7 @@
       return;
     }
 
-    /* 单句循环 / 跟读：R 循环、S 跟读、Esc 停 */
+    /* 单句循环：R 循环、Esc 停 */
     if (e.key === "Escape") {
       if (ui.segment) {
         stopSegment();
@@ -2983,11 +2837,6 @@
     if ((e.key === "r" || e.key === "R") && !e.metaKey && !e.ctrlKey) {
       e.preventDefault();
       toggleLoop();
-      return;
-    }
-    if ((e.key === "s" || e.key === "S") && !e.metaKey && !e.ctrlKey) {
-      e.preventDefault();
-      toggleShadow();
       return;
     }
 
