@@ -151,6 +151,16 @@ python3 dev/pad_times.py --dry-run                   # 只看会改多少
 教训：whisper 的词级时间戳会整段漂移（Wait for It 第 1 句被推到 11.07s，人工 LRC 与能量都在 9.7s）。
 以后先用 LRC 对照，ASR 只补 LRC 没有的行。
 
+## 5.9 强制对齐（2026-11-19，最终采用）
+
+whisper 词时间戳和人工 LRC 都有 ±1s 的漂移；现在改用 **wav2vec2 CTC 强制对齐**：
+`dev/force_align.py`（`.venv-align/`，torch+torchaudio+soundfile），把整首歌词按字符对齐到音频，
+输出 `dev/aligned/<show>/<n>.json`，每行 start/end 精确到 20ms 帧。
+
+- 全量：hamilton 46 首、poto 20 首（Entr'acte 纯音乐跳过）；hamilton 应用 3,301 行、poto 780 行；
+- 应用后再跑 `dev/pad_times.py --pad 0.15 --overlap 0.1` 加句尾旷量；
+- 重跑某首：`.venv-align/bin/python dev/force_align.py --show <id> --n <n>`。
+
 ## 6. 坑（都踩过）
 
 1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。

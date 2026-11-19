@@ -17,3 +17,7 @@ dev/.studio_token
 
 # ASR 中间产物
 dev/asr/
+
+# 本地强制对齐环境
+.venv-align/
+dev/aligned/
