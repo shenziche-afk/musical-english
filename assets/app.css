@@ -3419,3 +3419,18 @@ button,
   color: var(--muted-2);
   vertical-align: 1px;
 }
+
+/* 非内容区不参与拖选：避免标题/导语被划成一块金色 */
+.page-head,
+.hint-strip,
+.lib-stats,
+.songbar,
+.dock,
+.support,
+.legal-foot,
+.lib-tools,
+.bg-entry,
+.next-song {
+  -webkit-user-select: none;
+  user-select: none;
+}

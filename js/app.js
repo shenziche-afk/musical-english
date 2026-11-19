@@ -2536,6 +2536,10 @@
     updateBrand();
     renderProgress();
     document.body.classList.remove("nav-hidden");
+    try {
+      var sel = window.getSelection && window.getSelection();
+      if (sel) sel.removeAllRanges();
+    } catch (e) {}
     lastScrollY = 0;
     window.scrollTo({ top: 0, behavior: "smooth" });
     var push = !!ui.routePush;
