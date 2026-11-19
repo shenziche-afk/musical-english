@@ -132,6 +132,16 @@ python3 dev/asr_times.py self-test                                       # 合�
   写回后再用 `repair` 保证无重叠、无零长度（脚本见当日提交历史）。
 - 想重跑某首：`.venv-whisper/bin/python dev/asr_times.py transcribe|align|apply --show <id> --n <n>`。
 
+## 5.7 句尾旷量（2026-11-19）
+
+`dev/pad_times.py` 给每句结尾加 `--pad 0.18s`（默认），最多压到下一句开头 `+0.12s`，避免最后一个词被切掉；
+工作台的「重叠」判定阈值同步放宽到 0.15s，红色警告不会因此刷屏。想调：
+
+```bash
+python3 dev/pad_times.py --pad 0.25 --overlap 0.15   # 更大旷量
+python3 dev/pad_times.py --dry-run                   # 只看会改多少
+```
+
 ## 6. 坑（都踩过）
 
 1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。

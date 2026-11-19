@@ -268,7 +268,7 @@
       var next = arr[i + 1];
       var issues = [];
       if (!(t[0] < t[1])) issues.push(["bad", "起点 ≥ 终点"]);
-      if (prev && t[0] < prev[1] - 0.001) issues.push(["bad", "和前一句重叠 " + (prev[1] - t[0]).toFixed(2) + "s"]);
+      if (prev && t[0] < prev[1] - 0.15) issues.push(["bad", "和前一句重叠 " + (prev[1] - t[0]).toFixed(2) + "s"]);
       else if (prev && t[0] > prev[1] + 0.6) issues.push(["warn", "与前一句空 " + (t[0] - prev[1]).toFixed(2) + "s"]);
       if (next && t[1] > next[0] + 0.001) issues.push(["bad", "压到下一句 " + (t[1] - next[0]).toFixed(2) + "s"]);
       var cls = "trow" + (i === S.line ? " is-now" : "") + (issues.some(function (x) { return x[0] === "bad"; }) ? " is-bad" : "");
