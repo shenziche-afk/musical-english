@@ -71,6 +71,41 @@ def track_for(show, n):
 
 # ---------- 转写 ----------
 
+def read_wav(path):
+    """读 PCM/EXTENSIBLE WAV：afconvert 在 16k 下会写 WAVE_FORMAT_EXTENSIBLE，
+    标准库 wave 不认，这里按 RIFF 块自己解析。"""
+    import struct
+    import numpy as np
+
+    data = open(path, "rb").read()
+    if data[:4] != b"RIFF" or data[8:12] != b"WAVE":
+        raise SystemExit("不是 WAV 文件：%s" % path)
+    pos = 12
+    fmt = None
+    pcm = None
+    while pos + 8 <= len(data):
+        cid = data[pos:pos + 4]
+        size = struct.unpack("<I", data[pos + 4:pos + 8])[0]
+        body = data[pos + 8:pos + 8 + size]
+        if cid == b"fmt ":
+            tag, ch, sr, _br, _ba, bits = struct.unpack("<HHIIHH", body[:16])
+            if tag == 0xFFFE and len(body) >= 40:
+                tag = struct.unpack("<H", body[24:26])[0]
+            fmt = (tag, ch, sr, bits)
+        elif cid == b"data":
+            pcm = body
+        pos += 8 + size + (size & 1)
+    if not fmt or pcm is None:
+        raise SystemExit("WAV 缺少 fmt/data 块：%s" % path)
+    tag, ch, sr, bits = fmt
+    if tag != 1 or bits != 16:
+        raise SystemExit("只支持 16-bit PCM，实际 tag=%s bits=%s" % (tag, bits))
+    x = np.frombuffer(pcm, dtype="<i2").astype("float32") / 32768.0
+    if ch > 1:
+        x = x.reshape(-1, ch).mean(axis=1)
+    return x, sr
+
+
 def decode_16k(path):
     """用 macOS 自带 afconvert 解码成 16k 单声道 float32，避开 ffmpeg 依赖。"""
     wav = "/tmp/_asr_decode.wav"
@@ -78,15 +113,11 @@ def decode_16k(path):
         ["afconvert", "-f", "WAVE", "-d", "LEI16@16000", "-c", "1", path, wav],
         check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     )
-    w = wave.open(wav)
-    sr = w.getframerate()
+    x, sr = read_wav(wav)
+    os.remove(wav)
     if sr != 16000:
         raise SystemExit("afconvert 输出采样率不是 16k：%s" % sr)
-    raw = w.readframes(w.getnframes())
-    w.close()
-    os.remove(wav)
-    import numpy as np
-    return np.frombuffer(raw, dtype=np.int16).astype("float32") / 32768.0
+    return x
 
 
 def cmd_transcribe(args):
