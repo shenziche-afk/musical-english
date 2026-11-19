@@ -170,6 +170,9 @@
     loopCount: 0,
     /* 跟读留白剩余毫秒 */
     shadowLeft: 0,
+    shadowGapTotal: 0,
+    /* 跟读阶段：play（听）| gap（该你了）| replay（重放一遍） */
+    shadowPhase: "play",
     /* 隐藏中文时，单独点开过的行：{ l12: true } */
     zh: {},
     /* 上次保存播放位置的时间，避免 timeupdate 写太勤 */
@@ -424,6 +427,7 @@
           "</span>"
         );
       })() +
+      '<span class="line-ctl line-ctl-end">' +
       (!state.settings.showZh
         ? '<button class="zh-peek' + (ui.zh[line.id] ? " is-on" : "") +
           '" data-action="peek-zh" data-id="' + ME.esc(line.id) +
@@ -434,6 +438,7 @@
       '" aria-pressed="' +
       mastered +
       '" title="标记为已掌握">✓</button>' +
+      "</span>" +
       "</div>" +
       (open && hasDetail ? '<div class="line-detail">' + detailHtml(line) + "</div>" : "") +
       "</article>"
@@ -897,6 +902,10 @@
     }
     if (seg.mode === "shadow") {
       el.pause();
+      if (ui.shadowPhase === "replay") {
+        advanceShadow(seg);
+        return;
+      }
       startGap(seg);
       return;
     }
@@ -912,21 +921,37 @@
     var gap = Number(state.settings.shadowGap) || 2500;
     gap = Math.max(800, Math.min(8000, gap));
     ui.shadowLeft = gap;
+    ui.shadowGapTotal = gap;
+    ui.shadowPhase = "gap";
     updateSegChip();
     gapTimer = setInterval(function () {
-      ui.shadowLeft -= 250;
+      ui.shadowLeft -= 100;
       if (ui.shadowLeft > 0) {
         updateSegChip();
         return;
       }
       stopGap();
       if (!ui.segment || ui.segment.mode !== "shadow" || !audio.el) return;
+      ui.shadowPhase = "replay";
       audio.el.currentTime = ui.segment.start;
       safePlay(audio.el);
       armSegment();
       updateSegChip();
-    }, 250);
+    }, 100);
     if (gapTimer && gapTimer.unref) gapTimer.unref();
+  }
+
+  /* 重放完这一句，自动接下一句；整首最后一句就停下 */
+  function advanceShadow(seg) {
+    var n = seg.n;
+    var next = seg.i + 1;
+    var arr = TIMES[String(n)] || [];
+    if (next < arr.length && arr[next]) {
+      playSegment(n, next, "shadow");
+    } else {
+      stopSegment(true);
+      toast("这一首跟读完了");
+    }
   }
 
   function stopSegment(silent) {
@@ -968,7 +993,7 @@
       return;
     }
     playSegment(t.n, t.i, "shadow");
-    toast("跟读：每句播完留 " + (Number(state.settings.shadowGap) || 2500) / 1000 + " 秒给你重复");
+    toast("跟读：先听一句 → 留 " + (Number(state.settings.shadowGap) || 2500) / 1000 + " 秒给你说 → 重放一遍 → 自动下一句");
   }
 
   function segChipParts() {
@@ -978,10 +1003,10 @@
       return { label: "单句循环", val: ui.loopCount ? "×" + ui.loopCount : "第 " + (seg.i + 1) + " 句" };
     }
     if (seg.mode === "shadow") {
-      return {
-        label: "跟读",
-        val: ui.shadowLeft > 0 ? "留白 " + (ui.shadowLeft / 1000).toFixed(1) + "s" : "第 " + (seg.i + 1) + " 句"
-      };
+      if (ui.shadowPhase === "gap") {
+        return { label: "该你了", val: (ui.shadowLeft / 1000).toFixed(1) + "s · 点这里可调" };
+      }
+      return { label: "跟读", val: "第 " + (seg.i + 1) + " 句" + (ui.shadowPhase === "replay" ? " · 再听一遍" : "") };
     }
     return null;
   }
@@ -1004,12 +1029,23 @@
     if (box) {
       var p = segChipParts();
       box.innerHTML = p
-        ? '<span class="seg-label">' +
+        ? '<button class="seg-body" data-action="gap-cycle" title="点一下调整跟读留白">' +
+          '<span class="seg-label">' +
           ME.esc(p.label) +
           '</span><span class="seg-val">' +
           ME.esc(p.val) +
-          '</span><button class="seg-x" data-action="stop-seg" aria-label="停止">×</button>'
+          "</span></button>" +
+          '<button class="seg-x" data-action="stop-seg" aria-label="停止">×</button>'
         : "";
+    }
+    var bar = document.getElementById("shadowBar");
+    var fill = document.getElementById("shadowFill");
+    var segNow = ui.segment;
+    var inGap = !!(segNow && segNow.mode === "shadow" && ui.shadowPhase === "gap");
+    if (bar) bar.hidden = !inGap;
+    if (bar && inGap && fill) {
+      var pct = ui.shadowGapTotal ? Math.max(0, Math.min(100, (ui.shadowLeft / ui.shadowGapTotal) * 100)) : 0;
+      fill.style.width = pct + "%";
     }
     var seg = ui.segment;
     var lbtn = document.querySelector('.mode-btn[data-action="toggle-loop"]');
@@ -1068,6 +1104,7 @@
     ui.segment = { n: n, i: i, start: start, end: end, mode: mode || "line" };
     ui.lastSeg = { n: n, i: i };
     ui.loopCount = 0;
+    ui.shadowPhase = "play";
 
     function seekAndPlay() {
       audio.el.currentTime = start;
@@ -2069,9 +2106,9 @@
       "</div>" +
       '<div class="panel">' +
       "<h3>跟读留白</h3>" +
-      "<p>跟读模式下，每句播完会静音等待，这段时间留给你自己重复一遍，时间到了自动重放。手机上用底部 🎤 开启。</p>" +
+      "<p>跟读的节奏是：听一句 → 静音留白（这段时间你跟着说）→ 自动重放这一句 → 自动接下一句。留白长短直接影响顺不顺，建议 2–3 秒；播放条上的「该你了 2.4s」也可以直接点着调。</p>" +
       '<select id="shadowGap" class="study-select" aria-label="跟读留白">' +
-      [1500, 2000, 2500, 3000, 4000, 5000]
+      [1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000]
         .map(function (ms) {
           return (
             '<option value="' +
@@ -2251,6 +2288,7 @@
       ME.esc(audio.track ? audio.track.title : audio.name || (song && song.title) || "") +
       '</span><span id="audioTime">0:00 / 0:00</span></div>' +
       '<input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放进度">' +
+      '<div class="shadow-bar" id="shadowBar" hidden><i id="shadowFill"></i></div>' +
       "</div>" +
       '<div class="dock-modes">' +
       '<button class="mode-btn" data-action="toggle-loop" title="单句循环（R）" aria-label="单句循环" aria-pressed="false">环</button>' +
@@ -2583,8 +2621,9 @@
       t.textContent = d ? d.title : "歌词";
       sub.textContent = "英中逐行对照";
     } else {
-      t.textContent = "剧读";
-      sub.textContent = "Musical English";
+      var names = { phrases: "短语库", review: "复习", settings: "设置", story: "背景阅读" };
+      t.textContent = names[ui.view] || "剧读";
+      sub.textContent = (SHOW ? SHOW.title : "Musical English") + (song ? " · 第 " + song.n + " 首" : "");
     }
   }
 
@@ -2746,7 +2785,17 @@
     if (!target) return;
     var action = target.getAttribute("data-action");
 
-    if (action === "lib-filter") {
+    if (action === "gap-cycle") {
+      var gopts = [1000, 1500, 2000, 2500, 3000, 4000, 5000];
+      var cur = Number(state.settings.shadowGap) || 2500;
+      var gi = gopts.indexOf(cur);
+      var gnext = gopts[(gi + 1) % gopts.length];
+      state.settings.shadowGap = gnext;
+      ME.saveState(state);
+      toast("跟读留白 " + gnext / 1000 + " 秒");
+      if (ui.segment && ui.segment.mode === "shadow" && ui.shadowPhase === "gap") startGap(ui.segment);
+      updateSegChip();
+    } else if (action === "lib-filter") {
       ui.libFilter = target.getAttribute("data-filter") || "all";
       renderLibrary();
     } else if (action === "ab") {

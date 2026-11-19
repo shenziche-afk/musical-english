@@ -784,7 +784,7 @@ main {
 
 .line-row {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) auto 38px;
+  grid-template-columns: 40px minmax(0, 1fr) auto auto;
   gap: 14px;
   align-items: start;
   padding: 15px 10px;
@@ -897,7 +897,7 @@ main {
   font-size: 19.5px;
   line-height: 1.6;
   letter-spacing: 0.005em;
-  color: #f4ecdf;
+  color: var(--ink);
 }
 
 .zh {
@@ -1140,7 +1140,7 @@ main {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
   font-weight: 400;
-  color: #f0e5d2;
+  color: var(--text-bright);
 }
 
 .p-zh {
@@ -1294,7 +1294,7 @@ main {
   margin: 26px 0 10px;
   font-size: 19px;
   font-weight: 400;
-  color: #e9decd;
+  color: var(--ink);
   display: flex;
   align-items: baseline;
   gap: 9px;
@@ -1324,7 +1324,7 @@ main {
 
 .track {
   display: grid;
-  grid-template-columns: 30px 34px minmax(0, 1fr) 54px 66px;
+  grid-template-columns: 30px 34px minmax(0, 1fr) 42px 54px 62px;
   gap: 10px;
   align-items: center;
   padding: 8px 10px;
@@ -1375,7 +1375,7 @@ main {
 
 .track-title {
   font-size: 14px;
-  color: #e6dccb;
+  color: var(--text-bright);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1546,7 +1546,7 @@ main {
   color: var(--muted);
   border-radius: 99px;
   padding: 5px 12px;
-  font-size: 12.5px;
+  font-size: 12px;
   transition: all 0.15s;
 }
 
@@ -1571,7 +1571,7 @@ main {
 .phrase-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 13px;
+  border-radius: 14px;
   padding: 17px 18px 14px;
   display: flex;
   flex-direction: column;
@@ -1602,7 +1602,7 @@ main {
   margin: 9px 0 2px;
   font-size: 19px;
   font-weight: 400;
-  color: #f5eddf;
+  color: var(--text-bright);
   line-height: 1.35;
 }
 
@@ -1666,7 +1666,7 @@ main {
 .bg-card {
   background: linear-gradient(165deg, var(--surface-a), var(--surface-b));
   border: 1px solid var(--line);
-  border-radius: 13px;
+  border-radius: 14px;
   padding: 20px 20px 18px;
 }
 
@@ -1680,7 +1680,7 @@ main {
 .bg-card p {
   margin: 0;
   color: var(--text-body);
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.9;
 }
 
@@ -1954,7 +1954,7 @@ main {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   font-size: 15px;
-  color: #eee3d1;
+  color: var(--text-bright);
 }
 
 .char span {
@@ -2098,7 +2098,7 @@ main {
   margin: 0;
   font-size: 40px;
   line-height: 1.25;
-  color: #f6eee0;
+  color: var(--ink);
   word-break: break-word;
 }
 
@@ -2378,7 +2378,7 @@ main {
 .panel {
   border: 1px solid var(--line);
   background: var(--panel);
-  border-radius: 13px;
+  border-radius: 14px;
   padding: 20px 22px;
   margin-bottom: 16px;
 }
@@ -2387,7 +2387,7 @@ main {
   margin: 0 0 6px;
   font-size: 15px;
   font-weight: 600;
-  color: #ede2d0;
+  color: var(--text-strong);
 }
 
 .panel p {
@@ -2561,9 +2561,9 @@ main {
   bottom: 78px;
   transform: translate(-50%, 10px);
   z-index: 60;
-  background: #2a2118;
-  border: 1px solid #4a3b28;
-  color: #f0e4d0;
+  background: var(--tip-bg);
+  border: 1px solid var(--line);
+  color: var(--text-bright);
   padding: 9px 18px;
   border-radius: 9px;
   font-size: 13px;
@@ -3020,7 +3020,7 @@ main {
   border: 1px solid var(--gold-dim);
   border-radius: 10px;
   background: rgba(var(--gold-rgb), 0.08);
-  color: #e8d9bd;
+  color: var(--text-bright);
   font-size: 12.5px;
   line-height: 1.7;
 }
@@ -3361,4 +3361,66 @@ main {
   font-size: 11px;
   color: var(--gold-dim);
   font-variant-numeric: tabular-nums;
+}
+
+
+/* 行内控制组：播放/循环 + 中文/掌握 */
+.line-ctl-end {
+  justify-content: flex-end;
+}
+
+/* 下拉统一深色（曲库排序、设置页、播放器） */
+select,
+.study-select,
+.lib-sort {
+  background: var(--panel-2);
+  color: var(--text-bright);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* 跟读倒计时条 */
+.shadow-bar {
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: var(--line-3);
+  overflow: hidden;
+}
+
+.shadow-bar i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 0.1s linear;
+}
+
+.seg-body {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+/* 下拉箭头：跟随主题色 */
+select.study-select,
+select.lib-sort,
+#libSort {
+  padding-right: 26px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-2) 50%),
+    linear-gradient(135deg, var(--muted-2) 50%, transparent 50%);
+  background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
 }
