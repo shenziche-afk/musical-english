@@ -142,6 +142,15 @@ python3 dev/pad_times.py --pad 0.25 --overlap 0.15   # 更大旷量
 python3 dev/pad_times.py --dry-run                   # 只看会改多少
 ```
 
+## 5.8 人工 LRC 对照校正（2026-11-19）
+
+桌面留着原始人工 LRC：`~/Desktop/Hamilton 歌词（单独）/分曲 lrc/`、`~/Desktop/The Phantom of the Opera - Original London Cast (1986)/`。
+`dev/retime_lrc.py` 按文本逐行匹配（单调指针），用人工 LRC 的起点覆盖；**如果 LRC 时间点落在静音里（明显标错），保留原值**。
+这一轮改了 hamilton 1,564 行、poto 255 行；之后再跑 `dev/pad_times.py` 加旷量。
+
+教训：whisper 的词级时间戳会整段漂移（Wait for It 第 1 句被推到 11.07s，人工 LRC 与能量都在 9.7s）。
+以后先用 LRC 对照，ASR 只补 LRC 没有的行。
+
 ## 6. 坑（都踩过）
 
 1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。
