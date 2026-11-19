@@ -2296,16 +2296,6 @@
       '<button class="mode-btn' + (ui.ab.b != null ? " is-on" : ui.ab.a != null ? " is-half" : "") +
       '" data-action="ab" title="A-B 复读（A）" aria-label="A-B 复读">' +
       (ui.ab.b != null ? "A-B" : ui.ab.a != null ? "A" : "A-B") + "</button>" +
-      (canRecord()
-        ? '<button class="mode-btn' +
-          (rec.on ? " is-rec" : "") +
-          '" data-action="record" title="录音回放（再点停止）" aria-label="录音">' +
-          (rec.on ? "■" : "录") +
-          "</button>"
-        : "") +
-      (rec.url
-        ? '<button class="mode-btn" data-action="play-rec" title="回放录音" aria-label="回放录音">听</button>'
-        : "") +
       '<span class="seg-chip" id="segChip"></span>' +
       "</div>" +
       '<select id="rateSel" aria-label="播放速度">' +
@@ -2398,93 +2388,6 @@
       toast("已载入 " + f.name);
     });
     input.click();
-  }
-
-  /* ---------------- 录音回放（跟读自测，不落盘、不上传） ---------------- */
-
-  var rec = { on: false, mr: null, stream: null, url: "", chunks: [], el: null };
-
-  function canRecord() {
-    return (
-      typeof navigator !== "undefined" &&
-      !!navigator.mediaDevices &&
-      typeof navigator.mediaDevices.getUserMedia === "function" &&
-      typeof window !== "undefined" &&
-      typeof window.MediaRecorder === "function"
-    );
-  }
-
-  function stopRecord() {
-    if (rec.mr && rec.mr.state !== "inactive") rec.mr.stop();
-  }
-
-  function toggleRecord() {
-    if (rec.on) {
-      stopRecord();
-      return;
-    }
-    if (!canRecord()) {
-      toast("这个浏览器不能录音，换 Safari / Chrome 打开");
-      return;
-    }
-    /* 录音前先停掉伴奏和循环，免得把音乐录进去 */
-    clearSegmentTimer();
-    stopGap();
-    if (audio.el && !audio.el.paused) audio.el.pause();
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then(function (stream) {
-        var mr = new window.MediaRecorder(stream);
-        rec.chunks = [];
-        rec.stream = stream;
-        mr.ondataavailable = function (e) {
-          if (e.data && e.data.size) rec.chunks.push(e.data);
-        };
-        mr.onstop = function () {
-          rec.on = false;
-          rec.mr = null;
-          try {
-            stream.getTracks().forEach(function (t) {
-              t.stop();
-            });
-          } catch (e) {}
-          rec.stream = null;
-          var blob = new Blob(rec.chunks, { type: mr.mimeType || "audio/webm" });
-          if (rec.url) URL.revokeObjectURL(rec.url);
-          rec.url = URL.createObjectURL(blob);
-          renderDock();
-          toast("录好了 · 点「听」回放（只在内存里，刷新即丢）");
-        };
-        mr.start();
-        rec.mr = mr;
-        rec.on = true;
-        renderDock();
-        toast("录音中…读完再点 ■");
-      })
-      .catch(function () {
-        rec.on = false;
-        renderDock();
-        toast("麦克风打不开：检查权限（需要 https 或 localhost）");
-      });
-  }
-
-  /* 回放必须由点击触发，iOS 才放行 */
-  function playRecording() {
-    if (!rec.url) return;
-    if (!rec.el) {
-      rec.el = new Audio();
-      /* 和主播放器一样移出屏幕，iOS 上不在文档里的元素容易被拦 */
-      rec.el.style.cssText =
-        "position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none;";
-      document.body.appendChild(rec.el);
-    }
-    rec.el.src = rec.url;
-    var p = rec.el.play && rec.el.play();
-    if (p && p.catch) {
-      p.catch(function () {
-        toast("再点一次「听」回放");
-      });
-    }
   }
 
   function toggleAudio() {
@@ -2855,10 +2758,6 @@
       toggleShadow();
     } else if (action === "stop-seg") {
       stopSegment();
-    } else if (action === "record") {
-      toggleRecord();
-    } else if (action === "play-rec") {
-      playRecording();
     } else if (action === "play-track") {
       playTrack(Number(target.getAttribute("data-n")));
     } else if (action === "open-song") {
@@ -3105,10 +3004,6 @@
 
     /* 单句循环 / 跟读：R 循环、S 跟读、Esc 停 */
     if (e.key === "Escape") {
-      if (rec.on) {
-        stopRecord();
-        return;
-      }
       if (ui.segment) {
         stopSegment();
         return;

@@ -3179,12 +3179,6 @@ main {
   color: var(--gold);
 }
 
-.mode-btn.is-rec {
-  border-color: #e2564a;
-  color: #ff7a6d;
-  animation: recPulse 1.1s ease-in-out infinite;
-}
-
 @keyframes recPulse {
   0%,
   100% {

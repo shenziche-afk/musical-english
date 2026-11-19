@@ -459,7 +459,7 @@ check(
   seqs.join(" | ")
 );
 
-/* 单句循环 / 跟读 / 录音 */
+/* 单句循环 / 跟读 / A-B */
 docListeners.change.forEach((f) => f({ target: { id: "songSelect", value: "1" } }));
 tabClick("study");
 const au = FakeAudio.instances[0];
@@ -524,8 +524,8 @@ act("loop-line", { "data-n": "1", "data-i": "0" });
 act("play-track", { "data-n": "1" });
 check("整首播放退出循环", el("segChip").innerHTML === "");
 
-/* 没有麦克风的环境不该出现录音键 */
-check("无麦克风不显示录音键", !el("dock").innerHTML.includes('data-action="record"'));
+/* 录音功能已移除，dock 里不应再有录/听键 */
+check("无录音键", !el("dock").innerHTML.includes('data-action="record"'));
 
 console.log("");
 if (fails.length) {
