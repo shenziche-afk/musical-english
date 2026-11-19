@@ -180,8 +180,6 @@
     /* 整曲连播时是否自动滚动跟随当前句 */
     follow: true,
     lastFollowIdx: -1,
-    /* A-B 复读 */
-    ab: { a: null, b: null },
     /* 曲库筛选 / 排序 */
     libFilter: "all",
     libSort: "act"
@@ -2293,9 +2291,6 @@
       '<div class="dock-modes">' +
       '<button class="mode-btn" data-action="toggle-loop" title="单句循环（R）" aria-label="单句循环" aria-pressed="false">环</button>' +
       '<button class="mode-btn" data-action="toggle-shadow" title="跟读模式（S）" aria-label="跟读" aria-pressed="false">跟</button>' +
-      '<button class="mode-btn' + (ui.ab.b != null ? " is-on" : ui.ab.a != null ? " is-half" : "") +
-      '" data-action="ab" title="A-B 复读（A）" aria-label="A-B 复读">' +
-      (ui.ab.b != null ? "A-B" : ui.ab.a != null ? "A" : "A-B") + "</button>" +
       '<span class="seg-chip" id="segChip"></span>' +
       "</div>" +
       '<select id="rateSel" aria-label="播放速度">' +
@@ -2344,11 +2339,6 @@
   function updateAudioUI() {
     var el = audio.el;
     var seg = ui.segment;
-    if (el && ui.ab.a != null && ui.ab.b != null && el.currentTime >= ui.ab.b - 0.02) {
-      try {
-        el.currentTime = ui.ab.a;
-      } catch (e) {}
-    }
     /* timeupdate 兜底：定时器被系统节流时也能收住句尾 */
     if (seg && el && !el.paused && el.currentTime >= seg.end - 0.03) finishSegment();
     if (el) {
@@ -2701,25 +2691,6 @@
     } else if (action === "lib-filter") {
       ui.libFilter = target.getAttribute("data-filter") || "all";
       renderLibrary();
-    } else if (action === "ab") {
-      var at = audio.el ? audio.el.currentTime : 0;
-      if (ui.ab.a == null) {
-        ui.ab.a = at;
-        ui.ab.b = null;
-        toast("A 点 " + ME.formatClock(at) + "，再点一次设 B");
-      } else if (ui.ab.b == null) {
-        if (at - ui.ab.a < 0.4) {
-          toast("B 点要比 A 晚一点");
-        } else {
-          ui.ab.b = at;
-          toast("A-B 循环 " + ME.formatClock(ui.ab.a) + "–" + ME.formatClock(at));
-        }
-      } else {
-        ui.ab.a = null;
-        ui.ab.b = null;
-        toast("已取消 A-B");
-      }
-      renderDock();
     } else if (action === "peek-zh") {
       var zid = target.getAttribute("data-id");
       ui.zh[zid] = !ui.zh[zid];

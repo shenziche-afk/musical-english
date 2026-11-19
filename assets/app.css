@@ -3168,11 +3168,6 @@ main {
   color: var(--gold);
 }
 
-.mode-btn.is-half {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
 .mode-btn.is-on {
   border-color: var(--gold);
   background: rgba(var(--gold-rgb), 0.16);
