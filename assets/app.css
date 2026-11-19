@@ -3408,3 +3408,14 @@ button,
   -webkit-user-select: none;
   user-select: none;
 }
+
+/* 播放器里是另一首时的提示 */
+.dock-other {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  font-size: 10px;
+  color: var(--muted-2);
+  vertical-align: 1px;
+}

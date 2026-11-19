@@ -1039,7 +1039,7 @@
   }
 
   /* 上次听到哪儿了：整首播放/继续播时接着放 */
-  function restorePos(t) {
+  function restorePos(t, silent) {
     var saved = Number((ME.readPos() || {})[String(t.n)] || 0);
     if (!(saved > 5)) return;
     var once = function () {
@@ -1048,7 +1048,7 @@
       if (!isFinite(dur) || saved > dur - 8) return;
       try {
         audio.el.currentTime = saved;
-        toast("从 " + ME.formatClock(saved) + " 继续");
+        if (!silent) toast("从 " + ME.formatClock(saved) + " 继续");
       } catch (e) {}
     };
     audio.el.addEventListener("loadedmetadata", once);
@@ -2164,7 +2164,11 @@
       '<div class="dock-track">' +
       '<div class="dock-meta"><span>' +
       ME.esc(audio.track ? audio.track.title : audio.name || (song && song.title) || "") +
-      '</span><span id="audioTime">0:00 / 0:00</span></div>' +
+      "</span>" +
+      (audio.track && song && audio.track.n !== song.n && SONG_VIEWS.indexOf(ui.view) >= 0
+        ? '<span class="dock-other" title="播放器里是另一首，点这行的 ▶ 会切回本首">其他曲目</span>'
+        : "") +
+      '<span id="audioTime">0:00 / 0:00</span></div>' +
       '<input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放进度">' +
       "</div>" +
       '<div class="dock-modes">' +
@@ -2355,6 +2359,25 @@
     ui.open = {};
     ui.session = null;
     rebuildDerived();
+    syncDockToSong();
+  }
+
+  /* 切到某首歌时，播放条跟着换；正在播时不动，免得突然打断 */
+  function syncDockToSong() {
+    if (!song || !audio.el) return;
+    var t = trackByN(song.n);
+    if (!t || !t.file) return;
+    if (audio.track && audio.track.n === song.n) return;
+    if (audio.el.paused === false) return;
+    audio.track = t;
+    audio.name = "";
+    audio.el.src = t.file;
+    audio.el.__recovered = false;
+    audio.ready = true;
+    ui.follow = true;
+    ui.lastFollowIdx = -1;
+    restorePos(t, true);
+    renderDock();
   }
 
   /* 切曲：pack 没加载过就先注入脚本，加载完再切 */
