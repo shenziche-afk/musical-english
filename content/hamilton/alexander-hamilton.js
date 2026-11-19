@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["alexander-hamilton"] = {
   "runtime": "3:57",
   "tagline": "开场曲 · 一个孤儿如何成为国父",
   "audioSrc": "audio/hamilton/01-alexander-hamilton.m4a",
-  "intro": "全曲 80 行已整理入库（按原专辑断行，已去掉制作名单）。每一行都有讲解，其中 15 处展开到语法、词汇和短语；全曲分成 5 个区，可以一段一段过。",
+  "intro": "全剧的开场曲。合唱团一层层抛出一个问题：一个私生子、孤儿、妓女之子，怎么成了美国国父？八分钟里交代了主角的出身、性格和整部剧的赌注。听点是三句一组的排比如何推着叙事往前走。",
   "sections": [
     {
       "id": "s1",

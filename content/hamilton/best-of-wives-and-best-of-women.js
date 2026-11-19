@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["best-of-wives-and-best-of-women"] = {
   "runtime": "0:48",
   "audioSrc": "audio/hamilton/44-best-of-wives-and-best-of-women.m4a",
   "tagline": "第 44 首 · 全剧最短的一首，最长的一夜",
-  "intro": "决斗前夜，伊莱莎在黑暗里劝丈夫回床上睡，他说城外有个早会。这首只有 48 秒、13 行歌词的短曲，把最普通的夫妻对话放在死亡前夜；曲名「Best of wives and best of women」正是汉密尔顿诀别信里的原话，下一首枪声就要响起。",
+  "intro": "决斗前夜，伊莱莎在黑暗里劝丈夫回床上睡，他说城外有个早会。这首只有 48 秒、的短曲，把最普通的夫妻对话放在死亡前夜；曲名「Best of wives and best of women」正是汉密尔顿诀别信里的原话，下一首枪声就要响起。",
   "sections": [
     {
       "id": "s1",

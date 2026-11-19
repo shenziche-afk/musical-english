@@ -889,10 +889,22 @@ window.MUSICAL_SONGS["helpless"] = {
       "body": "伊丽莎白·斯凯勒 22 岁那年，父亲把她送到新泽西的莫里斯敦，住到姑妈家。大陆军正在附近过冬，小镇上到处都是军官。1780 年 2 月，她遇见了华盛顿的得力助手亚历山大·汉密尔顿。美国国家公园管理局的资料说，汉密尔顿「一见面就神魂颠倒」，到 3 月，两人已经决定结婚。汉密尔顿没有钱，也没有家族名望可以依靠；伊丽莎的父亲却拥有宅邸、八十英亩庄园和巨大的政治影响力。音乐剧把两人的差距写成玩笑，也写成宣言：「你的家人让我看到了另一面的自己。」但速度是真的——相识几周，两人就有了婚约，年底之前举行了婚礼。",
       "bodyEn": "Eliza Schuyler was twenty-two when her father sent her to Morristown, New Jersey, to stay with an aunt. The Continental Army was camped nearby for the winter, and the small town was full of officers. In February 1780 she met Alexander Hamilton, Washington’s chief assistant. The National Park Service records that Hamilton was “instantly smitten,” and that by March the two had decided to marry. Hamilton had no money and no family name to offer. Eliza’s father owned a mansion, an eighty-acre estate, and enormous political influence. The musical makes the gap between them a joke and a declaration: “your family brings out a different side of me.” But the speed was real. Within weeks of meeting, the couple had an understanding, and a wedding date followed before the year ended.",
       "glossary": [
-        { "w": "smitten", "zh": "神魂颠倒的，迷上的" },
-        { "w": "estate", "zh": "庄园，地产" },
-        { "w": "declaration", "zh": "宣言，表白" },
-        { "w": "understanding", "zh": "默契，心照不宣的约定" }
+        {
+          "w": "smitten",
+          "zh": "神魂颠倒的，迷上的"
+        },
+        {
+          "w": "estate",
+          "zh": "庄园，地产"
+        },
+        {
+          "w": "declaration",
+          "zh": "宣言，表白"
+        },
+        {
+          "w": "understanding",
+          "zh": "默契，心照不宣的约定"
+        }
       ],
       "quiz": [
         {
@@ -937,15 +949,32 @@ window.MUSICAL_SONGS["helpless"] = {
       "body": "伊丽莎白·斯凯勒生于 1757 年，是菲利普·斯凯勒和凯瑟琳·范伦斯勒的第二个女儿。她在一个富裕的家庭长大，将军和政治家都是家里的常客。1780 年她嫁给亚历山大·汉密尔顿，后来生下八个孩子。1804 年汉密尔顿在决斗中死去，她比他多活了五十年。这五十年里，她收集、整理丈夫的文件，采访他的旧同僚，替他维护名誉；历史学家普遍认为，没有她的工作，现代人写汉密尔顿传记会困难得多。1806 年她还参与创办了纽约孤儿收容协会，并长期主持会务。1854 年她去世，享年九十七岁，葬在丈夫身边。音乐剧里婚礼上的伊丽莎，只是这段漫长人生的第一章。",
       "bodyEn": "Elizabeth Schuyler was born in 1757, the second daughter of Philip Schuyler and Catharine Van Rensselaer. She grew up in a wealthy household where generals and politicians were ordinary dinner guests. In 1780 she married Alexander Hamilton and eventually bore eight children. After his death in the 1804 duel, she outlived him by fifty years. She spent those decades collecting and organizing his papers, interviewing his old colleagues, and defending his reputation. Without her work, historians agree, the modern biography of Hamilton would have been much harder to write. She also co-founded the New York Orphan Asylum Society in 1806 and led it for decades. When she died in 1854, at ninety-seven, she was buried beside her husband at Trinity Church. The musical’s wedding-day Eliza is only the first chapter of a much longer life.",
       "glossary": [
-        { "w": "outlived", "zh": "比……活得长" },
-        { "w": "reputation", "zh": "名誉，名声" },
-        { "w": "co-founded", "zh": "共同创办" },
-        { "w": "biography", "zh": "传记" }
+        {
+          "w": "outlived",
+          "zh": "比……活得长"
+        },
+        {
+          "w": "reputation",
+          "zh": "名誉，名声"
+        },
+        {
+          "w": "co-founded",
+          "zh": "共同创办"
+        },
+        {
+          "w": "biography",
+          "zh": "传记"
+        }
       ],
       "quiz": [
         {
           "q": "How many children did Eliza and Alexander have?",
-          "options": ["Four", "Six", "Eight", "Ten"],
+          "options": [
+            "Four",
+            "Six",
+            "Eight",
+            "Ten"
+          ],
           "answer": 2,
           "explain": "文中说伊丽莎后来生下八个孩子（bore eight children）。"
         },
@@ -980,10 +1009,22 @@ window.MUSICAL_SONGS["helpless"] = {
       "body": "歌里的时间走得飞快：一句「One week later」，信件满天飞；一句「two weeks later」，汉密尔顿已经去向她父亲提亲。真实的情书留得并不完整：伊丽莎给亚历山大写过信，但晚年她把自己写的信毁掉了；留下来的是他写给她的信，所以我们清楚他的语气，却几乎听不见她的声音。他写信给她的姐姐安吉莉卡，说伊丽莎「美得不讲道理」，有「善良的天性、和蔼与活泼」，还说她「真是奇怪的小东西」。在音乐剧里，信是快节奏的蒙太奇；在历史上，它们记录了一段迅速而认真的恋爱。伊丽莎唱「every letter that you write me」，而今天我们能读到的信，大多只朝一个方向流动。",
       "bodyEn": "The song’s clock moves fast: “One week later” the letters are flying, and “two weeks later” Hamilton is asking her father for a blessing. The real letters survive unevenly. Eliza wrote to Alexander, but she destroyed her own letters later in life; his letters to her are what remain, which is why we hear his voice so clearly and hers almost not at all. He wrote to her sister Angelica that Eliza was “most unmercifully handsome,” that she had “good nature, affability and vivacity,” and that she was “so strange a creature.” In the musical the letters are a comic montage; in history they were the record of a fast, serious courtship. Eliza sings “every letter that you write me.” In reality, most of the letters we can still read travel in only one direction.",
       "glossary": [
-        { "w": "montage", "zh": "蒙太奇，快速剪接的片段" },
-        { "w": "courtship", "zh": "求爱期，恋爱期" },
-        { "w": "affability", "zh": "和蔼可亲" },
-        { "w": "vivacity", "zh": "活泼，生气勃勃" }
+        {
+          "w": "montage",
+          "zh": "蒙太奇，快速剪接的片段"
+        },
+        {
+          "w": "courtship",
+          "zh": "求爱期，恋爱期"
+        },
+        {
+          "w": "affability",
+          "zh": "和蔼可亲"
+        },
+        {
+          "w": "vivacity",
+          "zh": "活泼，生气勃勃"
+        }
       ],
       "quiz": [
         {
@@ -1028,10 +1069,22 @@ window.MUSICAL_SONGS["helpless"] = {
       "body": "1780 年 12 月 14 日，亚历山大·汉密尔顿与伊丽莎白·斯凯勒在奥尔巴尼的斯凯勒宅邸成婚。这座宅子是哈德逊河崖上的乔治式砖楼，周围有八十英亩的果园、花园和农田。政治早就进过这栋房子：1777 年萨拉托加战役后，战败的英军将领约翰·伯戈因曾被关押在这里。新娘家比新郎家富有得多。音乐剧用一段婚礼进行曲和最后一句「my life is gon' be fine cuz Eliza's in it」收尾。无论仪式规模如何，那个地址留了下来：这座家族宅邸如今是纽约州的斯凯勒宅邸州立历史遗址，游客仍能看到举行婚礼的房间。",
       "bodyEn": "On December 14, 1780, Alexander Hamilton and Elizabeth Schuyler were married at the Schuyler house in Albany. The mansion was a Georgian brick building on a bluff above the Hudson River, set in eighty acres of orchards, gardens and farm fields. Politics had already filled its rooms: after the Battle of Saratoga in 1777, the defeated British general John Burgoyne had been held prisoner there. The bride’s family was far richer than the groom’s. The musical ends its version with a wedding march and one last line: “my life is gon’ be fine cuz Eliza’s in it.” Whatever the size of the ceremony, the address survives: a family home that now belongs to the state of New York as Schuyler Mansion State Historic Site. Visitors can still see the room where the vows were exchanged.",
       "glossary": [
-        { "w": "Georgian", "zh": "乔治式（建筑风格）" },
-        { "w": "prisoner", "zh": "囚犯，俘虏" },
-        { "w": "ceremony", "zh": "仪式，典礼" },
-        { "w": "vows", "zh": "誓言" }
+        {
+          "w": "Georgian",
+          "zh": "乔治式（建筑风格）"
+        },
+        {
+          "w": "prisoner",
+          "zh": "囚犯，俘虏"
+        },
+        {
+          "w": "ceremony",
+          "zh": "仪式，典礼"
+        },
+        {
+          "w": "vows",
+          "zh": "誓言"
+        }
       ],
       "quiz": [
         {

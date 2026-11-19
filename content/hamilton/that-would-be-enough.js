@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["that-would-be-enough"] = {
   "runtime": "2:59",
   "audioSrc": "audio/hamilton/17-that-would-be-enough.m4a",
   "tagline": "第 17 首 · 那就足够了",
-  "intro": "汉密尔顿从前线回家，得知伊莱莎怀孕；她承认自己写信求华盛顿放他回家。这是一首温柔的摇篮曲，也是全剧对「野心之外的生活」最完整的一次辩护，旋律后来还会回来。48 行，分 3 区。",
+  "intro": "汉密尔顿从前线回家，得知伊莱莎怀孕；她承认自己写信求华盛顿放他回家。这是一首温柔的摇篮曲，也是全剧对「野心之外的生活」最完整的一次辩护，旋律后来还会回来。",
   "sections": [
     {
       "id": "s1",

@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["yorktown"] = {
   "runtime": "4:03",
   "audioSrc": "audio/hamilton/20-yorktown-the-world-turned-upside-down.m4a",
   "tagline": "第 20 首 · 约克镇决战与天翻地覆的世界",
-  "intro": "决战之夜。汉密尔顿终于拿到兵权，带四百人夜袭英军第十号堡垒；拉法叶、穆里根、劳伦斯在各自战场出现。胜利之后是受降，是那首传说中「天翻地覆」的英国饮酒歌。100 行（含 5 行专辑名单），分 7 区。",
+  "intro": "决战之夜。汉密尔顿终于拿到兵权，带四百人夜袭英军第十号堡垒；拉法叶、穆里根、劳伦斯在各自战场出现。胜利之后是受降，是那首传说中「天翻地覆」的英国饮酒歌。",
   "sections": [
     {
       "id": "s1",
@@ -816,7 +816,7 @@ window.MUSICAL_SONGS["yorktown"] = {
       "id": "s6",
       "title": "We Won",
       "zh": "我们赢了",
-      "note": "那首传说中的英国饮酒歌《The World Turned Upside Down》被写成副歌；Down, down, down 既是歌词也是下行的旋律。胜利、自由、新的国家一起爆炸。本区最后 5 行是专辑制作名单（非歌词）。",
+      "note": "那首传说中的英国饮酒歌《The World Turned Upside Down》被写成副歌；Down, down, down 既是歌词也是下行的旋律。胜利、自由、新的国家一起爆炸。",
       "lines": [
         {
           "id": "l80",

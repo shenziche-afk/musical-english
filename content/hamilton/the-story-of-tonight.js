@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["the-story-of-tonight"] = {
   "runtime": "1:32",
   "audioSrc": "audio/hamilton/04-the-story-of-tonight.m4a",
   "tagline": "第 4 首 · 为今晚干杯",
-  "intro": "一首很短的祝酒歌。四个人知道明天可能就死，但还是为自由、为彼此举杯，相信孩子会把今晚讲下去。32 行，分 2 区。",
+  "intro": "一首很短的祝酒歌。四个人知道明天可能就死，但还是为自由、为彼此举杯，相信孩子会把今晚讲下去。",
   "sections": [
     {
       "id": "s1",

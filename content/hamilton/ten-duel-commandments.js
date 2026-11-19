@@ -13,7 +13,7 @@ window.MUSICAL_SONGS["ten-duel-commandments"] = {
   "runtime": "1:47",
   "audioSrc": "audio/hamilton/15-ten-duel-commandments.m4a",
   "tagline": "第 15 首 · 决斗十诫，数到十就开枪",
-  "intro": "一条条决斗规则被唱成一首可以跟唱的数数歌。表面是「十诫」教程，实际同时讲了 1778 年劳伦斯对李的决斗，并为 1804 年汉密尔顿与伯尔的决斗埋下伏笔。50 行，分 4 区，越数越快。",
+  "intro": "一条条决斗规则被唱成一首可以跟唱的数数歌。表面是「十诫」教程，实际同时讲了 1778 年劳伦斯对李的决斗，并为 1804 年汉密尔顿与伯尔的决斗埋下伏笔。越数越快。",
   "sections": [
     {
       "id": "s1",
