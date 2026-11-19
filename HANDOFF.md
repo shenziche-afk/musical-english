@@ -123,6 +123,15 @@ python3 dev/asr_times.py self-test                                       # 合�
 - 当前状态：环境已装、模型未下、真实音频未跑；自检通过（22 行合成数据，整体平移 1.2s 能被全部识别）。
 - 计划：先跑 POTO #17 和 Hamilton #46 对比，再决定是否全量。
 
+## 5.6 时间码 ASR 校准（2026-11-19 已跑）
+
+- 67 首全部用 `mlx-whisper`（large-v3-turbo）转写，词级时间戳存 `dev/asr/<show>/<n>.json`；
+  `dev/asr_times.py align` 生成候选，`apply` 写回（自动 `.bak`）。
+- 采纳门槛：匹配分 ≥0.9、位移 ≤3s；其余保留原值（重复副歌容易匹配到别处，宁可不动）。
+- 结果：poto 347/1209 行、hamilton 1880/3416 行被校正，位移中位数 0.49s / 0.36s；
+  写回后再用 `repair` 保证无重叠、无零长度（脚本见当日提交历史）。
+- 想重跑某首：`.venv-whisper/bin/python dev/asr_times.py transcribe|align|apply --show <id> --n <n>`。
+
 ## 6. 坑（都踩过）
 
 1. **GitHub 推送经常失败**：`Empty reply` / `Couldn't connect` / 慢于 1 KB/s。用重试循环（`perl -e 'alarm 120; exec @ARGV' git push ...` 最多 10 次）基本都能过。`github.com` 的 DNS 有时给到 `20.205.243.166`（不通），换 IP（如 `20.27.177.113`）可通，但没有 sudo 改 hosts。
