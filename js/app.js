@@ -153,6 +153,9 @@
   }
 
   var state = ME.loadState();
+  /* 启动时的地址栏参数要先存下来：后面 switchView 会把地址栏改写成当前视图 */
+  var BOOT_QUERY = (typeof location !== "undefined" && location.search) || "";
+
   var ui = {
     view: "study",
     open: {},
@@ -166,7 +169,19 @@
     lastSeg: null,
     loopCount: 0,
     /* 跟读留白剩余毫秒 */
-    shadowLeft: 0
+    shadowLeft: 0,
+    /* 隐藏中文时，单独点开过的行：{ l12: true } */
+    zh: {},
+    /* 上次保存播放位置的时间，避免 timeupdate 写太勤 */
+    posSavedAt: 0,
+    /* 整曲连播时是否自动滚动跟随当前句 */
+    follow: true,
+    lastFollowIdx: -1,
+    /* A-B 复读 */
+    ab: { a: null, b: null },
+    /* 曲库筛选 / 排序 */
+    libFilter: "all",
+    libSort: "act"
   };
   var audio = { el: null, ready: false, name: "", track: null };
 
@@ -374,7 +389,9 @@
       (line.speaker ? '<span class="speaker">' + ME.esc(line.speaker) + "</span>" : "") +
       hl(line.text, line.words) +
       "</p>" +
-      (line.zh ? '<p class="zh">' + ME.esc(line.zh) + "</p>" : "") +
+      (line.zh
+        ? '<p class="zh' + (ui.zh[line.id] ? " is-revealed" : "") + '">' + ME.esc(line.zh) + "</p>"
+        : "") +
       '<div class="chips">' +
       chips.join("") +
       "</div>" +
@@ -407,6 +424,11 @@
           "</span>"
         );
       })() +
+      (!state.settings.showZh
+        ? '<button class="zh-peek' + (ui.zh[line.id] ? " is-on" : "") +
+          '" data-action="peek-zh" data-id="' + ME.esc(line.id) +
+          '" title="显示这一行的中文">中</button>'
+        : "") +
       '<button class="master" data-action="master" data-id="' +
       ME.esc(line.id) +
       '" aria-pressed="' +
@@ -581,7 +603,7 @@
       '<button class="link-btn" data-action="go-phrases">浏览短语库 →</button>' +
       "</div>" +
       "</div>" +
-      '<div class="hint-strip">点任意一行都有讲解 · 带「词 / 短语 / 语法」的行展开更细 · 虚线词悬停看释义 · 右侧 ✓ 标记「已掌握」</div>' +
+      '<div class="hint-strip">点任意一行都有讲解 · 带「词 / 短语 / 语法」的行展开更细 · 中文默认隐藏，点右侧「中」只看这一句 · 虚线词悬停看释义</div>' +
       body;
 
     /* 行内「相关背景」只有作者手工挂的几处；这里给整首歌一个完整入口，
@@ -629,39 +651,109 @@
 
   /* ---------------- 曲库 ---------------- */
 
+  /* 曲库顶部的学习概览：掌握行数 / 今日到期 / 连续天数 */
+  function libStats() {
+    var total = 0;
+    Object.keys(LYRICS).forEach(function (n) {
+      total += ((LYRICS[n] && LYRICS[n].lines) || []).length;
+    });
+    var packIds = {};
+    TRACKS.forEach(function (t) {
+      var pid = packIdFor(t.n);
+      if (pid) packIds[pid + ":"] = true;
+    });
+    var learned = 0;
+    Object.keys(state.lines).forEach(function (k) {
+      var rec = state.lines[k];
+      if (!rec || !rec.mastered) return;
+      for (var pre in packIds) {
+        if (k.indexOf(pre) === 0) {
+          learned++;
+          return;
+        }
+      }
+    });
+    var now = Date.now();
+    var due = 0;
+    Object.keys(state.srs).forEach(function (k) {
+      var r = state.srs[k];
+      if (r && r.due && r.due <= now) due++;
+    });
+    var streak = 0;
+    var d = new Date();
+    while (streak < 400) {
+      var day = state.daily[ME.dateKey(d)];
+      if (day && ((day.new || 0) + (day.reviews || 0)) > 0) {
+        streak++;
+        d.setDate(d.getDate() - 1);
+      } else break;
+    }
+    return { total: total, learned: learned, due: due, streak: streak };
+  }
+
   function renderLibrary() {
     var box = document.getElementById("view-library");
     if (!TRACKS.length) {
       box.innerHTML = '<p class="empty">没有找到曲目清单。</p>';
       return;
     }
-    var acts = [1, 2].filter(function (act) {
-      return TRACKS.some(function (t) {
-        return t.act === act;
-      });
+    var filter = ui.libFilter || "all";
+    var sort = ui.libSort || "act";
+    var rows = TRACKS.filter(function (t) {
+      var pr = trackProgress(t);
+      if (filter === "done") return pr.total > 0 && pr.pct >= 100;
+      if (filter === "todo") return pr.pct < 100;
+      if (filter === "pack") return hasPack(t.n);
+      return true;
     });
-    var body = acts
-      .map(function (act) {
-        var list = TRACKS.filter(function (t) {
-          return t.act === act;
-        });
-        return (
-          '<section class="act">' +
-          '<h3 class="act-title serif">' +
-          (act === 1 ? "第一幕" : "第二幕") +
-          " <em>Act " +
-          act +
-          "</em>" +
-          '<span class="act-meta">' +
-          list.length +
-          " 首</span></h3>" +
-          '<ol class="track-list">' +
-          list.map(trackRow).join("") +
-          "</ol>" +
-          "</section>"
-        );
-      })
-      .join("");
+    if (sort === "length") rows.sort(function (a, b) { return b.seconds - a.seconds; });
+    else if (sort === "progress") rows.sort(function (a, b) { return trackProgress(b).pct - trackProgress(a).pct; });
+    else if (sort === "title") rows.sort(function (a, b) { return a.title.localeCompare(b.title); });
+
+    var body;
+    if (sort === "act") {
+      body = [1, 2]
+        .filter(function (act) {
+          return rows.some(function (t) { return t.act === act; });
+        })
+        .map(function (act) {
+          var list = rows.filter(function (t) { return t.act === act; });
+          return (
+            '<section class="act">' +
+            '<h3 class="act-title serif">' +
+            (act === 1 ? "第一幕" : "第二幕") +
+            " <em>Act " + act + "</em>" +
+            '<span class="act-meta">' + list.length + " 首</span></h3>" +
+            '<ol class="track-list">' + list.map(trackRow).join("") + "</ol>" +
+            "</section>"
+          );
+        })
+        .join("");
+    } else {
+      body = rows.length
+        ? '<ol class="track-list">' + rows.map(trackRow).join("") + "</ol>"
+        : '<p class="empty">这个筛选下没有曲目。</p>';
+    }
+
+    var tools =
+      '<div class="lib-tools">' +
+      '<div class="lib-filters">' +
+      [["all", "全部"], ["todo", "未学完"], ["done", "已学完"], ["pack", "有精读"]]
+        .map(function (f) {
+          return (
+            '<button class="type-chip' + (filter === f[0] ? " is-on" : "") +
+            '" data-action="lib-filter" data-filter="' + f[0] + '">' + f[1] + "</button>"
+          );
+        })
+        .join("") +
+      "</div>" +
+      '<select class="study-select lib-sort" id="libSort" aria-label="排序">' +
+      [["act", "按幕次"], ["progress", "按掌握度"], ["length", "按时长"], ["title", "按标题"]]
+        .map(function (o) {
+          return '<option value="' + o[0] + '"' + (sort === o[0] ? " selected" : "") + ">" + o[1] + "</option>";
+        })
+        .join("") +
+      "</select></div>";
 
     var withContent = TRACKS.filter(function (t) {
       return hasPack(t.n);
@@ -680,8 +772,34 @@
       "。已有逐行精读 <b>" +
       withContent +
       "</b> 首；点任意一行看歌词，点左侧 ▷ 播放。</p>" +
+      (function () {
+        var st = libStats();
+        return (
+          '<div class="lib-stats">' +
+          "<span>已掌握 <b>" + st.learned + "</b> / " + st.total + " 行</span>" +
+          "<span>今日到期 <b>" + st.due + "</b> 张</span>" +
+          "<span>连续 <b>" + st.streak + "</b> 天</span>" +
+          '<button class="link-btn lib-stats-go" data-action="tab" data-view="review">去复习 →</button>' +
+          "</div>"
+        );
+      })() +
       "</div>" +
+      tools +
       body;
+  }
+
+  function trackProgress(t) {
+    var pid = packIdFor(t.n);
+    var total = ((LYRICS[String(t.n)] && LYRICS[String(t.n)].lines) || []).length;
+    var done = 0;
+    if (pid) {
+      var pre = pid + ":";
+      Object.keys(state.lines).forEach(function (k) {
+        if (k.indexOf(pre) === 0 && state.lines[k] && state.lines[k].mastered) done++;
+      });
+    }
+    if (done > total) done = total;
+    return { done: done, total: total, pct: total ? Math.round((done / total) * 100) : 0 };
   }
 
   function trackRow(t) {
@@ -707,6 +825,12 @@
       '<span class="track-title">' +
       ME.esc(t.title) +
       "</span>" +
+      (function () {
+        var pr = trackProgress(t);
+        return hasPack(t.n) && pr.total
+          ? '<span class="track-pct" title="已掌握 ' + pr.done + " / " + pr.total + ' 行">' + pr.pct + "%</span>"
+          : "";
+      })() +
       '<span class="track-len">' +
       ME.formatClock(t.seconds) +
       "</span>" +
@@ -904,14 +1028,32 @@
   }
 
   /* 精读页高亮正在播的那一行（歌词页由 updateLyricHighlight 处理） */
+  function currentLineIdx(n, t) {
+    var arr = TIMES[String(n)] || [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] && t >= arr[i][0] && t < arr[i][1]) return i;
+    }
+    return -1;
+  }
+
   function markPlayingLine() {
-    if (ui.view !== "study") return;
+    if (ui.view !== "study" || !song) return;
     var prev = document.querySelector(".line.is-playing");
     if (prev) prev.classList.remove("is-playing");
     var seg = ui.segment;
-    if (!seg || !song || seg.n !== song.n) return;
-    var el = document.querySelector('.line[data-line="l' + (seg.i + 1) + '"]');
-    if (el) el.classList.add("is-playing");
+    var idx = -1;
+    if (seg && seg.n === song.n) idx = seg.i;
+    else if (audio.track && audio.track.n === song.n && audio.el && !audio.el.paused) {
+      idx = currentLineIdx(song.n, audio.el.currentTime);
+    }
+    if (idx < 0) return;
+    var el = document.querySelector('.line[data-line="l' + (idx + 1) + '"]');
+    if (!el) return;
+    el.classList.add("is-playing");
+    if (ui.follow && audio.el && !audio.el.paused && idx !== ui.lastFollowIdx) {
+      ui.lastFollowIdx = idx;
+      el.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
   }
 
   /* 播放一句：mode = "line"（播完停）| "loop"（单句循环）| "shadow"（跟读） */
@@ -960,6 +1102,28 @@
     });
   }
 
+  /* 上次听到哪儿了：整首播放/继续播时接着放 */
+  function restorePos(t) {
+    var saved = Number((ME.readPos() || {})[String(t.n)] || 0);
+    if (!(saved > 5)) return;
+    var once = function () {
+      audio.el.removeEventListener("loadedmetadata", once);
+      var dur = audio.el.duration;
+      if (!isFinite(dur) || saved > dur - 8) return;
+      try {
+        audio.el.currentTime = saved;
+        toast("从 " + ME.formatClock(saved) + " 继续");
+      } catch (e) {}
+    };
+    audio.el.addEventListener("loadedmetadata", once);
+  }
+
+  function savePosNow() {
+    if (audio.track && audio.el && audio.el.currentTime > 0.5) {
+      ME.savePos(audio.track.n, audio.el.currentTime);
+    }
+  }
+
   function playTrack(n) {
     var t = TRACKS.filter(function (x) {
       return x.n === n;
@@ -988,6 +1152,9 @@
     audio.el.src = t.file;
     audio.el.__recovered = false;
     audio.ready = true;
+    ui.follow = true;
+    ui.lastFollowIdx = -1;
+    restorePos(t);
     renderDock();
     safePlay(audio.el);
     watchStall();
@@ -2030,9 +2197,15 @@
       if (ui.view === "library") renderLibrary();
     });
     a.addEventListener("pause", function () {
+      savePosNow();
       updateAudioUI();
       if (ui.view === "library") renderLibrary();
     });
+    a.addEventListener("ended", function () {
+      if (audio.track) ME.clearPos(audio.track.n);
+      updateAudioUI();
+    });
+    window.addEventListener("pagehide", savePosNow);
     var first = TRACKS[0];
     if (first) {
       a.src = first.file;
@@ -2082,6 +2255,9 @@
       '<div class="dock-modes">' +
       '<button class="mode-btn" data-action="toggle-loop" title="单句循环（R）" aria-label="单句循环" aria-pressed="false">环</button>' +
       '<button class="mode-btn" data-action="toggle-shadow" title="跟读模式（S）" aria-label="跟读" aria-pressed="false">跟</button>' +
+      '<button class="mode-btn' + (ui.ab.b != null ? " is-on" : ui.ab.a != null ? " is-half" : "") +
+      '" data-action="ab" title="A-B 复读（A）" aria-label="A-B 复读">' +
+      (ui.ab.b != null ? "A-B" : ui.ab.a != null ? "A" : "A-B") + "</button>" +
       (canRecord()
         ? '<button class="mode-btn' +
           (rec.on ? " is-rec" : "") +
@@ -2140,6 +2316,11 @@
   function updateAudioUI() {
     var el = audio.el;
     var seg = ui.segment;
+    if (el && ui.ab.a != null && ui.ab.b != null && el.currentTime >= ui.ab.b - 0.02) {
+      try {
+        el.currentTime = ui.ab.a;
+      } catch (e) {}
+    }
     /* timeupdate 兜底：定时器被系统节流时也能收住句尾 */
     if (seg && el && !el.paused && el.currentTime >= seg.end - 0.03) finishSegment();
     if (el) {
@@ -2150,6 +2331,13 @@
       var seek = document.getElementById("seek");
       if (seek && el.duration) {
         if (document.activeElement !== seek) seek.value = String(Math.round((el.currentTime / el.duration) * 1000));
+      }
+    }
+    if (audio.track && el && !el.paused) {
+      var now = Date.now();
+      if (now - (ui.posSavedAt || 0) > 3000) {
+        ui.posSavedAt = now;
+        ME.savePos(audio.track.n, el.currentTime);
       }
     }
     updateLyricHighlight();
@@ -2362,17 +2550,20 @@
   }
 
   /* 切曲：pack 没加载过就先注入脚本，加载完再切 */
-  function switchStudy(id) {
+  function switchStudy(id, done) {
     if (!id) return;
+    ui.routePush = true;
     if (SONGS[id]) {
       setActiveSong(id);
       switchView("study");
+      if (done) done();
       return;
     }
     toast("正在载入曲目内容…");
     loadPack(id, function () {
       setActiveSong(id);
       switchView("study");
+      if (done) done();
     });
   }
 
@@ -2425,6 +2616,69 @@
     if (next) next.disabled = idx < 0 || idx >= list.length - 1;
   }
 
+  var routing = false;
+
+  /* 把当前视图写回地址栏：?show=poto&n=7&view=study&line=l12 */
+  function writeRoute(kind) {
+    if (!SHOW || routing) return;
+    var q;
+    try {
+      q = new URLSearchParams(location.search);
+    } catch (e) {
+      return;
+    }
+    q.set("show", SHOW.id);
+    if (ui.view === "lyrics") {
+      q.set("n", String(ui.lyricsN || 1));
+      q.delete("view");
+    } else if (SONG_VIEWS.indexOf(ui.view) >= 0 && song) {
+      q.set("n", String(song.n));
+      q.set("view", ui.view);
+    } else if (ui.view !== "library") {
+      q.delete("n");
+      q.set("view", ui.view);
+    } else {
+      q.delete("n");
+      q.delete("view");
+    }
+    if (ui.focusLine) q.set("line", ui.focusLine);
+    else q.delete("line");
+    var url = location.pathname + "?" + q.toString();
+    try {
+      history[kind === "push" ? "pushState" : "replaceState"]({ route: 1 }, "", url);
+    } catch (e) {}
+  }
+
+  /* 浏览器前进/后退：同一剧目就地切，不同剧目整页重载 */
+  function applyRoute() {
+    var q;
+    try {
+      q = new URLSearchParams(location.search);
+    } catch (e) {
+      return;
+    }
+    if ((q.get("show") || "") !== (SHOW ? SHOW.id : "")) {
+      location.reload();
+      return;
+    }
+    var n = Number(q.get("n")) || 0;
+    var view = q.get("view") || "";
+    routing = true;
+    if (n && packIdFor(n)) {
+      var pid = packIdFor(n);
+      var go = function () {
+        setActiveSong(pid);
+        switchView(view && SONG_VIEWS.indexOf(view) >= 0 ? view : "study");
+        routing = false;
+      };
+      if (SONGS[pid]) go();
+      else loadPack(pid, go);
+      return;
+    }
+    switchView(view && view !== "library" ? view : "library");
+    routing = false;
+  }
+
   function switchView(name) {
     ui.view = name;
     ["study", "library", "lyrics", "phrases", "story", "review", "settings"].forEach(function (v) {
@@ -2452,9 +2706,13 @@
     document.body.classList.remove("nav-hidden");
     lastScrollY = 0;
     window.scrollTo({ top: 0, behavior: "smooth" });
+    var push = !!ui.routePush;
+    ui.routePush = false;
+    writeRoute(push ? "push" : "replace");
   }
 
   function jumpToLine(id) {
+    ui.focusLine = id;
     ui.open[id] = true;
     if (ui.view !== "study") switchView("study");
     else renderStudy();
@@ -2466,6 +2724,7 @@
         el.classList.remove("is-flash");
       }, 1400);
     }
+    writeRoute("replace");
   }
 
   function openBg(id) {
@@ -2487,7 +2746,33 @@
     if (!target) return;
     var action = target.getAttribute("data-action");
 
-    if (action === "toggle-line") {
+    if (action === "lib-filter") {
+      ui.libFilter = target.getAttribute("data-filter") || "all";
+      renderLibrary();
+    } else if (action === "ab") {
+      var at = audio.el ? audio.el.currentTime : 0;
+      if (ui.ab.a == null) {
+        ui.ab.a = at;
+        ui.ab.b = null;
+        toast("A 点 " + ME.formatClock(at) + "，再点一次设 B");
+      } else if (ui.ab.b == null) {
+        if (at - ui.ab.a < 0.4) {
+          toast("B 点要比 A 晚一点");
+        } else {
+          ui.ab.b = at;
+          toast("A-B 循环 " + ME.formatClock(ui.ab.a) + "–" + ME.formatClock(at));
+        }
+      } else {
+        ui.ab.a = null;
+        ui.ab.b = null;
+        toast("已取消 A-B");
+      }
+      renderDock();
+    } else if (action === "peek-zh") {
+      var zid = target.getAttribute("data-id");
+      ui.zh[zid] = !ui.zh[zid];
+      renderStudy();
+    } else if (action === "toggle-line") {
       var id = target.getAttribute("data-id");
       ui.open[id] = !ui.open[id];
       renderStudy();
@@ -2686,6 +2971,9 @@
         switchView("lyrics");
         toast("这首的精读还在制作，先看歌词");
       }
+    } else if (e.target.id === "libSort") {
+      ui.libSort = e.target.value || "act";
+      renderLibrary();
     } else if (e.target.id === "lyricsSong") {
       ui.lyricsN = Number(e.target.value);
       renderLyrics();
@@ -2893,4 +3181,32 @@
   setupAudio();
   renderDock();
   switchView("library");
+
+  /* 地址栏里的位置：?show=poto&n=7&view=study&line=l12 */
+  (function initRoute() {
+    window.addEventListener("popstate", applyRoute);
+    var q;
+    try {
+      q = new URLSearchParams(BOOT_QUERY);
+    } catch (e) {
+      return;
+    }
+    var n = Number(q.get("n")) || 0;
+    var view = q.get("view") || "";
+    var line = q.get("line") || "";
+    if (n) {
+      var pid = packIdFor(n);
+      if (pid) {
+        switchStudy(pid, function () {
+          if (view && SONG_VIEWS.indexOf(view) >= 0 && view !== "study") switchView(view);
+          if (line) setTimeout(function () { jumpToLine(line); }, 150);
+        });
+      } else {
+        ui.lyricsN = n;
+        switchView("lyrics");
+      }
+    } else if (view && view !== "library") {
+      switchView(view);
+    }
+  })();
 })();

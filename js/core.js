@@ -16,7 +16,7 @@
       v: 1,
       srs: {},
       lines: {},
-      settings: { newPerDay: 12, showZh: true, rate: 1, shadowGap: 2500 },
+      settings: { newPerDay: 12, showZh: false, rate: 1, shadowGap: 2500 },
       lyrics: {},
       bg: {},
       daily: {}
@@ -37,6 +37,11 @@
       base.daily = saved.daily || {};
       base.settings = Object.assign(base.settings, saved.settings || {});
       base.v = saved.v || 1;
+      /* v2：中文译文默认隐藏（老用户也切到新默认，之后仍可自己开） */
+      if (base.v < 2) {
+        base.settings.showZh = false;
+        base.v = 2;
+      }
       /* 旧版行 id 没有曲目前缀，迁移到 Alexander Hamilton 名下 */
       Object.keys(base.lines).forEach(function (k) {
         if (k.indexOf(":") === -1) {
@@ -205,6 +210,51 @@
     return m + ":" + String(s).padStart(2, "0");
   }
 
+  /* 每首的播放位置（不进快照，单独一个小键） */
+  var POS_KEY = "musical-en.pos";
+
+  function readPos() {
+    try {
+      var o = JSON.parse(localStorage.getItem(POS_KEY) || "{}");
+      return o && typeof o === "object" ? o : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function savePos(n, sec) {
+    if (!n || !isFinite(sec) || sec < 0) return;
+    try {
+      var m = readPos();
+      m[String(n)] = Math.round(sec);
+      var keys = Object.keys(m);
+      if (keys.length > 120) {
+        keys.slice(0, keys.length - 120).forEach(function (k) {
+          delete m[k];
+        });
+      }
+      localStorage.setItem(POS_KEY, JSON.stringify(m));
+    } catch (e) {}
+  }
+
+  function clearPos(n) {
+    try {
+      var m = readPos();
+      delete m[String(n)];
+      localStorage.setItem(POS_KEY, JSON.stringify(m));
+    } catch (e) {}
+  }
+
+  function dateKey(d) {
+    return (
+      d.getFullYear() +
+      "-" +
+      String(d.getMonth() + 1).padStart(2, "0") +
+      "-" +
+      String(d.getDate()).padStart(2, "0")
+    );
+  }
+
   function formatHours(sec) {
     sec = Math.max(0, Math.round(sec || 0));
     var h = Math.floor(sec / 3600);
@@ -222,6 +272,10 @@
     listSnapshots: listSnapshots,
     readSnapshot: readSnapshot,
     todayKey: todayKey,
+    dateKey: dateKey,
+    readPos: readPos,
+    savePos: savePos,
+    clearPos: clearPos,
     esc: esc,
     norm: norm,
     rate: rate,

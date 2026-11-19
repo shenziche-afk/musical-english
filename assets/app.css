@@ -3168,6 +3168,11 @@ main {
   color: var(--gold);
 }
 
+.mode-btn.is-half {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .mode-btn.is-on {
   border-color: var(--gold);
   background: rgba(var(--gold-rgb), 0.16);
@@ -3282,4 +3287,78 @@ main {
   margin: 3px 0 0;
   font-size: 13px;
   color: var(--muted);
+}
+
+/* 隐藏中文时，单行「中」按钮 */
+.hide-zh .zh.is-revealed {
+  display: block;
+}
+
+.zh-peek {
+  width: 28px;
+  height: 28px;
+  margin-top: 3px;
+  border-radius: 50%;
+  border: 1px dashed var(--line-strong);
+  background: transparent;
+  color: var(--muted-2);
+  font-size: 12px;
+  line-height: 1;
+  transition: all 0.16s;
+}
+
+.zh-peek:hover,
+.zh-peek.is-on {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* 曲库顶部学习概览 */
+.lib-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin: 14px 0 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(var(--gold-rgb), 0.04);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.lib-stats b {
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.lib-stats .lib-stats-go {
+  margin-left: auto;
+}
+
+
+/* 曲库筛选 / 排序 / 单曲进度 */
+.lib-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 6px;
+}
+
+.lib-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lib-sort {
+  margin-left: auto;
+}
+
+.track-pct {
+  font-size: 11px;
+  color: var(--gold-dim);
+  font-variant-numeric: tabular-nums;
 }

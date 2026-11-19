@@ -137,7 +137,13 @@ class FakeAudio {
 
 FakeAudio.instances = [];
 
-global.window = { scrollTo() {}, MUSICAL_SONGS: {}, MUSICAL_TRACKS: {} };
+global.window = {
+  scrollTo() {},
+  addEventListener() {},
+  removeEventListener() {},
+  MUSICAL_SONGS: {},
+  MUSICAL_TRACKS: {}
+};
 global.document = document;
 global.location = { protocol: "http:", href: "http://127.0.0.1:8765/" };
 global.localStorage = localStorage;
