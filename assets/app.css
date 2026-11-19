@@ -2654,7 +2654,7 @@ main {
     display: none;
   }
   .line-row {
-    grid-template-columns: 30px minmax(0, 1fr) auto 32px;
+    grid-template-columns: 30px minmax(0, 1fr) auto auto;
     gap: 8px;
     padding: 13px 4px;
   }
@@ -3383,4 +3383,28 @@ select.lib-sort,
   background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
+}
+
+
+/* 选中文字：跟随主题色，别用浏览器默认的蓝 */
+::selection {
+  background: rgba(var(--gold-rgb), 0.3);
+  color: var(--text-bright);
+}
+
+::-moz-selection {
+  background: rgba(var(--gold-rgb), 0.3);
+  color: var(--text-bright);
+}
+
+/* 按钮/控件不参与文字选中，避免拖动时整排变蓝 */
+button,
+.tab,
+.subtab,
+.type-chip,
+.line-ctl,
+.mode-btn,
+.track-badge {
+  -webkit-user-select: none;
+  user-select: none;
 }
