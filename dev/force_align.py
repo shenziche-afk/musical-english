@@ -20,9 +20,8 @@ def load(path):
 
 
 def to_wav(path):
-    wav = "/tmp/_fa.wav"
-    subprocess.run(["afconvert", "-f", "WAVE", "-d", "LEI16@16000", "-c", "1", path, wav],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    from audio_decode import to_wav as decode
+    wav = decode(path, 16000)
     w, sr = torchaudio.load(wav)
     os.remove(wav)
     return w.mean(0, keepdim=True), sr
